@@ -189,14 +189,11 @@
                 <div class="lg:hidden border-t border-slate-200/60 px-4 sm:px-6 py-4 hidden" id="mobileMenu">
                     <div class="grid gap-2 text-sm font-semibold text-slate-800">
                         <a class="rounded-xl px-3 py-2 hover:bg-slate-50 transition" href="/#/home">Home</a>
-                        <a class="rounded-xl px-3 py-2 hover:bg-slate-50 transition"
-                            href="/#/pricing">Pricing</a>
-                        <a class="rounded-xl px-3 py-2 hover:bg-slate-50 transition"
-                            href="/#/portfolio">Portfolio</a>
+                        <a class="rounded-xl px-3 py-2 hover:bg-slate-50 transition" href="/#/pricing">Pricing</a>
+                        <a class="rounded-xl px-3 py-2 hover:bg-slate-50 transition" href="/#/portfolio">Portfolio</a>
                         <a class="rounded-xl px-3 py-2 hover:bg-slate-50 transition" href="/#/about-us">About
                             Us</a>
-                        <a class="rounded-xl px-3 py-2 hover:bg-slate-50 transition"
-                            href="/#/contact">Contact</a>
+                        <a class="rounded-xl px-3 py-2 hover:bg-slate-50 transition" href="/#/contact">Contact</a>
                     </div>
                 </div>
             </div>
@@ -396,14 +393,6 @@
                         // "Lock" the field: make it look disabled and prevent clicks
                         projectType.classList.add('pointer-events-none', 'bg-slate-100', 'text-slate-500');
 
-                        // Create a hidden input to ensure the value is still submitted
-                        // (even though pointer-events-none doesn't stop submission, this is a safeguard if we used disabled)
-                        // But since we are just blocking UI interaction, the select value will submit fine.
-
-                        // Trigger the change event so the conditional logic below runs immediately
-                        // We need to wait a tick or just run existing handlers
-                        // But since we haven't attached listeners yet, we should probably move this logic 
-                        // AFTER attaching listeners, or manually trigger dispatchEvent.
                     }
                 }
 
