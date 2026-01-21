@@ -1,0 +1,244 @@
+✅ FULL GDPR COOKIE BANNER (HTML + CSS + JS)
+
+1️⃣ HTML (place before </body>)
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-box">
+        <p class="cookie-text">
+            We use cookies to improve your experience, analyze traffic, and protect our
+            forms. You can accept all cookies, reject non-essential cookies, or manage
+            your preferences.
+            <a href="/cookie-policy.html" target="_blank">Cookie Policy</a>
+        </p>
+
+        <div class="cookie-buttons">
+            <button id="cookie-accept" class="btn primary">Accept All</button>
+            <button id="cookie-reject" class="btn secondary">Reject Non-Essential</button>
+            <button id="cookie-settings" class="btn link">Preferences</button>
+        </div>
+    </div>
+</div>
+
+<!-- Cookie Preferences Modal -->
+<div id="cookie-modal" class="cookie-modal">
+    <div class="modal-content">
+        <h3>Cookie Preferences</h3>
+
+        <label>
+            <input type="checkbox" checked disabled />
+            Necessary Cookies (Required)
+        </label>
+
+        <label>
+            <input type="checkbox" id="analytics-consent" />
+            Analytics Cookies
+        </label>
+
+        <label>
+            <input type="checkbox" id="marketing-consent" />
+            Marketing Cookies
+        </label>
+
+        <div class="modal-actions">
+            <button id="save-preferences" class="btn primary">Save Preferences</button>
+        </div>
+    </div>
+</div>
+
+2️⃣ CSS (modern, clean, conversion-safe)
+/* Banner */
+.cookie-banner {
+position: fixed;
+bottom: 20px;
+left: 20px;
+right: 20px;
+max-width: 960px;
+margin: auto;
+background: #111;
+color: #fff;
+padding: 18px;
+border-radius: 14px;
+box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+z-index: 9999;
+display: none;
+}
+
+.cookie-text {
+font-size: 14px;
+line-height: 1.6;
+}
+
+.cookie-text a {
+color: #4da3ff;
+text-decoration: underline;
+}
+
+.cookie-buttons {
+display: flex;
+gap: 12px;
+flex-wrap: wrap;
+margin-top: 12px;
+}
+
+/* Buttons */
+.btn {
+padding: 10px 16px;
+border-radius: 8px;
+font-size: 14px;
+cursor: pointer;
+border: none;
+}
+
+.btn.primary {
+background: #4da3ff;
+color: #000;
+font-weight: 600;
+}
+
+.btn.secondary {
+background: #444;
+color: #fff;
+}
+
+.btn.link {
+background: transparent;
+color: #fff;
+text-decoration: underline;
+}
+
+/* Modal */
+.cookie-modal {
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.6);
+display: none;
+align-items: center;
+justify-content: center;
+z-index: 10000;
+}
+
+.modal-content {
+background: #fff;
+color: #000;
+padding: 24px;
+border-radius: 12px;
+width: 100%;
+max-width: 420px;
+}
+
+.modal-content h3 {
+margin-top: 0;
+}
+
+.modal-content label {
+display: block;
+margin: 12px 0;
+font-size: 14px;
+}
+
+.modal-actions {
+margin-top: 20px;
+text-align: right;
+}
+
+3️⃣ JavaScript (FULL GDPR + Google Consent Mode v2)
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const banner = document.getElementById("cookie-banner");
+        const modal = document.getElementById("cookie-modal");
+
+        const acceptBtn = document.getElementById("cookie-accept");
+        const rejectBtn = document.getElementById("cookie-reject");
+        const settingsBtn = document.getElementById("cookie-settings");
+        const savePrefsBtn = document.getElementById("save-preferences");
+
+        const analyticsCheckbox = document.getElementById("analytics-consent");
+        const marketingCheckbox = document.getElementById("marketing-consent");
+
+        const consentKey = "cookieConsent";
+
+        // Show banner if no consent stored
+        if (!localStorage.getItem(consentKey)) {
+            banner.style.display = "block";
+            setDefaultConsent();
+        }
+
+        function setDefaultConsent() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+
+            gtag("consent", "default", {
+                analytics_storage: "denied",
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied"
+            });
+        }
+
+        function updateConsent(consent) {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+
+            gtag("consent", "update", consent);
+        }
+
+        // Accept all
+        acceptBtn.onclick = function () {
+            const consent = {
+                analytics_storage: "granted",
+                ad_storage: "granted",
+                ad_user_data: "granted",
+                ad_personalization: "granted"
+            };
+            localStorage.setItem(consentKey, JSON.stringify(consent));
+            updateConsent(consent);
+            closeAll();
+        };
+
+        // Reject non-essential
+        rejectBtn.onclick = function () {
+            const consent = {
+                analytics_storage: "denied",
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied"
+            };
+            localStorage.setItem(consentKey, JSON.stringify(consent));
+            updateConsent(consent);
+            closeAll();
+        };
+
+        // Open preferences
+        settingsBtn.onclick = function () {
+            modal.style.display = "flex";
+        };
+
+        // Save preferences
+        savePrefsBtn.onclick = function () {
+            const consent = {
+                analytics_storage: analyticsCheckbox.checked ? "granted" : "denied",
+                ad_storage: marketingCheckbox.checked ? "granted" : "denied",
+                ad_user_data: marketingCheckbox.checked ? "granted" : "denied",
+                ad_personalization: marketingCheckbox.checked ? "granted" : "denied"
+            };
+
+            localStorage.setItem(consentKey, JSON.stringify(consent));
+            updateConsent(consent);
+            closeAll();
+        };
+
+        function closeAll() {
+            banner.style.display = "none";
+            modal.style.display = "none";
+        }
+    });
+</script>
+
+
+
+Footer Setup
+<a href="/privacy-policy.html">Privacy Policy</a> |
+<a href="/cookie-policy.html">Cookie Policy</a> |
+<a href="#" onclick="localStorage.removeItem('cookieConsent');location.reload();">
+    Cookie Settings
+</a>

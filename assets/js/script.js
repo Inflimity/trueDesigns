@@ -6,6 +6,241 @@ const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 const PAYPAL_BASE = "https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=info@td-designs.com&currency_code=USD";
 const paypalUrl = (itemName, amount) => `${PAYPAL_BASE}&item_name=${encodeURIComponent(itemName)}&amount=${encodeURIComponent(Number(amount).toFixed(2))}`;
 
+const PRICING_DATA = {
+  logo: [
+    {
+      name: "Logo Design Starter Package",
+      price: 99,
+      original: 199,
+      blurb: "Clean, modern logo concepts—fast and affordable.",
+      features: ["4 custom logo concepts", "Unlimited revisions", "High-res PNG + JPG", "100% ownership", "Delivery in 24–72 hours", "100% Money Back Guarantee"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/J4Q7Q23L8A9JY"
+    },
+    {
+      name: "Logo Design Professional Package",
+      price: 199,
+      original: 399,
+      blurb: "Best for growing brands that need stronger options.",
+      features: ["8 custom logo concepts", "Unlimited revisions", "100% ownership", "AI / EPS vector + PNG + JPG", "100% Money Back Guarantee", "Social media profile files"],
+      popular: true,
+      customLink: "https://www.paypal.com/ncp/payment/T484MWSM8RH4U"
+    },
+    {
+      name: "Logo Design Premium Package",
+      price: 299,
+      original: 599,
+      blurb: "Full identity-ready deliverables for serious launches.",
+      features: ["12 custom logo concepts", "Unlimited revisions", "AI / EPS + SVG + PDF", "Dedicated project manager", "100% Money Back Guarantee", "Social media profile files"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/GS55U9HZYAVUQ"
+    }
+  ],
+  digitalAds: [
+    {
+      name: "Digital Ads & Banner Starter Package",
+      price: 99,
+      original: 199,
+      blurb: "One polished ad creative in standard sizes.",
+      features: ["1 ad concept", "Unlimited revisions", "Up to 3 standard sizes", "High-res PNG/JPG exports", "Fast turnaround"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/HYE3U2XCJ93TW"
+    },
+    {
+      name: "Digital Ads & Banner Professional Package",
+      price: 179,
+      original: 349,
+      blurb: "Most popular: a mini banner set for campaigns.",
+      features: ["2 ad concepts", "Unlimited revisions", "Up to 6 sizes (display/social)", "CTA + hierarchy optimization", "Web-ready exports"],
+      popular: true,
+      customLink: "https://www.paypal.com/ncp/payment/E6V8JPGBR7WKY"
+    },
+    {
+      name: "Digital Ads & Banner Premium Package",
+      price: 249,
+      original: 499,
+      blurb: "For bigger promotions and multi-placement needs.",
+      features: ["3 ad concepts", "Unlimited revisions", "Up to 10 sizes + variants", "Ad set consistency system", "Priority delivery"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/TCRYVK9BXK2TW"
+    }
+  ],
+  businessCards: [
+    {
+      name: "Business Card Starter Package",
+      price: 79,
+      original: 159,
+      blurb: "Simple, sharp, and print-ready.",
+      features: ["1 concept", "Unlimited revisions", "Front (or single-sided) design", "CMYK print-ready PDF", "Bleed + safe margins included"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/VTABFZ2YZU8M2"
+    },
+    {
+      name: "Business Card Professional Package",
+      price: 129,
+      original: 249,
+      blurb: "Most popular: premium front/back layout.",
+      features: ["2 concepts", "Unlimited revisions", "Double-sided design", "Print-ready PDF + PNG preview", "Standard + social QR option"],
+      popular: true,
+      customLink: "https://www.paypal.com/ncp/payment/JYJCHBUGRG2TL"
+    },
+    {
+      name: "Business Card Premium Package",
+      price: 179,
+      original: 349,
+      blurb: "For standout finishes and multiple variants.",
+      features: ["3 concepts", "Unlimited revisions", "Double-sided + 2 variants", "Print-ready files (PDF)", "Finishing guidance (foil/spot UV)"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/LH8G623HGV434"
+    }
+  ],
+  stationery: [
+    {
+      name: "Stationery Starter Package",
+      price: 149,
+      original: 299,
+      blurb: "Essential branded documents for daily use.",
+      features: ["Letterhead design", "Unlimited revisions", "Print-ready PDF", "1 file set (CMYK)", "Consistent typography + spacing"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/XEDZUQNYLCWEL"
+    },
+    {
+      name: "Stationery Professional Package",
+      price: 249,
+      original: 499,
+      blurb: "Most popular: cohesive set for a polished brand.",
+      features: ["Letterhead + envelope + business card", "Unlimited revisions", "Print-ready PDFs", "Matching brand layout system", "Multiple export formats"],
+      popular: true,
+      customLink: "https://www.paypal.com/ncp/payment/ZEU62ME49C9NJ"
+    },
+    {
+      name: "Stationery Premium Package",
+      price: 349,
+      original: 699,
+      blurb: "For teams that need variants and stronger consistency.",
+      features: ["Full stationery set + 2 variants", "Unlimited revisions", "Print-ready + web previews", "Brand usage notes PDF", "Priority turnaround"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/2UUK4BCU53YV8"
+    }
+  ],
+  tshirt: [
+    {
+      name: "Custom T‑Shirt & Merch Starter Package",
+      price: 149,
+      original: 299,
+      blurb: "One strong shirt graphic, ready for print.",
+      features: ["1 concept", "Unlimited revisions", "Front (or back) design", "Print-ready PNG (transparent)", "1-color or full-color option"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/4UZV9KZAK9EQC"
+    },
+    {
+      name: "Custom T‑Shirt & Merch Professional Package",
+      price: 229,
+      original: 449,
+      blurb: "Most popular: front + back or 2 variations.",
+      features: ["2 concepts", "Unlimited revisions", "Front + back (or 2 variants)", "Print-ready files (PNG/PDF)", "Placement + sizing guidance"],
+      popular: true,
+      customLink: "https://www.paypal.com/ncp/payment/TBZMW46KLDGMC"
+    },
+    {
+      name: "Custom T‑Shirt & Merch Premium Package",
+      price: 329,
+      original: 649,
+      blurb: "Merch-ready set for collections and drops.",
+      features: ["3 concepts", "Unlimited revisions", "Up to 3 placements/variants", "Print-ready exports + mockup previews", "Priority turnaround"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/P3ETFEF4GLDQS"
+    }
+  ],
+  graphic: [
+    {
+      name: "Graphic Design Starter Package",
+      price: 99,
+      original: 199,
+      blurb: "One polished design asset.",
+      features: ["1 design piece", "Unlimited revisions", "Print/digital sizing", "High-res exports", "Fast delivery"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/DDHBP4WPXHLFN"
+    },
+    {
+      name: "Graphic Design Professional Package",
+      price: 199,
+      original: 399,
+      blurb: "Most popular: a mini set for campaigns.",
+      features: ["3 design pieces", "Unlimited revisions", "Multi-format exports", "Consistent styling", "Priority delivery"],
+      popular: true,
+      customLink: "https://www.paypal.com/ncp/payment/CF5W6RN5TPDQA"
+    },
+    {
+      name: "Graphic Design Premium Package",
+      price: 299,
+      original: 599,
+      blurb: "Campaign-ready set for teams and launches.",
+      features: ["5 design pieces", "Unlimited revisions", "Source files (where applicable)", "Ad + organic variants", "Brand-consistent system"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/EGNL8KCCA4BTJ"
+    }
+  ],
+  web: [
+    {
+      name: "Web Design Starter Package",
+      price: 399,
+      original: 799,
+      blurb: "A clean, single-page layout for fast launches.",
+      features: ["1-page website design (mockup)", "Responsive desktop + mobile", "Unlimited revisions", "Modern UI sections", "Handoff-ready layout"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/GATM2BZVNHCQC"
+    },
+    {
+      name: "Web Design Professional Package",
+      price: 699,
+      original: 1299,
+      blurb: "Most popular: multi-page design system.",
+      features: ["Up to 5 pages (design)", "Responsive desktop + mobile", "Unlimited revisions", "Conversion-first layout", "Style guide components"],
+      popular: true,
+      customLink: "https://www.paypal.com/ncp/payment/7A7T3FGCAQD2E"
+    },
+    {
+      name: "Web Design Premium Package",
+      price: 999,
+      original: 1899,
+      blurb: "For brands needing deeper pages and polish.",
+      features: ["Up to 10 pages (design)", "Responsive + UI component kit", "Unlimited revisions", "Enhanced sections + states", "Priority delivery + handoff notes"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/N6BHAZQ45FRXS"
+    }
+  ],
+  ecommerce: [
+    {
+      name: "E-Commerce Starter Package",
+      price: 699,
+      original: 1199,
+      blurb: "A clean storefront foundation for new shops.",
+      features: ["Homepage + collection + PDP (design)", "Cart + checkout concept", "Responsive desktop + mobile", "Unlimited revisions", "Conversion-first layout"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/S3MRWPBQSBTPU"
+    },
+    {
+      name: "E-Commerce Professional Package",
+      price: 999,
+      original: 1899,
+      blurb: "Most popular: complete store design flow.",
+      features: ["Up to 7 templates (design)", "Homepage, collection, PDP", "Cart + checkout + account", "Responsive views", "UI components + style guide"],
+      popular: true,
+      customLink: "https://www.paypal.com/ncp/payment/S3MRWPBQSBTPU"
+    },
+    {
+      name: "E-Commerce Premium Package",
+      price: 1499,
+      original: 2799,
+      blurb: "For brands scaling with stronger UX depth.",
+      features: ["Up to 12 templates (design)", "Enhanced PDP modules", "Promo/upsell components", "UI kit + handoff notes", "Priority delivery"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/YA93ZCBAFHT9Y"
+    }
+  ]
+};
+
 const setMeta = ({ title, description, keywords, canonical }) => {
   document.title = title;
   const setOrCreate = (nameOrProp, value, isProp = false) => {
@@ -204,13 +439,9 @@ const footerHTML = () => `
           <div class="grid gap-10 lg:grid-cols-12">
             <div class="lg:col-span-5">
               <div class="flex items-center gap-3">
-                <div class="h-11 w-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-teal-600 soft-shadow">
-                  <i class="bi bi-triangle-fill text-sm"></i>
-                </div>
-                <div>
-                  <div class="font-display text-xl">True Designs</div>
-                  <div class="text-sm text-slate-500 -mt-0.5">Premium custom design, priced for growth.</div>
-                </div>
+                <a href="#/home" class="flex items-center gap-3 group" style="cursor: default;">
+                  <img src="assets/images/logo.png" alt="True Designs Logo" class="h-10 w-auto rounded-xl">
+                </a>
               </div>
               <p class="mt-5 max-w-md text-sm leading-6 text-slate-600">
                 We help businesses look credible and convert faster with clean, modern design—serving clients across the USA, Canada, and worldwide.
@@ -234,6 +465,11 @@ const footerHTML = () => `
                 <a class="hover:text-slate-900 transition" href="#/portfolio">Portfolio</a>
                 <a class="hover:text-slate-900 transition" href="#/about-us">About Us</a>
                 <a class="hover:text-slate-900 transition" href="#/contact">Contact</a>
+                <div class="mt-4 pt-4 border-t border-slate-200">
+                  <a class="block hover:text-slate-900 transition" href="privacy-policy">Privacy Policy</a>
+                  <a class="block hover:text-slate-900 transition mt-2" href="terms-conditions">Terms & Conditions</a>
+                  <a class="block hover:text-slate-900 transition mt-2" href="cookie-policy">Cookie Policy</a>
+                </div>
               </div>
             </div>
 
@@ -297,7 +533,7 @@ const trustRowHTML = () => `
       </div>
     `;
 
-const pricingCard = ({ name, price, original, blurb, features, popular = false }) => `
+const pricingCard = ({ name, price, original, blurb, features, popular = false, customLink }) => `
       <div class="relative rounded-2xl bg-white subtle-border p-6 hover:-translate-y-1 transition transform ${popular ? 'ring-1 ring-teal-500/40 soft-shadow' : ''}">
         ${popular ? `
           <div class="absolute -top-3 left-6">
@@ -325,7 +561,7 @@ const pricingCard = ({ name, price, original, blurb, features, popular = false }
           `).join("")}
         </ul>
         <div class="mt-6 flex flex-col gap-3">
-          <a href="${paypalUrl(name, price)}" target="_blank" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-orange-500 px-4 py-3 text-sm font-extrabold text-white hover:opacity-95 hover:-translate-y-0.5 transition transform">
+          <a href="${customLink || paypalUrl(name, price)}" target="_blank" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-orange-500 px-4 py-3 text-sm font-extrabold text-white hover:opacity-95 hover:-translate-y-0.5 transition transform">
             Order Now <span class="ml-2 text-white/90 text-xs font-bold">(PayPal)</span>
           </a>
           <a href="#/contact" class="inline-flex items-center justify-center rounded-xl border border-slate-200/70 bg-white px-4 py-3 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
@@ -558,50 +794,7 @@ const HomePage = () => {
     keywords: "affordable custom design services USA Canada worldwide, professional logo design services, digital ads banner design, custom t-shirt merch design, graphic design, web design, e-commerce website", canonical: "https://td-designs.com/"
   });
 
-  const logoPackages = [
-    {
-      name: "Logo Design Starter Package",
-      price: 99,
-      original: 199,
-      blurb: "Clean, modern logo concepts—fast and affordable.",
-      features: [
-        "2 custom logo concepts",
-        "Unlimited revisions",
-        "High-res PNG + JPG",
-        "Color variations",
-        "Delivery in 24–72 hours"
-      ],
-      popular: false
-    },
-    {
-      name: "Logo Design Professional Package",
-      price: 199,
-      original: 399,
-      blurb: "Best for growing brands that need stronger options.",
-      features: [
-        "4 custom logo concepts",
-        "Unlimited revisions",
-        "AI / EPS vector + PNG + JPG",
-        "Brand color palette guidance",
-        "Social media-ready exports"
-      ],
-      popular: true
-    },
-    {
-      name: "Logo Design Premium Package",
-      price: 299,
-      original: 599,
-      blurb: "Full identity-ready deliverables for serious launches.",
-      features: [
-        "6 custom logo concepts",
-        "Unlimited revisions",
-        "AI / EPS + SVG + print files",
-        "Typography recommendations",
-        "Mini brand guidelines PDF"
-      ],
-      popular: false
-    }
-  ];
+  const logoPackages = PRICING_DATA.logo;
 
   const services = [
     {
@@ -903,32 +1096,7 @@ const LogoDesignPage = () => {
     canonical: "https://td-designs.com/logo-design"
   });
 
-  const packages = [
-    {
-      name: "Logo Design Starter Package",
-      price: 99,
-      original: 199,
-      blurb: "Best for startups that need a clean identity quickly.",
-      features: ["2 logo concepts", "Unlimited revisions", "PNG + JPG exports", "1 color palette direction", "24–72h turnaround"],
-      popular: false
-    },
-    {
-      name: "Logo Design Professional Package",
-      price: 199,
-      original: 399,
-      blurb: "Ideal balance of variety + strategic refinement.",
-      features: ["4 logo concepts", "Unlimited revisions", "AI/EPS vector + PNG/JPG", "Black/white + color variants", "Social profile exports"],
-      popular: true
-    },
-    {
-      name: "Logo Design Premium Package",
-      price: 299,
-      original: 599,
-      blurb: "For brands that want full launch-ready assets.",
-      features: ["6 logo concepts", "Unlimited revisions", "AI/EPS + SVG + print-ready files", "Typography recommendations", "Mini brand guidelines PDF"],
-      popular: false
-    }
-  ];
+  const packages = PRICING_DATA.logo;
 
   const seoHtml = `
         If you’re looking for <span class="font-semibold text-slate-900">affordable custom logo design</span> that still feels premium, True Designs was built for you. We work with businesses across the
@@ -1021,32 +1189,7 @@ const BusinessCardPage = () => {
     canonical: "https://td-designs.com/digital-ads-banner-design"
   });
 
-  const packages = [
-    {
-      name: "Digital Ads & Banner Starter Package",
-      price: 99,
-      original: 199,
-      blurb: "One polished ad creative in standard sizes.",
-      features: ["1 ad concept", "Unlimited revisions", "Up to 3 standard sizes", "High-res PNG/JPG exports", "Fast turnaround"],
-      popular: false
-    },
-    {
-      name: "Digital Ads & Banner Professional Package",
-      price: 179,
-      original: 349,
-      blurb: "Most popular: a mini banner set for campaigns.",
-      features: ["2 ad concepts", "Unlimited revisions", "Up to 6 sizes (display/social)", "CTA + hierarchy optimization", "Web-ready exports"],
-      popular: true
-    },
-    {
-      name: "Digital Ads & Banner Premium Package",
-      price: 249,
-      original: 499,
-      blurb: "For bigger promotions and multi-placement needs.",
-      features: ["3 ad concepts", "Unlimited revisions", "Up to 10 sizes + variants", "Ad set consistency system", "Priority delivery"],
-      popular: false
-    }
-  ];
+  const packages = PRICING_DATA.digitalAds;
 
   const seoHtml = `
         Your ad creative is often the first impression of your offer—so it needs to communicate value fast. True Designs provides
@@ -1133,32 +1276,7 @@ const StationeryPage = () => {
     description: "Affordable custom T‑shirt & merch design—print-ready apparel graphics and merch visuals built for strong branding. True Designs serves USA, Canada, and worldwide clients.",
     keywords: "affordable custom t-shirt merch design USA Canada worldwide, t-shirt design, apparel graphics, merch design, print-ready t-shirt files",
     canonical: "https://td-designs.com/custom-tshirt-merch-design"
-  }); const packages = [
-    {
-      name: "Custom T‑Shirt & Merch Starter Package",
-      price: 149,
-      original: 299,
-      blurb: "One strong shirt graphic, ready for print.",
-      features: ["1 concept", "Unlimited revisions", "Front (or back) design", "Print-ready PNG (transparent)", "1-color or full-color option"],
-      popular: false
-    },
-    {
-      name: "Custom T‑Shirt & Merch Professional Package",
-      price: 229,
-      original: 449,
-      blurb: "Most popular: front + back or 2 variations.",
-      features: ["2 concepts", "Unlimited revisions", "Front + back (or 2 variants)", "Print-ready files (PNG/PDF)", "Placement + sizing guidance"],
-      popular: true
-    },
-    {
-      name: "Custom T‑Shirt & Merch Premium Package",
-      price: 329,
-      original: 649,
-      blurb: "Merch-ready set for collections and drops.",
-      features: ["3 concepts", "Unlimited revisions", "Up to 3 placements/variants", "Print-ready exports + mockup previews", "Priority turnaround"],
-      popular: false
-    }
-  ]; const seoHtml = `
+  }); const packages = PRICING_DATA.tshirt; const seoHtml = `
         Cohesive stationery can instantly make a business feel established. From proposals and invoices to client onboarding and thank-you notes, professional stationery reinforces your brand at every touchpoint.
         True Designs provides <span class="font-semibold text-slate-900">affordable stationery design</span> for clients in the <span class="font-semibold text-slate-900">USA</span>, <span class="font-semibold text-slate-900">Canada</span>, and <span class="font-semibold text-slate-900">worldwide</span>.
         <br/><br/>
@@ -1232,32 +1350,7 @@ const GraphicDesignPage = () => {
     canonical: "https://td-designs.com/graphic-design"
   });
 
-  const packages = [
-    {
-      name: "Graphic Design Starter Package",
-      price: 99,
-      original: 199,
-      blurb: "One design asset, delivered fast and polished.",
-      features: ["1 design piece (flyer/post/social)", "Unlimited revisions", "Print or digital sizing", "High-res exports", "Fast turnaround"],
-      popular: false
-    },
-    {
-      name: "Graphic Design Professional Package",
-      price: 199,
-      original: 399,
-      blurb: "Most popular: a mini set for campaigns.",
-      features: ["3 design pieces", "Unlimited revisions", "Multiple formats (IG/FB/web/print)", "Consistent campaign styling", "Priority delivery"],
-      popular: true
-    },
-    {
-      name: "Graphic Design Premium Package",
-      price: 299,
-      original: 599,
-      blurb: "Campaign-ready set for teams and launches.",
-      features: ["5 design pieces", "Unlimited revisions", "Source files (where applicable)", "Ad + organic variants", "Brand-consistent system"],
-      popular: false
-    }
-  ];
+  const packages = PRICING_DATA.graphic;
 
   const seoHtml = `
         Marketing moves fast—and your visuals need to keep up. True Designs provides <span class="font-semibold text-slate-900">affordable graphic design</span> for businesses in the <span class="font-semibold text-slate-900">USA</span>, <span class="font-semibold text-slate-900">Canada</span>, and <span class="font-semibold text-slate-900">worldwide</span>, with a focus on clarity, hierarchy, and results.
@@ -1345,32 +1438,7 @@ const WebDesignPage = () => {
     canonical: "https://td-designs.com/web-design"
   });
 
-  const packages = [
-    {
-      name: "Web Design Starter Package",
-      price: 399,
-      original: 799,
-      blurb: "A clean, single-page layout for fast launches.",
-      features: ["1-page website design (mockup)", "Responsive desktop + mobile", "Unlimited revisions", "Modern UI sections", "Handoff-ready layout"],
-      popular: false
-    },
-    {
-      name: "Web Design Professional Package",
-      price: 699,
-      original: 1299,
-      blurb: "Most popular: multi-page design system.",
-      features: ["Up to 5 pages (design)", "Responsive desktop + mobile", "Unlimited revisions", "Conversion-first layout", "Style guide components"],
-      popular: true
-    },
-    {
-      name: "Web Design Premium Package",
-      price: 999,
-      original: 1899,
-      blurb: "For brands needing deeper pages and polish.",
-      features: ["Up to 10 pages (design)", "Responsive + UI component kit", "Unlimited revisions", "Enhanced sections + states", "Priority delivery + handoff notes"],
-      popular: false
-    }
-  ];
+  const packages = PRICING_DATA.web;
 
   const seoHtml = `
         A website is often the first “sales conversation” your business has with a new customer. If the layout feels cluttered or outdated, trust drops instantly. True Designs provides
@@ -1459,32 +1527,7 @@ const EcommercePage = () => {
     canonical: "https://td-designs.com/e-commerce-website"
   });
 
-  const packages = [
-    {
-      name: "E-Commerce Starter Package",
-      price: 599,
-      original: 1199,
-      blurb: "A clean storefront foundation for new shops.",
-      features: ["Homepage + collection + PDP (design)", "Cart + checkout concept", "Responsive desktop + mobile", "Unlimited revisions", "Conversion-first layout"],
-      popular: false
-    },
-    {
-      name: "E-Commerce Professional Package",
-      price: 999,
-      original: 1899,
-      blurb: "Most popular: complete store design flow.",
-      features: ["Up to 7 templates (design)", "Homepage, collection, PDP", "Cart + checkout + account", "Responsive views", "UI components + style guide"],
-      popular: true
-    },
-    {
-      name: "E-Commerce Premium Package",
-      price: 1499,
-      original: 2799,
-      blurb: "For brands scaling with stronger UX depth.",
-      features: ["Up to 12 templates (design)", "Enhanced PDP modules", "Promo/upsell components", "UI kit + handoff notes", "Priority delivery"],
-      popular: false
-    }
-  ];
+  const packages = PRICING_DATA.ecommerce;
 
   const seoHtml = `
         For online stores, design is directly tied to revenue. Product pages must feel trustworthy, collections must be easy to scan, and checkout must be frictionless. True Designs offers
@@ -1577,78 +1620,46 @@ const PricingPage = () => {
       id: "logo-design",
       title: "Logo Design",
       subtitle: "Distinctive identities with production-ready exports.",
-      cards: [
-        { name: "Logo Design Starter Package", price: 99, original: 199, blurb: "Fast, clean logo concepts for new brands.", features: ["2 logo concepts", "Unlimited revisions", "PNG + JPG", "Color variations", "24–72h turnaround"], popular: false },
-        { name: "Logo Design Professional Package", price: 199, original: 399, blurb: "Best for serious brands and stronger options.", features: ["4 logo concepts", "Unlimited revisions", "AI/EPS vector files", "Black/white + color", "Social exports"], popular: true },
-        { name: "Logo Design Premium Package", price: 299, original: 599, blurb: "Launch-ready logo system + guidelines.", features: ["6 logo concepts", "Unlimited revisions", "AI/EPS + SVG", "Typography recommendations", "Mini brand guidelines PDF"], popular: false },
-      ]
+      cards: PRICING_DATA.logo
     }, {
       id: "digital-ads-banner-design",
       title: "Digital Ads &amp; Banner Design",
       subtitle: "High-converting ad creatives sized for every placement.",
-      cards: [
-        { name: "Digital Ads & Banner Starter Package", price: 99, original: 199, blurb: "One polished ad creative in standard sizes.", features: ["1 ad concept", "Unlimited revisions", "Up to 3 standard sizes", "High-res PNG/JPG exports", "Fast turnaround"], popular: false },
-        { name: "Digital Ads & Banner Professional Package", price: 179, original: 349, blurb: "Most popular: a mini banner set for campaigns.", features: ["2 ad concepts", "Unlimited revisions", "Up to 6 sizes (display/social)", "CTA + hierarchy optimization", "Web-ready exports"], popular: true },
-        { name: "Digital Ads & Banner Premium Package", price: 249, original: 499, blurb: "For bigger promotions and multi-placement needs.", features: ["3 ad concepts", "Unlimited revisions", "Up to 10 sizes + variants", "Ad set consistency system", "Priority delivery"], popular: false },
-      ]
+      cards: PRICING_DATA.digitalAds
     }, {
       id: "business-card-design",
       title: "Business Card Design",
       subtitle: "Premium, print-ready layouts for modern brands.",
-      cards: [
-        { name: "Business Card Starter Package", price: 79, original: 159, blurb: "Simple, sharp, and print-ready.", features: ["1 concept", "Unlimited revisions", "Front (or single-sided) design", "CMYK print-ready PDF", "Bleed + safe margins included"], popular: false },
-        { name: "Business Card Professional Package", price: 129, original: 249, blurb: "Most popular: premium front/back layout.", features: ["2 concepts", "Unlimited revisions", "Double-sided design", "Print-ready PDF + PNG preview", "Standard + social QR option"], popular: true },
-        { name: "Business Card Premium Package", price: 179, original: 349, blurb: "For standout finishes and multiple variants.", features: ["3 concepts", "Unlimited revisions", "Double-sided + 2 variants", "Print-ready files (PDF)", "Finishing guidance (foil/spot UV)"], popular: false },
-      ]
+      cards: PRICING_DATA.businessCards
     },
     {
       id: "stationery-design",
       title: "Stationery Design",
       subtitle: "Letterhead, envelopes, and cohesive brand collateral.",
-      cards: [
-        { name: "Stationery Starter Package", price: 149, original: 299, blurb: "Essential branded documents for daily use.", features: ["Letterhead design", "Unlimited revisions", "Print-ready PDF", "1 file set (CMYK)", "Consistent typography + spacing"], popular: false },
-        { name: "Stationery Professional Package", price: 249, original: 499, blurb: "Most popular: cohesive set for a polished brand.", features: ["Letterhead + envelope + business card", "Unlimited revisions", "Print-ready PDFs", "Matching brand layout system", "Multiple export formats"], popular: true },
-        { name: "Stationery Premium Package", price: 349, original: 699, blurb: "For teams that need variants and stronger consistency.", features: ["Full stationery set + 2 variants", "Unlimited revisions", "Print-ready + web previews", "Brand usage notes PDF", "Priority turnaround"], popular: false },
-      ]
+      cards: PRICING_DATA.stationery
     },
     {
       id: "custom-tshirt-merch-design",
       title: "Custom T‑Shirt &amp; Merch Design",
       subtitle: "Print-ready apparel graphics and merch visuals.",
-      cards: [
-        { name: "Custom T‑Shirt & Merch Starter Package", price: 149, original: 299, blurb: "One strong shirt graphic, ready for print.", features: ["1 concept", "Unlimited revisions", "Front (or back) design", "Print-ready PNG (transparent)", "1-color or full-color option"], popular: false },
-        { name: "Custom T‑Shirt & Merch Professional Package", price: 229, original: 449, blurb: "Most popular: front + back or 2 variations.", features: ["2 concepts", "Unlimited revisions", "Front + back (or 2 variants)", "Print-ready files (PNG/PDF)", "Placement + sizing guidance"], popular: true },
-        { name: "Custom T‑Shirt & Merch Premium Package", price: 329, original: 649, blurb: "Merch-ready set for collections and drops.", features: ["3 concepts", "Unlimited revisions", "Up to 3 placements/variants", "Print-ready exports + mockup previews", "Priority turnaround"], popular: false },
-      ]
+      cards: PRICING_DATA.tshirt
     }, {
       id: "graphic-design",
       title: "Graphic Design",
       subtitle: "Marketing visuals for social, print, and campaigns.",
-      cards: [
-        { name: "Graphic Design Starter Package", price: 99, original: 199, blurb: "One polished design asset.", features: ["1 design piece", "Unlimited revisions", "Print/digital sizing", "High-res exports", "Fast delivery"], popular: false },
-        { name: "Graphic Design Professional Package", price: 199, original: 399, blurb: "Most popular mini campaign set.", features: ["3 design pieces", "Unlimited revisions", "Multi-format exports", "Consistent styling", "Priority delivery"], popular: true },
-        { name: "Graphic Design Premium Package", price: 299, original: 599, blurb: "Campaign-ready set for launches.", features: ["5 design pieces", "Unlimited revisions", "Source files (where applicable)", "Ad + organic variants", "Brand-consistent system"], popular: false },
-      ]
+      cards: PRICING_DATA.graphic
     },
     {
       id: "web-design",
       title: "Web Design",
       subtitle: "Responsive, conversion-focused page designs.",
-      cards: [
-        { name: "Web Design Starter Package", price: 399, original: 799, blurb: "Single-page design for quick launches.", features: ["1-page website design", "Responsive views", "Unlimited revisions", "Modern UI sections", "Handoff-ready"], popular: false },
-        { name: "Web Design Professional Package", price: 699, original: 1299, blurb: "Most popular multi-page design system.", features: ["Up to 5 pages (design)", "Responsive views", "Unlimited revisions", "Conversion-first layout", "Component guide"], popular: true },
-        { name: "Web Design Premium Package", price: 999, original: 1899, blurb: "Deeper site design with extra polish.", features: ["Up to 10 pages (design)", "UI component kit", "Unlimited revisions", "Enhanced states", "Priority delivery"], popular: false },
-      ]
+      cards: PRICING_DATA.web
     },
     {
       id: "e-commerce-website",
       title: "E-Commerce Website",
       subtitle: "Product-to-checkout UX that builds trust and sells.",
-      cards: [
-        { name: "E-Commerce Starter Package", price: 599, original: 1199, blurb: "Core templates for new shops.", features: ["Homepage + collection + PDP", "Cart + checkout concept", "Responsive views", "Unlimited revisions", "Conversion-first layout"], popular: false },
-        { name: "E-Commerce Professional Package", price: 999, original: 1899, blurb: "Most popular full store design flow.", features: ["Up to 7 templates (design)", "Homepage, collection, PDP", "Cart + checkout + account", "Responsive views", "UI kit + style guide"], popular: true },
-        { name: "E-Commerce Premium Package", price: 1499, original: 2799, blurb: "Scaling-ready UX depth.", features: ["Up to 12 templates (design)", "Enhanced PDP modules", "Promo/upsell components", "UI kit + handoff notes", "Priority delivery"], popular: false },
-      ]
+      cards: PRICING_DATA.ecommerce
     }
   ];
 
@@ -2311,10 +2322,14 @@ const parseRoute = () => {
   return { path: path === "//home" ? "/home" : path.replace("//", "/"), raw: hash };
 };
 
+// Safe render check
 const render = () => {
+  const app = $("#app");
+  if (!app) return;
+
   const { path } = parseRoute();
   const page = routes[path] || HomePage;
-  $("#app").innerHTML = page();
+  app.innerHTML = page();
 
   // Set year
   const yearEl = $("#year");
@@ -2349,8 +2364,154 @@ const render = () => {
   if (!(location.hash || "").includes("#/pricing#")) window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
+
+// --------- Cookie Consent Banner ----------
+const cookieBannerHTML = `
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:w-[400px] z-50 bg-white p-6 rounded-2xl shadow-2xl border border-slate-200/80 hidden transform transition-all duration-300 ease-in-out translate-y-full opacity-0">
+    <div class="flex items-start gap-4">
+      <div class="h-10 w-10 shrink-0 rounded-xl bg-slate-50 flex items-center justify-center text-slate-800">
+        <i class="bi bi-cookie"></i>
+      </div>
+      <div>
+        <div class="text-sm font-extrabold text-slate-900">Cookie Preferences</div>
+        <p class="mt-2 text-xs text-slate-600 leading-5">
+          We use cookies to improve your experience, analyze traffic, and protect our forms.
+          <a href="cookie-policy" class="underline hover:text-slate-900">Read Policy</a>.
+        </p>
+      </div>
+    </div>
+    <div class="mt-5 flex flex-col gap-2">
+      <button id="cookie-accept" class="w-full rounded-xl bg-slate-900 px-4 py-2.5 text-xs font-extrabold text-white hover:opacity-95 transition">
+        Accept All
+      </button>
+      <div class="grid grid-cols-2 gap-2">
+        <button id="cookie-reject" class="w-full rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50 transition">
+          Reject Non-Essential
+        </button>
+        <button id="cookie-settings" class="w-full rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-xs font-bold text-slate-700 hover:bg-slate-50 transition">
+          Preferences
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Modal -->
+  <div id="cookie-modal" class="fixed inset-0 z-[60] bg-slate-900/40 backdrop-blur-sm hidden flex items-center justify-center px-4">
+    <div class="bg-white rounded-3xl shadow-2xl w-full max-w-md overflow-hidden">
+      <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+        <h3 class="text-lg font-extrabold text-slate-900">Cookie Preferences</h3>
+        <button id="cookie-modal-close" class="text-slate-400 hover:text-slate-600">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div class="p-6 space-y-4">
+        <label class="flex items-start gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/50 cursor-not-allowed">
+          <input type="checkbox" checked disabled class="mt-1 accent-slate-900">
+          <div>
+            <div class="text-sm font-bold text-slate-900">Necessary (Required)</div>
+            <div class="text-xs text-slate-500 mt-1">Essential for the website to function correctly. Cannot be disabled.</div>
+          </div>
+        </label>
+        
+        <label class="flex items-start gap-3 p-3 rounded-xl border border-slate-100 hover:bg-slate-50 transition cursor-pointer">
+          <input type="checkbox" id="analytics-consent" class="mt-1 accent-slate-900 h-4 w-4">
+          <div>
+            <div class="text-sm font-bold text-slate-900">Analytics</div>
+            <div class="text-xs text-slate-500 mt-1">Helps us understand how visitors interact with our website.</div>
+          </div>
+        </label>
+
+        <label class="flex items-start gap-3 p-3 rounded-xl border border-slate-100 hover:bg-slate-50 transition cursor-pointer">
+          <input type="checkbox" id="marketing-consent" class="mt-1 accent-slate-900 h-4 w-4">
+          <div>
+            <div class="text-sm font-bold text-slate-900">Marketing</div>
+            <div class="text-xs text-slate-500 mt-1">Used to deliver relevant ads and track campaign performance.</div>
+          </div>
+        </label>
+      </div>
+      <div class="p-6 border-t border-slate-100 bg-slate-50/30">
+        <button id="save-preferences" class="w-full rounded-xl bg-slate-900 px-4 py-3 text-sm font-extrabold text-white hover:opacity-95 transition">
+          Save Preferences
+        </button>
+      </div>
+    </div>
+  </div>
+`;
+
+const initCookieBanner = () => {
+  const consent = localStorage.getItem("cookie_consent");
+
+  // Inject HTML
+  if (!document.getElementById("cookie-banner")) {
+    const div = document.createElement("div");
+    div.innerHTML = cookieBannerHTML;
+    document.body.appendChild(div);
+  }
+
+  const banner = $("#cookie-banner");
+  const modal = $("#cookie-modal");
+
+  // Elements
+  const btnAccept = $("#cookie-accept");
+  const btnReject = $("#cookie-reject");
+  const btnSettings = $("#cookie-settings");
+  const btnCloseModal = $("#cookie-modal-close");
+  const btnSave = $("#save-preferences");
+
+  const analyticsCheck = $("#analytics-consent");
+  const marketingCheck = $("#marketing-consent");
+
+  // Show banner if no consent
+  if (!consent) {
+    if (banner) {
+      banner.classList.remove("hidden");
+      // Small delay for animation
+      setTimeout(() => {
+        banner.classList.remove("translate-y-full", "opacity-0");
+      }, 100);
+    }
+  }
+
+  const hideBanner = () => {
+    banner?.classList.add("translate-y-full", "opacity-0");
+    setTimeout(() => banner?.classList.add("hidden"), 300);
+  };
+
+  const closeModal = () => modal?.classList.add("hidden");
+  const openModal = () => modal?.classList.remove("hidden");
+
+  // Handlers
+  btnAccept?.addEventListener("click", () => {
+    localStorage.setItem("cookie_consent", JSON.stringify({ necessary: true, analytics: true, marketing: true }));
+    hideBanner();
+  });
+
+  btnReject?.addEventListener("click", () => {
+    localStorage.setItem("cookie_consent", JSON.stringify({ necessary: true, analytics: false, marketing: false }));
+    hideBanner();
+  });
+
+  btnSettings?.addEventListener("click", openModal);
+  btnCloseModal?.addEventListener("click", closeModal);
+
+  btnSave?.addEventListener("click", () => {
+    const prefs = {
+      necessary: true,
+      analytics: analyticsCheck?.checked || false,
+      marketing: marketingCheck?.checked || false
+    };
+    localStorage.setItem("cookie_consent", JSON.stringify(prefs));
+    closeModal();
+    hideBanner();
+  });
+};
+
 window.addEventListener("hashchange", render);
 window.addEventListener("DOMContentLoaded", () => {
-  if (!location.hash) location.hash = "#/home";
-  render();
+  if (document.getElementById("app")) {
+    if (!location.hash) location.hash = "#/home";
+    render();
+  }
+  initCookieBanner();
 });
