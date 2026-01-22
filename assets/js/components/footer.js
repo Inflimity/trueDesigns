@@ -6,7 +6,7 @@ export const footerHTML = () => `
       <div class="grid gap-10 lg:grid-cols-12">
         <div class="lg:col-span-5">
           <div class="flex items-center gap-3">
-            <div class="h-11 w-11 rounded-xl bg-gradient-to-br from-teal-500 to-blue-600 flex items-center justify-center text-white soft-shadow">
+            <div class="h-11 w-11 rounded-xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center text-white soft-shadow">
               <i class="bi bi-triangle-fill text-sm"></i>
             </div>
             <div>
@@ -22,7 +22,7 @@ export const footerHTML = () => `
             <a href="#/pricing" class="inline-flex items-center gap-2 rounded-xl bg-white border border-slate-200/70 px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
               <i class="bi bi-tag"></i> View Pricing
             </a>
-            <a href="#/contact" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-orange-500 px-4 py-2.5 text-sm font-extrabold text-white hover:opacity-95 hover:-translate-y-0.5 transition transform">
+            <a href="#/contact" class="inline-flex items-center justify-center rounded-xl bg-[#00a99d] px-4 py-2.5 text-sm font-extrabold text-white hover:opacity-95 hover:-translate-y-0.5 transition transform">
               Get a Free Quote
             </a>
           </div>

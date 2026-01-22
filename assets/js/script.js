@@ -847,9 +847,9 @@ const HomePage = () => {
       icon: "bi-bezier2",
       accent: "border-blue-500"
     }, {
-      title: "Digital Ads &amp; Banner Design",
-      desc: "Scroll-stopping creatives for campaigns and promotions.",
-      href: "#/pricing#digital-ads-banner-design",
+      title: "Book Cover Design",
+      desc: "Professional book cover design for your book.",
+      href: "#/pricing#book-cover-design",
       img: "home-service-card",
       icon: "bi-badge-ad",
       accent: "border-orange-500"
@@ -2731,9 +2731,9 @@ function PhotoToArtPage() {
     { title: "Wedding Fine Art", src: "assets/images/wedding-art.jpg", alt: "Romantic wedding painting", tag: "Fine Art", caption: "Capturing the romance of the big day in elegant brushstrokes." },
     { title: "Vintage Restoration", src: "assets/images/vintage-art.jpg", alt: "Vintage style photo effect", tag: "Vintage", caption: "Nostalgic 1920s style editing for a timeless look." },
     { title: "Scenic Landscape", src: "assets/images/travel-art.jpg", alt: "Landscape painting", tag: "Acrylic", caption: "Transforming nature shots into vibrant acrylic masterpieces." },
-    { title: "Family Sketch", src: "assets/images/portrait-art.jpg", alt: "Pencil sketch of family", tag: "Sketch", caption: "Hand-drawn style digital sketch perfect for framing." },
-    { title: "Modern Pet Portrait", src: "assets/images/pet-art.jpg", alt: "Modern style pet art", tag: "Modern", caption: "Sleek and minimal art style for your furry friends." },
-    { title: "Anniversary Moment", src: "assets/images/wedding-art.jpg", alt: "Anniversary painting", tag: "Oil Style", caption: "Celebrating milestones with a custom oil painting." }
+    { title: "Family Water Color Painting", src: "assets/images/portrait-art.jpg", alt: "Pencil sketch of family", tag: "Sketch", caption: "Watercolor style digital painting perfect for framing." },
+    { title: "Modern Pet Portrait", src: "assets/images/pet-art.jpg", alt: "Modern style pet art", tag: "Modern", caption: "Turn your pet into Origami Style art." },
+    { title: "Anniversary Moment", src: "assets/images/wedding-art.jpg", alt: "Anniversary painting", tag: "Oil Style", caption: "Turn your photo into Pixar Style art." }
   ];
 
   const servicesList = [
@@ -2761,7 +2761,7 @@ function PhotoToArtPage() {
       <div class="hero-gradient-art">
         ${heroBand({
     kicker: "Turn Memories Into Masterpieces",
-    title: "Custom <span class='text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600'>Hand-Crafted</span> Digital Art from Your Photos",
+    title: "Custom <span class='text-transparent bg-clip-text bg-gradient-to-r from-[#00a99d] to-[#4fd1c5]'>Crafted Digital</span> Art from Your Photos",
     subtitle: "Transform any picture into a stunning oil painting, watercolor, or pop art piece. Professionally designed styling—not just a filter.",
     primaryHref: "#/contact",
     primaryText: "Get a Free Quote",

@@ -26,10 +26,10 @@
   <style>
     /* Inline style 1 - Custom Variables & Animations */
     :root {
-      --td-accent: #0ea5a4;
-      /* teal */
-      --td-accent2: #2563eb;
-      /* blue */
+      --td-accent: #00a99d;
+      /* turquoise */
+      --td-accent2: #f97316;
+      /* soft orange */
       --td-ink: #0b1220;
       --td-muted: #64748b;
       --td-border: rgba(15, 23, 42, .12);
@@ -165,51 +165,88 @@
       /* background-color: #ffffff !important; <-- REMOVED to prevent opaque cover */
     }
 
-    /* --- ACCENT COLORS (Green, Blue, Red) --- */
+    /* --- ACCENT COLORS (Orange & Turquoise Only - REFINED) --- */
 
-    /* Primary Actions -> GREEN */
+    /* Buttons & Actions -> TURQUOISE */
     a[href*="contact"].bg-gradient-to-r,
     button[type="submit"],
     .bg-emerald-500,
-    .bg-emerald-600 {
-      background-color: #16a34a !important;
-      /* Green-600 */
+    .bg-emerald-600,
+    .from-emerald-500,
+    [class*="bg-orange-600"] {
+      background-color: #00a99d !important;
+      background-image: none !important;
       color: white !important;
     }
 
-    /* Secondary / Trust -> BLUE */
+    /* Secondary / Trust -> TURQUOISE */
     a[href*="pricing"].bg-gradient-to-r,
     .text-teal-700,
-    .text-teal-500 {
-      color: #2563eb !important;
-      /* Blue-600 */
+    .text-teal-500,
+    .text-blue-700,
+    .text-indigo-700,
+    .text-violet-700,
+    .text-sky-700,
+    .text-sky-500 {
+      color: #00a99d !important;
     }
 
+    /* FORCED BLUE/RED REMOVAL */
+    .bg-blue-50,
+    .bg-blue-100,
+    .bg-blue-500,
+    .bg-blue-600,
+    .bg-red-50,
+    .bg-red-100,
+    .bg-red-500,
+    .bg-red-600,
+    .bg-pink-50,
+    .bg-pink-100,
+    .bg-indigo-50,
+    .bg-violet-50 {
+      background-color: #fafafa !important;
+      /* Neutral */
+    }
+
+    .text-blue-600,
+    .text-blue-500,
+    .text-red-500,
+    .text-red-600 {
+      color: #00a99d !important;
+      /* Default to Turquoise text for safety */
+    }
+
+    /* Background Tints */
     .bg-teal-50,
-    .bg-teal-500 {
-      background-color: #eff6ff !important;
-      /* Blue-50 */
+    .bg-emerald-50,
+    .bg-orange-50,
+    .bg-slate-100 {
+      background-color: #fafafa !important;
+      /* Neutral/White tint */
     }
 
-    /* Alerts / Highlights -> RED */
+    /* Specific overrides for "colored" backgrounds to be Orange or Turquoise light */
+    .bg-teal-50 {
+      background-color: #f0fdfa !important;
+      /* Light Turquoise */
+    }
+
+    .bg-orange-50 {
+      background-color: #fff7ed !important;
+      /* Light Orange */
+    }
+
+    /* Alerts / Highlights -> SOFT ORANGE */
     .text-orange-500,
-    .from-orange-500 {
-      color: #dc2626 !important;
-      /* Red-600 */
+    .from-orange-500,
+    .text-orange-700,
+    .text-pink-700 {
+      color: #f97316 !important;
     }
 
     /* Carousel Container: Keep Dark for Contrast */
     #landing-carousel {
       background-color: #0f172a !important;
-    }
-
-    /* Fix "Order Now" Buttons - Ensure they are Green*/
-    a[class*="from-emerald-500"],
-    .from-emerald-500 {
-      background-color: #16a34a !important;
-      /* Green-600 */
-      color: white !important;
-      background-image: none !important;
     }
 
     /* Text Visibility on White */
@@ -220,7 +257,10 @@
     /* ...but keep text white inside buttons/carousel */
     #landing-carousel .text-white,
     a[href*="contact"] .text-white,
-    button[type="submit"] .text-white {
+    button[type="submit"] .text-white,
+    .bg-emerald-500 .text-white,
+    .from-emerald-500 .text-white,
+    [class*="bg-orange-600"] .text-white {
       color: #ffffff !important;
     }
   </style>
@@ -243,9 +283,9 @@
 
       // Home Service Grid (Specific Matched Images)
       'home-service-logo': 'assets/images/homepage/LogoImage.png', /* Sketch/Branding */
-      'home-service-card': 'assets/images/art1.webp', /* Tablet/Ads Display */
+      'home-service-card': 'assets/images/homepage/Book-cover.png', /* Tablet/Ads Display */
       'home-service-card-2': 'assets/images/homepage/ad.png', /* Tablet/Ads Display 2 */
-      'home-service-stationery': 'assets/images/homepage/Book-cover.png', /* Business Cards */
+      'home-service-stationery': 'assets/images/homepage/station.png', /* Business Cards */
       'home-service-merch': 'assets/images/homepage/merch.png', /* T-Shirt Mockup */
       'home-service-graphic': 'assets/images/homepage/graphic.png', /* Computer Security/Graphic Tech */
       'home-service-web': 'assets/images/homepage/Web.png', /* Minimal Web Layout */
@@ -497,7 +537,7 @@
                 </a><a href="#/digital-ads-banner-design"
                   class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-slate-50 transition" role="menuitem"
                   style="cursor: default;">
-                  <div class="h-9 w-9 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center"><i
+                  <div class="h-9 w-9 rounded-lg bg-orange-50 text-orange-700 flex items-center justify-center"><i
                       class="bi bi-badge-ad"></i></div>
                   <div>
                     <div class="font-semibold text-slate-900">Digital Ads &amp; Banner Design</div>
@@ -506,7 +546,7 @@
                 </a><a href="#/custom-tshirt-merch-design"
                   class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-slate-50 transition" role="menuitem"
                   style="cursor: default;">
-                  <div class="h-9 w-9 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center"><i
+                  <div class="h-9 w-9 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center"><i
                       class="bi bi-tshirt"></i></div>
                   <div>
                     <div class="font-semibold text-slate-900">Custom T‑Shirt &amp; Merch Design</div>
@@ -524,7 +564,7 @@
                 </a>
                 <a href="#/web-design" class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-slate-50 transition"
                   role="menuitem" style="cursor: default;">
-                  <div class="h-9 w-9 rounded-lg bg-violet-50 text-violet-700 flex items-center justify-center"><i
+                  <div class="h-9 w-9 rounded-lg bg-teal-50 text-teal-700 flex items-center justify-center"><i
                       class="bi bi-window"></i></div>
                   <div>
                     <div class="font-semibold text-slate-900">Web Design</div>
@@ -544,7 +584,7 @@
                 <a href="#/photo-to-art"
                   class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-slate-50 transition" role="menuitem"
                   style="cursor: default;">
-                  <div class="h-9 w-9 rounded-lg bg-pink-50 text-pink-700 flex items-center justify-center"><i
+                  <div class="h-9 w-9 rounded-lg bg-orange-50 text-orange-700 flex items-center justify-center"><i
                       class="bi bi-palette2"></i></div>
                   <div>
                     <div class="font-semibold text-slate-900">Photo to Art</div>
@@ -564,7 +604,7 @@
           <!-- CTA + Mobile -->
           <div class="flex items-center gap-2 sm:gap-3">
             <a href="#/contact"
-              class="hidden sm:inline-flex items-center justify-center rounded-xl bg-emerald-600 px-4 py-2.5 text-sm font-extrabold text-white shadow-sm hover:opacity-95 hover:-translate-y-0.5 transition transform"
+              class="hidden sm:inline-flex items-center justify-center rounded-xl bg-[#00a99d] px-4 py-2.5 text-sm font-extrabold text-white shadow-sm hover:opacity-95 hover:-translate-y-0.5 transition transform"
               style="cursor: default;">
               Get a Free Quote
             </a>
@@ -611,7 +651,7 @@
             <a class="rounded-xl px-3 py-2 hover:bg-slate-50 transition" href="#/contact"
               style="cursor: default;">Contact</a>
             <a href="#/contact"
-              class="mt-2 inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-orange-500 px-4 py-3 text-sm font-extrabold text-white hover:opacity-95 transition"
+              class="mt-2 inline-flex items-center justify-center rounded-xl bg-[#00a99d] px-4 py-3 text-sm font-extrabold text-white hover:opacity-95 transition"
               style="cursor: default;">
               Get a Free Quote
             </a>

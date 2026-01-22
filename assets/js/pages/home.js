@@ -7,125 +7,125 @@ import { pricingCard, trustRowHTML } from '../components/pricing.js';
 import { ctaBand } from '../components/cta.js';
 
 export default function HomePage() {
-    setMeta({
-        title: "True Designs - Affordable Custom Design Services | USA, Canada & Worldwide",
-        description: "True Designs delivers affordable, high-quality custom design services—logos, digital ads & banner design, custom T‑shirt & merch design, graphics, web design, and e-commerce—serving clients in the USA, Canada, and worldwide. Fast turnaround and 100% satisfaction guaranteed.",
-        keywords: "affordable custom design services USA Canada worldwide, professional logo design services, digital ads banner design, custom t-shirt merch design, graphic design, web design, e-commerce website",
-        canonical: "https://td-designs.com/"
-    });
+  setMeta({
+    title: "True Designs - Affordable Custom Design Services | USA, Canada & Worldwide",
+    description: "True Designs delivers affordable, high-quality custom design services—logos, digital ads & banner design, custom T‑shirt & merch design, graphics, web design, and e-commerce—serving clients in the USA, Canada, and worldwide. Fast turnaround and 100% satisfaction guaranteed.",
+    keywords: "affordable custom design services USA Canada worldwide, professional logo design services, digital ads banner design, custom t-shirt merch design, graphic design, web design, e-commerce website",
+    canonical: "https://td-designs.com/"
+  });
 
-    const logoPackages = [
-        {
-            name: "Logo Design Starter Package",
-            price: 99,
-            original: 199,
-            blurb: "Clean, modern logo concepts—fast and affordable.",
-            features: [
-                "2 custom logo concepts",
-                "Unlimited revisions",
-                "High-res PNG + JPG",
-                "Color variations",
-                "Delivery in 24–72 hours"
-            ],
-            popular: false
-        },
-        {
-            name: "Logo Design Professional Package",
-            price: 199,
-            original: 399,
-            blurb: "Best for growing brands that need stronger options.",
-            features: [
-                "4 custom logo concepts",
-                "Unlimited revisions",
-                "AI / EPS vector + PNG + JPG",
-                "Brand color palette guidance",
-                "Social media-ready exports"
-            ],
-            popular: true
-        },
-        {
-            name: "Logo Design Premium Package",
-            price: 299,
-            original: 599,
-            blurb: "Full identity-ready deliverables for serious launches.",
-            features: [
-                "6 custom logo concepts",
-                "Unlimited revisions",
-                "AI / EPS + SVG + print files",
-                "Typography recommendations",
-                "Mini brand guidelines PDF"
-            ],
-            popular: false
-        }
-    ];
+  const logoPackages = [
+    {
+      name: "Logo Design Starter Package",
+      price: 99,
+      original: 199,
+      blurb: "Clean, modern logo concepts—fast and affordable.",
+      features: [
+        "2 custom logo concepts",
+        "Unlimited revisions",
+        "High-res PNG + JPG",
+        "Color variations",
+        "Delivery in 24–72 hours"
+      ],
+      popular: false
+    },
+    {
+      name: "Logo Design Professional Package",
+      price: 199,
+      original: 399,
+      blurb: "Best for growing brands that need stronger options.",
+      features: [
+        "4 custom logo concepts",
+        "Unlimited revisions",
+        "AI / EPS vector + PNG + JPG",
+        "Brand color palette guidance",
+        "Social media-ready exports"
+      ],
+      popular: true
+    },
+    {
+      name: "Logo Design Premium Package",
+      price: 299,
+      original: 599,
+      blurb: "Full identity-ready deliverables for serious launches.",
+      features: [
+        "6 custom logo concepts",
+        "Unlimited revisions",
+        "AI / EPS + SVG + print files",
+        "Typography recommendations",
+        "Mini brand guidelines PDF"
+      ],
+      popular: false
+    }
+  ];
 
-    const services = [
-        {
-            title: "Logo Design",
-            desc: "Distinctive identity that looks credible everywhere.",
-            href: "#/pricing#logo-design",
-            img: "home-service-logo",
-            icon: "bi-bezier2"
-        },
-        {
-            title: "Digital Ads &amp; Banner Design",
-            desc: "Scroll-stopping creatives for campaigns and promotions.",
-            href: "#/pricing#digital-ads-banner-design",
-            img: "home-service-card",
-            icon: "bi-badge-ad"
-        },
-        {
-            title: "Custom T‑Shirt &amp; Merch Design",
-            desc: "Bold, print-ready apparel graphics and merch visuals.",
-            href: "#/pricing#custom-tshirt-merch-design",
-            img: "home-service-merch",
-            icon: "bi-tshirt"
-        },
-        {
-            title: "Graphic Design",
-            desc: "Marketing visuals built for attention and clarity.",
-            href: "#/pricing#graphic-design",
-            img: "home-service-graphic",
-            icon: "bi-layers"
-        },
-        {
-            title: "Web Design",
-            desc: "Conversion-first websites with polished UI.",
-            href: "#/pricing#web-design",
-            img: "home-service-web",
-            icon: "bi-window"
-        },
-        {
-            title: "E-Commerce Website",
-            desc: "Storefronts, product pages, and checkout flows.",
-            href: "#/pricing#e-commerce-website",
-            img: "home-service-ecom",
-            icon: "bi-bag-check"
-        }
-    ];
+  const services = [
+    {
+      title: "Logo Design",
+      desc: "Distinctive identity that looks credible everywhere.",
+      href: "#/pricing#logo-design",
+      img: "home-service-logo",
+      icon: "bi-bezier2"
+    },
+    {
+      title: "Digital Ads &amp; Banner Design",
+      desc: "Scroll-stopping creatives for campaigns and promotions.",
+      href: "#/pricing#digital-ads-banner-design",
+      img: "home-service-card",
+      icon: "bi-badge-ad"
+    },
+    {
+      title: "Custom T‑Shirt &amp; Merch Design",
+      desc: "Bold, print-ready apparel graphics and merch visuals.",
+      href: "#/pricing#custom-tshirt-merch-design",
+      img: "home-service-merch",
+      icon: "bi-tshirt"
+    },
+    {
+      title: "Graphic Design",
+      desc: "Marketing visuals built for attention and clarity.",
+      href: "#/pricing#graphic-design",
+      img: "home-service-graphic",
+      icon: "bi-layers"
+    },
+    {
+      title: "Web Design",
+      desc: "Conversion-first websites with polished UI.",
+      href: "#/pricing#web-design",
+      img: "home-service-web",
+      icon: "bi-window"
+    },
+    {
+      title: "E-Commerce Website",
+      desc: "Storefronts, product pages, and checkout flows.",
+      href: "#/pricing#e-commerce-website",
+      img: "home-service-ecom",
+      icon: "bi-bag-check"
+    }
+  ];
 
-    const testimonials = [
-        { name: "Alyssa M.", where: "Toronto, Canada", quote: "The logo concepts looked like they came from a top-tier studio. Revisions were fast and professional—our brand finally feels real." },
-        { name: "Jordan K.", where: "Austin, USA", quote: "The banner ads came out crisp and conversion-focused. Great hierarchy, clean typography, and sizes that worked across all placements." },
-        { name: "Priya S.", where: "Vancouver, Canada", quote: "We needed custom merch designs for a new clinic launch—everything looked cohesive and premium. Communication was clear the entire time." },
-        { name: "Marcus T.", where: "New York, USA", quote: "Our landing page redesign increased inquiries within a week. The layout is clear and conversion-focused." },
-        { name: "Elena R.", where: "Calgary, Canada", quote: "The social media graphics are consistently on-brand and sharp. Huge time saver for our marketing team." },
-        { name: "Hannah D.", where: "Los Angeles, USA", quote: "E-commerce UI mockups were stunning and practical. Product pages feel premium and the checkout flow is clean." },
-        { name: "Omar A.", where: "Worldwide", quote: "Quality exceeded expectations for the price. Very responsive and genuinely focused on getting it right." },
-        { name: "Sam P.", where: "USA", quote: "Everything delivered exactly as promised—files, exports, and guidance. Easy process from start to finish." }
-    ];
+  const testimonials = [
+    { name: "Alyssa M.", where: "Toronto, Canada", quote: "The logo concepts looked like they came from a top-tier studio. Revisions were fast and professional—our brand finally feels real." },
+    { name: "Jordan K.", where: "Austin, USA", quote: "The banner ads came out crisp and conversion-focused. Great hierarchy, clean typography, and sizes that worked across all placements." },
+    { name: "Priya S.", where: "Vancouver, Canada", quote: "We needed custom merch designs for a new clinic launch—everything looked cohesive and premium. Communication was clear the entire time." },
+    { name: "Marcus T.", where: "New York, USA", quote: "Our landing page redesign increased inquiries within a week. The layout is clear and conversion-focused." },
+    { name: "Elena R.", where: "Calgary, Canada", quote: "The social media graphics are consistently on-brand and sharp. Huge time saver for our marketing team." },
+    { name: "Hannah D.", where: "Los Angeles, USA", quote: "E-commerce UI mockups were stunning and practical. Product pages feel premium and the checkout flow is clean." },
+    { name: "Omar A.", where: "Worldwide", quote: "Quality exceeded expectations for the price. Very responsive and genuinely focused on getting it right." },
+    { name: "Sam P.", where: "USA", quote: "Everything delivered exactly as promised—files, exports, and guidance. Easy process from start to finish." }
+  ];
 
-    return `
+  return `
     ${heroBand({
-        kicker: "Affordable, high-trust design for growing businesses",
-        title: "Professional Custom Design Services for Businesses Worldwide",
-        subtitle: "Affordable Prices • Fast Turnaround • 100% Satisfaction Guaranteed",
-        primaryHref: "#/contact",
-        primaryText: "Get a Free Quote",
-        secondaryHref: "#/pricing",
-        secondaryText: "View All Pricing",
-        bgGenId: "home-hero-multi-mockup"
-    })}
+    kicker: "Affordable, high-trust design for growing businesses",
+    title: "Professional Custom Design Services for Businesses Worldwide",
+    subtitle: "Affordable Prices • Fast Turnaround • 100% Satisfaction Guaranteed",
+    primaryHref: "#/contact",
+    primaryText: "Get a Free Quote",
+    secondaryHref: "#/pricing",
+    secondaryText: "View All Pricing",
+    bgGenId: "home-hero-multi-mockup"
+  })}
 
     <!-- Featured Logo Packages -->
     <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
@@ -196,7 +196,7 @@ export default function HomePage() {
             A simple, documented process that keeps timelines clear and results predictable—especially for remote USA/Canada/worldwide clients.
           </p>
           <div class="mt-6 flex gap-3">
-            <a href="#/contact" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-orange-500 px-4 py-3 text-sm font-extrabold text-white hover:opacity-95 transition">
+            <a href="#/contact" class="inline-flex items-center justify-center rounded-xl bg-[#00a99d] px-4 py-3 text-sm font-extrabold text-white hover:opacity-95 transition">
               Get a Free Quote
             </a>
             <a href="#/portfolio" class="inline-flex items-center justify-center rounded-xl border border-slate-200/70 bg-white px-4 py-3 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
@@ -208,13 +208,13 @@ export default function HomePage() {
         <div class="lg:col-span-7">
           <div class="grid gap-4">
             ${[
-            { icon: "bi-chat-square-text", title: "1) Tell us what you need", desc: "Choose a service + package, share your goals, and send any inspiration or files by email." },
-            { icon: "bi-palette2", title: "2) We design + refine", desc: "You get strong first drafts quickly. We revise until it feels right, with clear versioning." },
-            { icon: "bi-send-check", title: "3) Receive final files", desc: "We deliver production-ready exports for web and print, plus any source files included in your package." },
-        ].map((s, i) => `
+      { icon: "bi-chat-square-text", title: "1) Tell us what you need", desc: "Choose a service + package, share your goals, and send any inspiration or files by email." },
+      { icon: "bi-palette2", title: "2) We design + refine", desc: "You get strong first drafts quickly. We revise until it feels right, with clear versioning." },
+      { icon: "bi-send-check", title: "3) Receive final files", desc: "We deliver production-ready exports for web and print, plus any source files included in your package." },
+    ].map((s, i) => `
               <div class="rounded-2xl bg-white subtle-border p-6 hover:-translate-y-1 transition transform">
                 <div class="flex items-start gap-4">
-                  <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-teal-500/15 to-blue-600/15 border border-slate-200/70 flex items-center justify-center text-slate-900">
+                  <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-teal-500/15 to-teal-600/15 border border-slate-200/70 flex items-center justify-center text-slate-900">
                     <i class="bi ${s.icon}"></i>
                   </div>
                   <div>
@@ -252,11 +252,11 @@ export default function HomePage() {
           <div class="p-7 sm:p-10">
             <div class="flex items-center justify-between gap-4">
               <div class="inline-flex items-center gap-2 rounded-full bg-white subtle-border px-3 py-1.5 text-xs font-extrabold text-slate-700">
-                <i class="bi bi-star-fill text-amber-500"></i>
-                <i class="bi bi-star-fill text-amber-500"></i>
-                <i class="bi bi-star-fill text-amber-500"></i>
-                <i class="bi bi-star-fill text-amber-500"></i>
-                <i class="bi bi-star-fill text-amber-500"></i>
+                <i class="bi bi-star-fill text-orange-500"></i>
+                <i class="bi bi-star-fill text-orange-500"></i>
+                <i class="bi bi-star-fill text-orange-500"></i>
+                <i class="bi bi-star-fill text-orange-500"></i>
+                <i class="bi bi-star-fill text-orange-500"></i>
                 <span class="ml-1">5-star client feedback</span>
               </div>
               <div class="text-xs font-bold text-slate-500" id="t-indicator"></div>
@@ -309,11 +309,11 @@ export default function HomePage() {
 
         <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           ${[
-            { icon: "bi-patch-check", title: "Trusted process", desc: "Clear briefs + versioned revisions." },
-            { icon: "bi-award", title: "Premium feel", desc: "Editorial hierarchy, modern UI." },
-            { icon: "bi-lock", title: "Secure checkout", desc: "PayPal Order Now buttons." },
-            { icon: "bi-rocket-takeoff", title: "Launch-ready", desc: "Exports for web + print." },
-        ].map(x => `
+      { icon: "bi-patch-check", title: "Trusted process", desc: "Clear briefs + versioned revisions." },
+      { icon: "bi-award", title: "Premium feel", desc: "Editorial hierarchy, modern UI." },
+      { icon: "bi-lock", title: "Secure checkout", desc: "PayPal Order Now buttons." },
+      { icon: "bi-rocket-takeoff", title: "Launch-ready", desc: "Exports for web + print." },
+    ].map(x => `
             <div class="rounded-2xl bg-white subtle-border p-5">
               <div class="flex items-start gap-3">
                 <div class="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-800"><i class="bi ${x.icon}"></i></div>
@@ -329,14 +329,14 @@ export default function HomePage() {
     </section>
 
     ${ctaBand({
-            title: "Ready to upgrade your brand fast?",
-            subtitle: "View packages, then request a free quote—no phone calls, just clear email communication and fast delivery.",
-            primaryHref: "#/pricing",
-            primaryText: "View All Pricing",
-            secondaryHref: "#/contact",
-            secondaryText: "Get a Free Quote",
-            bg: "from-white to-slate-50"
-        })}
+      title: "Ready to upgrade your brand fast?",
+      subtitle: "View packages, then request a free quote—no phone calls, just clear email communication and fast delivery.",
+      primaryHref: "#/pricing",
+      primaryText: "View All Pricing",
+      secondaryHref: "#/contact",
+      secondaryText: "Get a Free Quote",
+      bg: "from-white to-slate-50"
+    })}
 
     ${footerHTML()}
   `;
