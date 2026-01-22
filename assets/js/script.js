@@ -227,7 +227,7 @@ const PRICING_DATA = {
       blurb: "Most popular: complete store design flow.",
       features: ["Up to 7 templates (design)", "Homepage, collection, PDP", "Cart + checkout + account", "Responsive views", "UI components + style guide"],
       popular: true,
-      customLink: "https://www.paypal.com/ncp/payment/S3MRWPBQSBTPU"
+      customLink: "https://www.paypal.com/ncp/payment/ZWCJLMETV9Z4W"
     },
     {
       name: "E-Commerce Premium Package",
