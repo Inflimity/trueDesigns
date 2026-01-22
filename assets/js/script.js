@@ -504,9 +504,9 @@ const footerHTML = () => `
                 <a class="hover:text-slate-900 transition" href="#/about-us">About Us</a>
                 <a class="hover:text-slate-900 transition" href="#/contact">Contact</a>
                 <div class="mt-4 pt-4 border-t border-slate-200">
-                  <a class="block hover:text-slate-900 transition" href="privacy-policy">Privacy Policy</a>
-                  <a class="block hover:text-slate-900 transition mt-2" href="terms-conditions">Terms & Conditions</a>
-                  <a class="block hover:text-slate-900 transition mt-2" href="cookie-policy">Cookie Policy</a>
+                  <a class="block hover:text-slate-900 transition" href="privacy-policy.html">Privacy Policy</a>
+                  <a class="block hover:text-slate-900 transition mt-2" href="terms-conditions.html">Terms & Conditions</a>
+                  <a class="block hover:text-slate-900 transition mt-2" href="cookie-policy.html">Cookie Policy</a>
                 </div>
               </div>
             </div>
