@@ -830,8 +830,8 @@ const ctaBand = ({ title, subtitle, primaryHref, primaryText, secondaryHref, sec
 
 const HomePage = () => {
   setMeta({
-    title: "True Designs - Affordable Custom Design Services | USA, Canada & Worldwide",
-    description: "True Designs delivers affordable, high-quality custom design services—logos, digital ads & banner design, custom T‑shirt & merch design, graphics, web design, and e-commerce—serving clients in the USA, Canada, and worldwide. Fast turnaround and 100% satisfaction guaranteed.",
+    title: "Professional Custom Design Services | Logo, Ads, Web & More | True Designs",
+    description: "Affordable custom design services for logos, ads, websites, e-commerce & more. High-quality visual design with fast turnaround for businesses worldwide. Get a free quote today.",
     keywords: "affordable custom design services USA Canada worldwide, professional logo design services, digital ads banner design, custom t-shirt merch design, graphic design, web design, e-commerce website",
     canonical: "https://td-designs.com/"
   });
@@ -899,6 +899,14 @@ const HomePage = () => {
       img: "home-service-ecom",
       icon: "bi-bag-check",
       accent: "border-emerald-500"
+    },
+    {
+      title: "Photo to Art",
+      desc: "Turn your favorite pictures into custom digital paintings.",
+      href: "#/photo-to-art",
+      img: "home-service-photo-art",
+      icon: "bi-palette2",
+      accent: "border-pink-500"
     }
   ];
 
@@ -1245,8 +1253,8 @@ const HomePage = () => {
 
 const LogoDesignPage = () => {
   setMeta({
-    title: "Affordable Custom Logo Design | True Designs - USA & Canada",
-    description: "Affordable custom logo design for USA, Canada, and worldwide clients. True Designs delivers professional logo concepts, unlimited revisions, and production-ready files with fast turnaround.",
+    title: "Logo Design Services | Custom Brand Identity | True Designs",
+    description: "Professional custom logo design services with modern, versatile concepts tailored to your brand. Choose your package and get production-ready logo files quickly.",
     keywords: "affordable custom logo design USA Canada worldwide, professional logo design services, custom logo packages, vector logo files, brand identity",
     canonical: "https://td-designs.com/logo-design"
   });
@@ -1370,8 +1378,8 @@ const LogoDesignPage = () => {
 
 const BusinessCardPage = () => {
   setMeta({
-    title: "Affordable Digital Ads & Banner Design | True Designs - USA, Canada & Worldwide",
-    description: "Affordable digital ads & banner design with high-converting creatives sized for web, display, and social placements. True Designs serves USA, Canada, and worldwide clients with fast turnaround and unlimited revisions.",
+    title: "Digital Ads & Banner Design | High-Converting Visual Creatives",
+    description: "Scroll-stopping digital ads and banner graphics designed to boost engagement and drive conversions. Professional creative support for campaigns and promotions.",
     keywords: "affordable digital ads banner design USA Canada worldwide, display ad design, banner ad design, social media ad creatives, high converting ad creative",
     canonical: "https://td-designs.com/digital-ads-banner-design"
   });
@@ -1487,8 +1495,8 @@ const BusinessCardPage = () => {
 
 const StationeryPage = () => {
   setMeta({
-    title: "Affordable Custom T‑Shirt & Merch Design | True Designs - USA, Canada & Worldwide",
-    description: "Affordable custom T‑shirt & merch design—print-ready apparel graphics and merch visuals built for strong branding. True Designs serves USA, Canada, and worldwide clients.",
+    title: "Custom T-Shirt & Merch Design | Print-Ready Apparel Graphics",
+    description: "Create bold, professional apparel and merch visuals for tees, hoodies, hats & more. Premium graphics that elevate merchandise branding and sales.",
     keywords: "affordable custom t-shirt merch design USA Canada worldwide, t-shirt design, apparel graphics, merch design, print-ready t-shirt files",
     canonical: "https://td-designs.com/custom-tshirt-merch-design"
   });
@@ -1592,8 +1600,8 @@ const StationeryPage = () => {
 
 const GraphicDesignPage = () => {
   setMeta({
-    title: "Affordable Graphic Design Services | True Designs - USA, Canada & Worldwide",
-    description: "Affordable graphic design services for flyers, posters, social media, menus, and more. True Designs serves USA, Canada, and worldwide clients with fast turnaround and unlimited revisions.",
+    title: "Graphic Design Services | Marketing & Brand Visuals",
+    description: "Expert graphic design for marketing materials, social graphics, flyers, brochures & more. Clean, attention-focused visuals built to communicate your message clearly.",
     keywords: "affordable graphic design USA Canada worldwide, flyer design, poster design, social media graphics, infographic design, professional graphic design services",
     canonical: "https://td-designs.com/graphic-design"
   });
@@ -1696,8 +1704,8 @@ const GraphicDesignPage = () => {
 
 const WebDesignPage = () => {
   setMeta({
-    title: "Affordable Web Design | True Designs - Conversion-Focused Worldwide",
-    description: "Affordable web design built for trust and conversions. True Designs serves USA, Canada, and worldwide clients with modern UI, clear hierarchy, and fast turnaround.",
+    title: "Web Design Services | Conversion-Focused UI/UX | True Designs",
+    description: "Custom website design with polished user interfaces and strategic layouts for conversions. Modern, responsive designs tailored to your business needs.",
     keywords: "affordable web design USA Canada worldwide, conversion focused web design, professional website design services, responsive web design",
     canonical: "https://td-designs.com/web-design"
   });
@@ -1802,8 +1810,8 @@ const WebDesignPage = () => {
 
 const EcommercePage = () => {
   setMeta({
-    title: "Affordable E-Commerce Website Design | True Designs - USA, Canada & Worldwide",
-    description: "Affordable e-commerce website design with product, cart, and checkout-focused UX. True Designs serves USA, Canada, and worldwide businesses with conversion-first layouts.",
+    title: "E-Commerce Website Design | Online Storefronts That Convert",
+    description: "Professional e-commerce site design including storefronts, product pages & checkout flows optimized for sales. Build your brand’s online shop with expert support.",
     keywords: "affordable e-commerce website design USA Canada worldwide, online store design, product page design, checkout flow UX, professional ecommerce design services",
     canonical: "https://td-designs.com/e-commerce-website"
   });
@@ -1913,8 +1921,8 @@ const EcommercePage = () => {
 
 const PricingPage = () => {
   setMeta({
-    title: "All Design Packages & Pricing | True Designs",
-    description: "View all True Designs packages and transparent pricing for logo design, digital ads & banner design, custom T‑shirt & merch design, graphic design, web design, and e-commerce—serving USA, Canada & worldwide clients.",
+    title: "True Designs Pricing | Logo, Web, Graphic & Design Packages",
+    description: "Explore transparent design pricing for logo, branding, web, e-commerce & graphic services. Packages start at affordable rates with unlimited revisions included.",
     keywords: "True Designs pricing, affordable custom design packages USA Canada worldwide, logo design pricing, digital ads banner design pricing, custom t-shirt merch design pricing, web design pricing, e-commerce pricing",
     canonical: "https://td-designs.com/pricing"
   });
@@ -2176,7 +2184,7 @@ const PortfolioPage = () => {
                 Browse categorized work samples across our services. Use <span class="text-emerald-600 font-bold">filters</span> to jump between logo, print, graphics, and website UI.
               </p>
               <div class="mt-7 flex flex-col sm:flex-row gap-3">
-                <a href="#/pricing" class="inline-flex items-center justify-center rounded-2xl bg-[#0f172a] px-6 py-4 text-sm sm:text-base font-extrabold text-white hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-blue-500/10">
+                <a href="#/pricing" class="inline-flex items-center justify-center rounded-2xl bg-[#fff] px-6 py-4 text-sm sm:text-base font-extrabold text-white hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-blue-500/10">
                   View All Pricing <i class="bi bi-arrow-right-short text-xl ml-1"></i>
                 </a>
                 <a href="#/contact" class="inline-flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-6 py-4 text-sm sm:text-base font-extrabold text-slate-900 hover:bg-slate-50 hover:border-emerald-500/50 transition-all duration-300">
@@ -2710,8 +2718,8 @@ const ContactPage = () => {
 
 function PhotoToArtPage() {
   setMeta({
-    title: "Photo to Art - Turn Pictures into Canvas Paintings | True Designs",
-    description: "Transform your favorite photos into custom hand-painted style artwork. Oil paintings, watercolors, sketches, and pop art from your pictures. Perfect for gifts and home décor.",
+    title: "Turn Your Photos Into Art | Custom Photo to Painting Service",
+    description: "Transform your photos into stunning artwork — portraits, pets, weddings, travel & vintage styles. Artist-crafted digital art perfect for gifts and décor. Start now.",
     keywords: "photo to art, picture into painting, custom oil painting from photo, watercolor from photo, pet portraits, wedding photo art, turn photo into canvas",
     canonical: "https://td-designs.com/photo-to-art"
   });
@@ -2752,15 +2760,15 @@ function PhotoToArtPage() {
 
       <div class="hero-gradient-art">
         ${heroBand({
-            kicker: "Turn Memories Into Masterpieces",
-            title: "Custom <span class='text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600'>Hand-Crafted</span> Digital Art from Your Photos",
-            subtitle: "Transform any picture into a stunning oil painting, watercolor, or pop art piece. Professionally designed styling—not just a filter.",
-            primaryHref: "#/contact",
-            primaryText: "Get a Free Quote",
-            secondaryHref: "#styles",
-            secondaryText: "View Gallery",
-            bgGenId: "photo-to-art-hero"
-        })}
+    kicker: "Turn Memories Into Masterpieces",
+    title: "Custom <span class='text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600'>Hand-Crafted</span> Digital Art from Your Photos",
+    subtitle: "Transform any picture into a stunning oil painting, watercolor, or pop art piece. Professionally designed styling—not just a filter.",
+    primaryHref: "#/contact",
+    primaryText: "Get a Free Quote",
+    secondaryHref: "#portfolio",
+    secondaryText: "View Gallery",
+    bgGenId: "photo-to-art-hero"
+  })}
       </div>
 
       <!-- Gallery Section -->
