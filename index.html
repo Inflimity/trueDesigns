@@ -238,15 +238,17 @@
       'web-hero-devices': 'assets/images/hero/webp2.webp',
       'ecom-hero-checkout': 'assets/images/hero/ecomp2.webp',
       'about-hero-agency': 'assets/images/hero/home_hero2.webp',
+      'photo-to-art-hero': 'assets/images/photo-to-art-hero.jpg',
 
       // Home Service Grid (Specific Matched Images)
-      'home-service-logo': 'assets/images/logo/logo1.png', /* Sketch/Branding */
+      'home-service-logo': 'assets/images/homepage/LogoImage.png', /* Sketch/Branding */
       'home-service-card': 'assets/images/art1.webp', /* Tablet/Ads Display */
-      'home-service-stationery': 'assets/images/art2.webp', /* Business Cards */
-      'home-service-merch': 'assets/images/art3.webp', /* T-Shirt Mockup */
-      'home-service-graphic': 'assets/images/marketing.webp', /* Computer Security/Graphic Tech */
-      'home-service-web': 'assets/images/web1.webp', /* Minimal Web Layout */
-      'home-service-ecom': 'assets/images/web2.webp', /* Shopping/Retail */
+      'home-service-card-2': 'assets/images/homepage/ad.png', /* Tablet/Ads Display 2 */
+      'home-service-stationery': 'assets/images/homepage/Book-cover.png', /* Business Cards */
+      'home-service-merch': 'assets/images/homepage/merch.png', /* T-Shirt Mockup */
+      'home-service-graphic': 'assets/images/homepage/graphic.png', /* Computer Security/Graphic Tech */
+      'home-service-web': 'assets/images/homepage/Web.png', /* Minimal Web Layout */
+      'home-service-ecom': 'assets/images/homepage/ecom.png', /* Shopping/Retail */
 
       // Team (Randomized Office People)
       'team-1': 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80',
@@ -262,6 +264,17 @@
       'logo-gallery-4': 'assets/images/logopage/logop4.webp',   /* Bold Fitness */
       'logo-gallery-5': 'assets/images/logopage/logop5.webp',   /* Abstract Finance */
       'logo-gallery-6': 'assets/images/logopage/logop6.webp',   /* Playful Kids */
+
+      // Photo-to-Art Gallery
+      'photo-art-1': 'assets/images/photoToArt/p7.png',
+      'photo-art-2': 'assets/images/photoToArt/p4.png',
+      'photo-art-3': 'assets/images/photoToArt/p1.png',
+      'photo-art-4': 'assets/images/photoToArt/p9.png',
+      'photo-art-5': 'assets/images/photoToArt/p5.png',
+      'photo-art-6': 'assets/images/photoToArt/p6.png',
+      'photo-art-7': 'assets/images/photoToArt/p3.png',
+      'photo-art-8': 'assets/images/photoToArt/p10.jpg',
+      'photo-art-9': 'assets/images/photoToArt/p2.png',
       'logo-gallery-7': 'assets/images/logopage/logop7.webp',   /* Luxury Real Estate */
       'logo-gallery-8': 'assets/images/logopage/logop8.webp',   /* Eco Leaf */
       'logo-gallery-9': 'assets/images/logopage/logop9.webp',   /* Modern Gradient */
@@ -433,6 +446,9 @@
       });
     };
 
+    // Expose for script.js
+    window.injectImages = injectImages;
+
     // Use MutationObserver for robust injections on SPA render
     window.addEventListener('DOMContentLoaded', () => {
       const obs = new MutationObserver(() => injectImages());
@@ -523,6 +539,16 @@
                     <div class="text-xs text-slate-500">Storefronts that sell</div>
                   </div>
                 </a>
+                <a href="#/photo-to-art"
+                  class="flex items-center gap-3 rounded-xl px-3 py-2 hover:bg-slate-50 transition" role="menuitem"
+                  style="cursor: default;">
+                  <div class="h-9 w-9 rounded-lg bg-pink-50 text-pink-700 flex items-center justify-center"><i
+                      class="bi bi-palette2"></i></div>
+                  <div>
+                    <div class="font-semibold text-slate-900">Photo to Art</div>
+                    <div class="text-xs text-slate-500">Custom art from photos</div>
+                  </div>
+                </a>
               </div>
             </div>
 
@@ -570,7 +596,8 @@
                   class="block px-3 py-2 hover:bg-slate-50 transition" href="#/web-design" style="cursor: default;">Web
                   Design</a>
                 <a class="block px-3 py-2 hover:bg-slate-50 transition" href="#/e-commerce-website"
-                  style="cursor: default;">E-Commerce Website</a>
+                  style="cursor: default;">E-Commerce Website</a><a class="block px-3 py-2 hover:bg-slate-50 transition"
+                  href="#/photo-to-art" style="cursor: default;">Photo to Art</a>
               </div>
             </div>
             <a class="rounded-xl px-3 py-2 hover:bg-slate-50 transition" href="#/pricing"
@@ -696,7 +723,7 @@
   <!-- App Root -->
   <main id="app">
 
-    <section class="relative overflow-hidden">
+    <!-- <section class="relative overflow-hidden">
       <div data-bg-gen-id="home-hero-multi-mockup" class="absolute inset-0 bg-cover bg-center"></div>
       <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-white/85 to-white"></div>
 
@@ -840,6 +867,197 @@
                   Real deliverables</div>
               </div>
 
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-reveal {
+        opacity: 0;
+        animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+
+      .delay-3 {
+        animation-delay: 0.6s;
+      }
+    </style>
+
+    <section class="relative overflow-hidden">
+      <div data-bg-gen-id="home-hero-multi-mockup"
+        class="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] hover:scale-105"></div>
+      <div class="absolute inset-0 bg-white/90 backdrop-blur-[2px]"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-14 lg:pb-16">
+        <div class="grid gap-10 lg:grid-cols-12 items-center">
+
+          <div class="lg:col-span-7 animate-reveal">
+            <div
+              class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-3 py-1.5 text-xs font-extrabold text-slate-700 shadow-sm">
+              <span class="h-2 w-2 rounded-full bg-blue-600 animate-pulse"></span>
+              <span class="text-emerald-600">Affordable</span>, high-trust design for growing businesses
+            </div>
+
+            <h1 class="font-display mt-4 text-4xl sm:text-5xl lg:text-6xl leading-[1.03] text-slate-900 tracking-tight">
+              <span class="text-blue-600">Professional</span> Custom Design Services for Businesses <span
+                class="text-orange-500">Worldwide</span>
+            </h1>
+
+            <p class="mt-5 text-lg sm:text-xl leading-8 text-slate-600 max-w-2xl animate-reveal delay-1">
+              Affordable Prices • Fast Turnaround • 100% Satisfaction Guaranteed
+            </p>
+
+            <div class="mt-7 flex flex-col sm:flex-row gap-3 animate-reveal delay-1">
+              <a href="#/contact"
+                class="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-6 py-4 text-sm sm:text-base font-extrabold text-white hover:bg-emerald-700 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-emerald-500/20">
+                Get a Free Quote <i class="bi bi-arrow-right-short text-xl ml-1"></i>
+              </a>
+
+              <a href="#/pricing"
+                class="inline-flex items-center justify-center rounded-2xl bg-white border-2 border-blue-600 px-6 py-4 text-sm sm:text-base font-extrabold text-blue-600 hover:bg-blue-50 transition-all duration-300">
+                View All Pricing <i class="bi bi-arrow-up-right text-sm ml-2"></i>
+              </a>
+            </div>
+
+            <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl animate-reveal delay-2">
+              <div
+                class="rounded-2xl bg-white border border-slate-100 p-3 shadow-sm hover:border-blue-500 transition-colors">
+                <div class="text-xs text-slate-500 font-bold">Avg. delivery</div>
+                <div class="mt-1 text-sm font-extrabold text-blue-600">24–72h</div>
+              </div>
+
+              <div
+                class="rounded-2xl bg-white border border-slate-100 p-3 shadow-sm hover:border-emerald-500 transition-colors">
+                <div class="text-xs text-slate-500 font-bold">Revisions</div>
+                <div class="mt-1 text-sm font-extrabold text-emerald-600">Unlimited</div>
+              </div>
+
+              <div
+                class="rounded-2xl bg-white border border-slate-100 p-3 shadow-sm hover:border-orange-500 transition-colors">
+                <div class="text-xs text-slate-500 font-bold">Clients served</div>
+                <div class="mt-1 text-sm font-extrabold text-orange-500">Worldwide</div>
+              </div>
+
+              <div
+                class="rounded-2xl bg-white border border-slate-100 p-3 shadow-sm hover:border-blue-500 transition-colors">
+                <div class="text-xs text-slate-500 font-bold">Guarantee</div>
+                <div class="mt-1 text-sm font-extrabold text-blue-600">100%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 animate-reveal delay-2">
+            <div class="rounded-3xl bg-white border border-slate-100 shadow-2xl overflow-hidden">
+              <div class="p-5 sm:p-6">
+                <div class="flex items-center justify-between border-b border-slate-50 pb-4">
+                  <div class="text-sm font-extrabold text-slate-900">What you <span class="text-blue-600">get</span>
+                  </div>
+                  <div class="text-xs font-bold text-orange-500 uppercase tracking-widest">USA • Canada • Global</div>
+                </div>
+
+                <div class="mt-4 grid gap-3">
+                  <div
+                    class="rounded-2xl bg-slate-50/50 border border-transparent hover:border-blue-500 hover:bg-white transition-all p-4 group">
+                    <div class="flex gap-3">
+                      <div
+                        class="h-10 w-10 rounded-xl bg-white flex items-center justify-center text-blue-600 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="bi bi-magic"></i>
+                      </div>
+                      <div>
+                        <div class="text-sm font-extrabold text-slate-900">Bespoke <span
+                            class="text-blue-600">creative</span></div>
+                        <div class="mt-0.5 text-sm text-slate-500 leading-6">Designed to match your market and brand
+                          tone.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="rounded-2xl bg-slate-50/50 border border-transparent hover:border-emerald-500 hover:bg-white transition-all p-4 group">
+                    <div class="flex gap-3">
+                      <div
+                        class="h-10 w-10 rounded-xl bg-white flex items-center justify-center text-emerald-600 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="bi bi-check2-square"></i>
+                      </div>
+                      <div>
+                        <div class="text-sm font-extrabold text-slate-900">Production <span
+                            class="text-emerald-600">ready</span></div>
+                        <div class="mt-0.5 text-sm text-slate-500 leading-6">Files prepared for web + print from day
+                          one.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="rounded-2xl bg-slate-50/50 border border-transparent hover:border-orange-500 hover:bg-white transition-all p-4 group">
+                    <div class="flex gap-3">
+                      <div
+                        class="h-10 w-10 rounded-xl bg-white flex items-center justify-center text-orange-500 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="bi bi-graph-up-arrow"></i>
+                      </div>
+                      <div>
+                        <div class="text-sm font-extrabold text-slate-900">Conversion <span
+                            class="text-orange-500">focused</span></div>
+                        <div class="mt-0.5 text-sm text-slate-500 leading-6">Clear hierarchy that builds trust quickly.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-5 rounded-2xl bg-blue-50 border border-blue-100 p-4">
+                  <div class="flex items-start gap-3">
+                    <i class="bi bi-shield-check text-blue-600 mt-0.5 text-lg"></i>
+                    <div>
+                      <div class="text-sm font-extrabold text-slate-900">Satisfaction <span
+                          class="text-blue-600">Guarantee</span></div>
+                      <div class="text-sm text-slate-600 leading-6">If you’re not happy, we keep refining until you
+                        are—simple and documented.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-3 gap-3 animate-reveal delay-3">
+              <div
+                class="rounded-2xl bg-white border border-slate-100 p-4 text-center hover:-translate-y-1 transition-all">
+                <div class="text-xs font-bold text-blue-600">Design-first</div>
+                <div class="mt-1 text-sm font-extrabold text-slate-900">Modern</div>
+              </div>
+
+              <div
+                class="rounded-2xl bg-white border border-slate-100 p-4 text-center hover:-translate-y-1 transition-all">
+                <div class="text-xs font-bold text-orange-500">Fast</div>
+                <div class="mt-1 text-sm font-extrabold text-slate-900">Milestones</div>
+              </div>
+
+              <div
+                class="rounded-2xl bg-white border border-slate-100 p-4 text-center hover:-translate-y-1 transition-all">
+                <div class="text-xs font-bold text-emerald-600">Trusted</div>
+                <div class="mt-1 text-sm font-extrabold text-slate-900">Deliverables</div>
+              </div>
             </div>
           </div>
         </div>

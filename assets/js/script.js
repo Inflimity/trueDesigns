@@ -238,6 +238,44 @@ const PRICING_DATA = {
       popular: false,
       customLink: "https://www.paypal.com/ncp/payment/YA93ZCBAFHT9Y"
     }
+  ],
+  photoToArt: [
+    {
+      name: "Artistic Photo Conversion",
+      price: 99,
+      original: 199,
+      blurb: "Simple transformations & stylized art.",
+      features: ["High-resolution digital art", "Print-ready file formats (PNG/JPG)", "Perfect for wall art, gifts, and web use", "Unlimited revisions"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/ZVYVMHZFNDA6L"
+    },
+    {
+      name: "Watercolor Style Artwork",
+      price: 45,
+      original: 89,
+      blurb: "Elegant, artistic decor pieces.",
+      features: ["Soft, painterly watercolor effect", "Ideal for portraits, travel photos, scenery", "Print-ready & digital delivery", "Unlimited revisions"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/UW5ANMSWM559W"
+    },
+    {
+      name: "Oil Painting Style Artwork",
+      price: 59,
+      original: 119,
+      blurb: "Timeless, gallery-quality art.",
+      features: ["Detailed oil-style texture & tones", "Great for portraits, family photos, keepsakes", "Digital file + optional canvas prep guidance", "Unlimited revisions"],
+      popular: true,
+      customLink: "https://www.paypal.com/ncp/payment/QJBWCADMAMQ9E"
+    },
+    {
+      name: "Canvas-Ready & Premium Artwork",
+      price: 169,
+      original: 339,
+      blurb: "Home décor & professional display.",
+      features: ["Premium finish + optional sizing advice", "Works with multi-subject or complex edits", "Prioritized support & revisions", "Full fine-art creation"],
+      popular: false,
+      customLink: "https://www.paypal.com/ncp/payment/TX9QR95YLQFXG"
+    }
   ]
 };
 
@@ -787,11 +825,15 @@ const ctaBand = ({ title, subtitle, primaryHref, primaryText, secondaryHref, sec
       </section>
     `;
 
-// --------- Pages ----------
+
+
+
 const HomePage = () => {
   setMeta({
-    title: "True Designs - Affordable Custom Design Services | USA, Canada & Worldwide", description: "True Designs delivers affordable, high-quality custom design services—logos, digital ads & banner design, custom T‑shirt & merch design, graphics, web design, and e-commerce—serving clients in the USA, Canada, and worldwide. Fast turnaround and 100% satisfaction guaranteed.",
-    keywords: "affordable custom design services USA Canada worldwide, professional logo design services, digital ads banner design, custom t-shirt merch design, graphic design, web design, e-commerce website", canonical: "https://td-designs.com/"
+    title: "True Designs - Affordable Custom Design Services | USA, Canada & Worldwide",
+    description: "True Designs delivers affordable, high-quality custom design services—logos, digital ads & banner design, custom T‑shirt & merch design, graphics, web design, and e-commerce—serving clients in the USA, Canada, and worldwide. Fast turnaround and 100% satisfaction guaranteed.",
+    keywords: "affordable custom design services USA Canada worldwide, professional logo design services, digital ads banner design, custom t-shirt merch design, graphic design, web design, e-commerce website",
+    canonical: "https://td-designs.com/"
   });
 
   const logoPackages = PRICING_DATA.logo;
@@ -802,59 +844,69 @@ const HomePage = () => {
       desc: "Distinctive identity that looks credible everywhere.",
       href: "#/pricing#logo-design",
       img: "home-service-logo",
-      icon: "bi-bezier2"
+      icon: "bi-bezier2",
+      accent: "border-blue-500"
     }, {
       title: "Digital Ads &amp; Banner Design",
       desc: "Scroll-stopping creatives for campaigns and promotions.",
       href: "#/pricing#digital-ads-banner-design",
       img: "home-service-card",
-      icon: "bi-badge-ad"
+      icon: "bi-badge-ad",
+      accent: "border-orange-500"
     }, {
       title: "Digital Ads &amp; Banner Design",
       desc: "High-converting ad creatives sized for every placement.",
       href: "#/pricing#digital-ads-banner-design",
-      img: "home-service-card",
-      icon: "bi-badge-ad"
+      img: "home-service-card-2",
+      icon: "bi-badge-ad",
+      accent: "border-emerald-500"
     },
     {
       title: "Stationery Design",
       desc: "Cohesive brand collateral (letterhead, envelope, card).",
       href: "#/pricing#stationery-design",
       img: "home-service-stationery",
-      icon: "bi-envelope-paper"
+      icon: "bi-envelope-paper",
+      accent: "border-blue-500"
     },
     {
       title: "Custom T‑Shirt &amp; Merch Design",
       desc: "Bold, print-ready apparel graphics and merch visuals.",
       href: "#/pricing#custom-tshirt-merch-design",
       img: "home-service-merch",
-      icon: "bi-tshirt"
+      icon: "bi-tshirt",
+      accent: "border-orange-500"
     }, {
       title: "Graphic Design",
       desc: "Marketing visuals built for attention and clarity.",
       href: "#/pricing#graphic-design",
       img: "home-service-graphic",
-      icon: "bi-layers"
+      icon: "bi-layers",
+      accent: "border-emerald-500"
     },
     {
       title: "Web Design",
       desc: "Conversion-first websites with polished UI.",
       href: "#/pricing#web-design",
       img: "home-service-web",
-      icon: "bi-window"
+      icon: "bi-window",
+      accent: "border-blue-500"
     },
     {
       title: "E-Commerce Website",
       desc: "Storefronts, product pages, and checkout flows.",
       href: "#/pricing#e-commerce-website",
       img: "home-service-ecom",
-      icon: "bi-bag-check"
+      icon: "bi-bag-check",
+      accent: "border-emerald-500"
     }
   ];
 
   const testimonials = [
-    { name: "Alyssa M.", where: "Toronto, Canada", quote: "The logo concepts looked like they came from a top-tier studio. Revisions were fast and professional—our brand finally feels real." }, { name: "Jordan K.", where: "Austin, USA", quote: "The banner ads came out crisp and conversion-focused. Great hierarchy, clean typography, and sizes that worked across all placements." },
-    { name: "Priya S.", where: "Vancouver, Canada", quote: "We needed custom merch designs for a new clinic launch—everything looked cohesive and premium. Communication was clear the entire time." }, { name: "Marcus T.", where: "New York, USA", quote: "Our landing page redesign increased inquiries within a week. The layout is clear and conversion-focused." },
+    { name: "Alyssa M.", where: "Toronto, Canada", quote: "The logo concepts looked like they came from a top-tier studio. Revisions were fast and professional—our brand finally feels real." },
+    { name: "Jordan K.", where: "Austin, USA", quote: "The banner ads came out crisp and conversion-focused. Great hierarchy, clean typography, and sizes that worked across all placements." },
+    { name: "Priya S.", where: "Vancouver, Canada", quote: "We needed custom merch designs for a new clinic launch—everything looked cohesive and premium. Communication was clear the entire time." },
+    { name: "Marcus T.", where: "New York, USA", quote: "Our landing page redesign increased inquiries within a week. The layout is clear and conversion-focused." },
     { name: "Elena R.", where: "Calgary, Canada", quote: "The social media graphics are consistently on-brand and sharp. Huge time saver for our marketing team." },
     { name: "Hannah D.", where: "Los Angeles, USA", quote: "E-commerce UI mockups were stunning and practical. Product pages feel premium and the checkout flow is clean." },
     { name: "Omar A.", where: "Worldwide", quote: "Quality exceeded expectations for the price. Very responsive and genuinely focused on getting it right." },
@@ -862,67 +914,179 @@ const HomePage = () => {
   ];
 
   return `
-        ${heroBand({
-    kicker: "Affordable, high-trust design for growing businesses",
-    title: "Professional Custom Design Services for Businesses Worldwide",
-    subtitle: "Affordable Prices • Fast Turnaround • 100% Satisfaction Guaranteed",
-    primaryHref: "#/contact",
-    primaryText: "Get a Free Quote",
-    secondaryHref: "#/pricing",
-    secondaryText: "View All Pricing",
-    bgGenId: "home-hero-multi-mockup"
-  })}
+    <style>
+      @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .animate-reveal { animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+      .delay-1 { animation-delay: 0.2s; }
+      .delay-2 { animation-delay: 0.4s; }
+      .delay-3 { animation-delay: 0.6s; }
+      .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+    </style>
 
-        <!-- Featured Logo Packages -->
-        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-          <div class="flex items-end justify-between gap-6">
-            <div>
-              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Featured: Logo Design packages</h2>
-              <p class="mt-3 text-slate-600 max-w-2xl leading-7">
-                Choose a package that matches your stage—startup, growth, or full brand launch. All packages include unlimited revisions.
-              </p>
+    <section class="relative overflow-hidden">
+      <div data-bg-gen-id="home-hero-multi-mockup" class="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] hover:scale-105"></div>
+      <div class="absolute inset-0 bg-white/90 backdrop-blur-[2px]"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-14 lg:pb-16">
+        <div class="grid gap-10 lg:grid-cols-12 items-center">
+
+          <div class="lg:col-span-7 animate-reveal">
+            <div class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-3 py-1.5 text-xs font-extrabold text-slate-700 shadow-sm">
+              <span class="h-2 w-2 rounded-full bg-orange-500 animate-pulse"></span>
+              <span class="text-blue-600">High-Trust</span> design for growing businesses
             </div>
-            <a href="#/pricing#logo-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
-              Compare All Packages <i class="bi bi-arrow-right-short text-lg"></i>
-            </a>
+
+            <h1 class="font-display mt-4 text-4xl sm:text-5xl lg:text-6xl leading-[1.03] text-slate-900 tracking-tight">
+              <span class="text-orange-500">Professional</span> Custom Design Services for Businesses <span class="text-emerald-600">Worldwide</span>
+            </h1>
+
+            <p class="mt-5 text-lg sm:text-xl leading-8 text-slate-600 max-w-2xl animate-reveal delay-1">
+              Affordable Prices • Fast Turnaround • 100% Satisfaction Guaranteed
+            </p>
+
+            <div class="mt-7 flex flex-col sm:flex-row gap-3 animate-reveal delay-1">
+              <a href="#/contact" class="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-6 py-4 text-sm sm:text-base font-extrabold text-white hover:bg-emerald-700 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-emerald-500/20">
+                Get a Free Quote <i class="bi bi-arrow-right-short text-xl ml-1"></i>
+              </a>
+
+              <a href="#/pricing" class="inline-flex items-center justify-center rounded-2xl bg-white border-2 border-orange-500 px-6 py-4 text-sm sm:text-base font-extrabold text-orange-600 hover:bg-orange-50 transition-all duration-300">
+                View All Pricing <i class="bi bi-arrow-up-right text-sm ml-2"></i>
+              </a>
+            </div>
+
+            <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl animate-reveal delay-2">
+              <div class="rounded-2xl bg-white border border-slate-100 p-3 shadow-sm hover:border-blue-500 transition-colors">
+                <div class="text-xs text-slate-500 font-bold">Avg. delivery</div>
+                <div class="mt-1 text-sm font-extrabold text-blue-600">24–72h</div>
+              </div>
+
+              <div class="rounded-2xl bg-white border border-slate-100 p-3 shadow-sm hover:border-emerald-500 transition-colors">
+                <div class="text-xs text-slate-500 font-bold">Revisions</div>
+                <div class="mt-1 text-sm font-extrabold text-emerald-600">Unlimited</div>
+              </div>
+
+              <div class="rounded-2xl bg-white border border-slate-100 p-3 shadow-sm hover:border-orange-500 transition-colors">
+                <div class="text-xs text-slate-500 font-bold">Clients served</div>
+                <div class="mt-1 text-sm font-extrabold text-orange-500">Worldwide</div>
+              </div>
+
+              <div class="rounded-2xl bg-white border border-slate-100 p-3 shadow-sm hover:border-blue-500 transition-colors">
+                <div class="text-xs text-slate-500 font-bold">Guarantee</div>
+                <div class="mt-1 text-sm font-extrabold text-blue-600">100%</div>
+              </div>
+            </div>
           </div>
 
-          <div class="mt-8 grid gap-5 lg:grid-cols-3">
-            ${logoPackages.map(p => pricingCard(p)).join("")}
-          </div>
+          <div class="lg:col-span-5 animate-reveal delay-2">
+            <div class="rounded-3xl bg-white border border-slate-100 shadow-2xl overflow-hidden">
+              <div class="p-5 sm:p-6">
+                <div class="flex items-center justify-between border-b border-slate-50 pb-4">
+                  <div class="text-sm font-extrabold text-slate-900">What you <span class="text-blue-600">get</span></div>
+                  <div class="text-xs font-bold text-orange-500 uppercase tracking-widest">USA • Canada • Global</div>
+                </div>
 
-          <div class="mt-10">
-            ${trustRowHTML()}
-          </div>
-        </section>
+                <div class="mt-4 grid gap-3">
+                  <div class="rounded-2xl bg-slate-50/50 border border-transparent hover:border-blue-500 hover:bg-white transition-all p-4 group">
+                    <div class="flex gap-3">
+                      <div class="h-10 w-10 rounded-xl bg-white flex items-center justify-center text-blue-600 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="bi bi-magic"></i>
+                      </div>
+                      <div>
+                        <div class="text-sm font-extrabold text-slate-900">Bespoke <span class="text-blue-600">creative</span></div>
+                        <div class="mt-0.5 text-sm text-slate-500 leading-6">Designed to match your market and brand tone.</div>
+                      </div>
+                    </div>
+                  </div>
 
-        <!-- Services Grid -->
-        <section class="bg-slate-50/60 border-y border-slate-200/60">
-          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+                  <div class="rounded-2xl bg-slate-50/50 border border-transparent hover:border-emerald-500 hover:bg-white transition-all p-4 group">
+                    <div class="flex gap-3">
+                      <div class="h-10 w-10 rounded-xl bg-white flex items-center justify-center text-emerald-600 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="bi bi-check2-square"></i>
+                      </div>
+                      <div>
+                        <div class="text-sm font-extrabold text-slate-900">Production <span class="text-emerald-600">ready</span></div>
+                        <div class="mt-0.5 text-sm text-slate-500 leading-6">Files prepared for web + print from day one.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rounded-2xl bg-slate-50/50 border border-transparent hover:border-orange-500 hover:bg-white transition-all p-4 group">
+                    <div class="flex gap-3">
+                      <div class="h-10 w-10 rounded-xl bg-white flex items-center justify-center text-orange-500 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="bi bi-graph-up-arrow"></i>
+                      </div>
+                      <div>
+                        <div class="text-sm font-extrabold text-slate-900">Conversion <span class="text-orange-500">focused</span></div>
+                        <div class="mt-0.5 text-sm text-slate-500 leading-6">Clear hierarchy that builds trust quickly.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-5 rounded-2xl bg-blue-50 border border-blue-100 p-4">
+                  <div class="flex items-start gap-3">
+                    <i class="bi bi-shield-check text-blue-600 mt-0.5 text-lg"></i>
+                    <div>
+                      <div class="text-sm font-extrabold text-slate-900">Satisfaction <span class="text-blue-600">Guarantee</span></div>
+                      <div class="text-sm text-slate-600 leading-6">If you’re not happy, we keep refining until you are—simple and documented.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-3 gap-3 animate-reveal delay-3">
+              <div class="rounded-2xl bg-white border border-slate-100 p-4 text-center hover:-translate-y-1 transition-all">
+                <div class="text-xs font-bold text-blue-600">Design-first</div>
+                <div class="mt-1 text-sm font-extrabold text-slate-900">Modern</div>
+              </div>
+
+              <div class="rounded-2xl bg-white border border-slate-100 p-4 text-center hover:-translate-y-1 transition-all">
+                <div class="text-xs font-bold text-orange-500">Fast</div>
+                <div class="mt-1 text-sm font-extrabold text-slate-900">Milestones</div>
+              </div>
+
+              <div class="rounded-2xl bg-white border border-slate-100 p-4 text-center hover:-translate-y-1 transition-all">
+                <div class="text-xs font-bold text-emerald-600">Trusted</div>
+                <div class="mt-1 text-sm font-extrabold text-slate-900">Deliverables</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+        <section class="bg-slate-50 border-y border-slate-200/60 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl -mr-48 -mt-48"></div>
+          <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-100/50 rounded-full blur-3xl -ml-48 -mb-48"></div>
+
+          <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16 reveal">
             <div class="max-w-3xl">
-              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Everything you need to look credible</h2>
+              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Everything you need to <span class="text-emerald-600">look credible</span></h2>
               <p class="mt-3 text-slate-600 leading-7">
                 From first impressions (logo + cards) to full digital presence (web + e-commerce), we deliver clean, production-ready design worldwide.
               </p>
             </div>
 
-            <div class="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 delay-1">
               ${services.map((s) => `
-                <div class="group rounded-2xl bg-white subtle-border overflow-hidden hover:-translate-y-1 transition transform">
-                  <div class="relative aspect-[16/10] bg-slate-100">
-                    <img data-gen-id="${s.img}" alt="${s.title} design mockup" class="absolute inset-0 w-full h-full object-cover" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/0 to-slate-950/0 opacity-0 group-hover:opacity-100 transition"></div>
-                    <div class="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-white/85 subtle-border px-3 py-1.5 text-xs font-extrabold text-slate-800">
-                      <i class="bi ${s.icon}"></i> ${s.title}
+                <div class="group rounded-2xl bg-white border border-slate-200/60 overflow-hidden hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2">
+                  <div class="relative aspect-[16/10] bg-slate-100 overflow-hidden">
+                    <img data-gen-id="${s.img}" alt="${s.title} design mockup" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-white/90 glass-card border border-slate-200 px-3 py-1.5 text-xs font-extrabold text-slate-800">
+                      <i class="bi ${s.icon} text-blue-600"></i> ${s.title}
                     </div>
                   </div>
                   <div class="p-6">
                     <div class="text-sm text-slate-600 leading-7">${s.desc}</div>
                     <div class="mt-5 flex items-center justify-between">
-                      <a href="${s.href}" class="inline-flex items-center justify-center rounded-xl bg-white border border-slate-200/70 px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
+                      <a href="${s.href}" class="inline-flex items-center justify-center rounded-xl bg-white border border-slate-200 px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
                         View Pricing <i class="bi bi-arrow-up-right text-sm ml-2"></i>
                       </a>
-                      <a href="#/contact" class="inline-flex items-center gap-2 text-sm font-extrabold text-teal-700 hover:text-teal-800 transition">
+                      <a href="#/contact" class="inline-flex items-center gap-2 text-sm font-extrabold text-emerald-600 hover:text-emerald-700 transition">
                         Get a Quote <i class="bi bi-arrow-right-short text-lg"></i>
                       </a>
                     </div>
@@ -933,41 +1097,40 @@ const HomePage = () => {
           </div>
         </section>
 
-        <!-- How It Works -->
-        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16 reveal">
           <div class="grid gap-10 lg:grid-cols-12 items-start">
             <div class="lg:col-span-5">
-              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">How it works</h2>
+              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">How it <span class="text-orange-600">works</span></h2>
               <p class="mt-3 text-slate-600 leading-7">
                 A simple, documented process that keeps timelines clear and results predictable—especially for remote USA/Canada/worldwide clients.
               </p>
               <div class="mt-6 flex gap-3">
-                <a href="#/contact" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 to-orange-500 px-4 py-3 text-sm font-extrabold text-white hover:opacity-95 transition">
+                <a href="#/contact" class="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-emerald-500 via-blue-600 to-orange-500 px-5 py-3 text-sm font-extrabold text-white hover:scale-105 transition-transform shadow-lg shadow-blue-500/20">
                   Get a Free Quote
                 </a>
-                <a href="#/portfolio" class="inline-flex items-center justify-center rounded-xl border border-slate-200/70 bg-white px-4 py-3 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
+                <a href="#/portfolio" class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
                   View Portfolio
                 </a>
               </div>
             </div>
 
-            <div class="lg:col-span-7">
+            <div class="lg:col-span-7 delay-1">
               <div class="grid gap-4">
                 ${[
-      { icon: "bi-chat-square-text", title: "1) Tell us what you need", desc: "Choose a service + package, share your goals, and send any inspiration or files by email." },
-      { icon: "bi-palette2", title: "2) We design + refine", desc: "You get strong first drafts quickly. We revise until it feels right, with clear versioning." },
-      { icon: "bi-send-check", title: "3) Receive final files", desc: "We deliver production-ready exports for web and print, plus any source files included in your package." },
+      { icon: "bi-chat-square-text", color: "text-blue-600", bg: "bg-blue-50", title: "1) Tell us what you need", desc: "Choose a service + package, share your goals, and send any inspiration or files by email." },
+      { icon: "bi-palette2", color: "text-emerald-600", bg: "bg-emerald-50", title: "2) We design + refine", desc: "You get strong first drafts quickly. We revise until it feels right, with clear versioning." },
+      { icon: "bi-send-check", color: "text-orange-600", bg: "bg-orange-50", title: "3) Receive final files", desc: "We deliver production-ready exports for web and print, plus any source files included in your package." },
     ].map((s, i) => `
-                  <div class="rounded-2xl bg-white subtle-border p-6 hover:-translate-y-1 transition transform">
+                  <div class="group rounded-2xl bg-white border border-slate-200/70 p-6 hover:shadow-xl hover:border-slate-300 transition-all duration-300">
                     <div class="flex items-start gap-4">
-                      <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-teal-500/15 to-blue-600/15 border border-slate-200/70 flex items-center justify-center text-slate-900">
-                        <i class="bi ${s.icon}"></i>
+                      <div class="h-12 w-12 rounded-2xl ${s.bg} border border-slate-100 flex items-center justify-center ${s.color} transition-transform group-hover:rotate-12">
+                        <i class="bi ${s.icon} text-xl"></i>
                       </div>
                       <div>
                         <div class="text-sm font-extrabold text-slate-900">${s.title}</div>
                         <div class="mt-2 text-sm text-slate-600 leading-7">${s.desc}</div>
                       </div>
-                      <div class="ml-auto text-xs font-extrabold text-slate-400">0${i + 1}</div>
+                      <div class="ml-auto text-xs font-extrabold text-slate-300">0${i + 1}</div>
                     </div>
                   </div>
                 `).join("")}
@@ -976,48 +1139,47 @@ const HomePage = () => {
           </div>
         </section>
 
-        <!-- Testimonials Carousel -->
-        <section class="bg-white border-y border-slate-200/60">
+        <section class="bg-white border-y border-slate-200/60 reveal">
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
             <div class="flex items-end justify-between gap-6">
               <div class="max-w-2xl">
-                <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Clients choose us for clarity and speed</h2>
+                <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Clients choose us for <span class="text-blue-600">clarity and speed</span></h2>
                 <p class="mt-3 text-slate-600 leading-7">A few words from businesses we’ve helped across the USA, Canada, and worldwide.</p>
               </div>
               <div class="hidden sm:flex items-center gap-2">
-                <button id="t-prev" class="h-11 w-11 rounded-xl border border-slate-200/70 bg-white hover:bg-slate-50 transition inline-flex items-center justify-center" aria-label="Previous testimonial">
+                <button id="t-prev" class="h-11 w-11 rounded-xl border border-slate-200 bg-white hover:border-blue-500 hover:text-blue-600 transition inline-flex items-center justify-center">
                   <i class="bi bi-arrow-left"></i>
                 </button>
-                <button id="t-next" class="h-11 w-11 rounded-xl border border-slate-200/70 bg-white hover:bg-slate-50 transition inline-flex items-center justify-center" aria-label="Next testimonial">
+                <button id="t-next" class="h-11 w-11 rounded-xl border border-slate-200 bg-white hover:border-blue-500 hover:text-blue-600 transition inline-flex items-center justify-center">
                   <i class="bi bi-arrow-right"></i>
                 </button>
               </div>
             </div>
 
-            <div class="mt-8 rounded-3xl bg-gradient-to-r from-slate-50 to-white subtle-border soft-shadow overflow-hidden">
+            <div class="mt-8 rounded-3xl bg-gradient-to-br from-slate-50 via-white to-blue-50/30 border border-slate-200/60 shadow-lg overflow-hidden">
               <div class="p-7 sm:p-10">
                 <div class="flex items-center justify-between gap-4">
-                  <div class="inline-flex items-center gap-2 rounded-full bg-white subtle-border px-3 py-1.5 text-xs font-extrabold text-slate-700">
-                    <i class="bi bi-star-fill text-amber-500"></i>
-                    <i class="bi bi-star-fill text-amber-500"></i>
-                    <i class="bi bi-star-fill text-amber-500"></i>
-                    <i class="bi bi-star-fill text-amber-500"></i>
-                    <i class="bi bi-star-fill text-amber-500"></i>
+                  <div class="inline-flex items-center gap-2 rounded-full bg-white border border-slate-200 px-3 py-1.5 text-xs font-extrabold text-slate-700 shadow-sm">
+                    <i class="bi bi-star-fill text-orange-500"></i>
+                    <i class="bi bi-star-fill text-orange-500"></i>
+                    <i class="bi bi-star-fill text-orange-500"></i>
+                    <i class="bi bi-star-fill text-orange-500"></i>
+                    <i class="bi bi-star-fill text-orange-500"></i>
                     <span class="ml-1">5-star client feedback</span>
                   </div>
-                  <div class="text-xs font-bold text-slate-500" id="t-indicator"></div>
+                  <div class="text-xs font-bold text-slate-400" id="t-indicator"></div>
                 </div>
 
                 <div class="mt-7" id="t-track">
                   ${testimonials.map((t, i) => `
-                    <div class="t-slide ${i === 0 ? '' : 'hidden'}">
+                    <div class="t-slide animate-in fade-in slide-in-from-right-5 duration-700 ${i === 0 ? '' : 'hidden'}">
                       <div class="grid gap-7 lg:grid-cols-12 items-start">
                         <div class="lg:col-span-8">
-                          <div class="text-xl sm:text-2xl font-extrabold text-slate-900 leading-9">
+                          <div class="text-xl sm:text-2xl font-extrabold text-slate-900 leading-relaxed italic">
                             “${t.quote}”
                           </div>
                           <div class="mt-6 flex items-center gap-3">
-                            <div class="h-11 w-11 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-extrabold">
+                            <div class="h-11 w-11 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-extrabold shadow-lg shadow-blue-500/30">
                               ${t.name.split(" ")[0].slice(0, 1)}${t.name.split(" ")[1]?.slice(0, 1) || ""}
                             </div>
                             <div>
@@ -1027,42 +1189,30 @@ const HomePage = () => {
                           </div>
                         </div>
                         <div class="lg:col-span-4">
-                          <div class="rounded-2xl bg-white subtle-border p-5">
-                            <div class="text-sm font-extrabold text-slate-900">Why this matters</div>
+                          <div class="rounded-2xl bg-white/60 glass-card border border-slate-200/60 p-5 shadow-sm">
+                            <div class="text-sm font-extrabold text-blue-600">Why this matters</div>
                             <p class="mt-2 text-sm text-slate-600 leading-7">
                               We keep communication simple, revisions organized, and deliverables production-ready—so you can launch with confidence.
                             </p>
-                            <a href="#/contact" class="mt-4 inline-flex items-center gap-2 text-sm font-extrabold text-teal-700 hover:text-teal-800 transition">
-                              Request a quote <i class="bi bi-arrow-right-short text-lg"></i>
-                            </a>
                           </div>
                         </div>
                       </div>
                     </div>
                   `).join("")}
                 </div>
-
-                <div class="mt-8 flex sm:hidden items-center gap-2">
-                  <button id="t-prev" class="h-11 w-11 rounded-xl border border-slate-200/70 bg-white hover:bg-slate-50 transition inline-flex items-center justify-center" aria-label="Previous testimonial">
-                    <i class="bi bi-arrow-left"></i>
-                  </button>
-                  <button id="t-next" class="h-11 w-11 rounded-xl border border-slate-200/70 bg-white hover:bg-slate-50 transition inline-flex items-center justify-center" aria-label="Next testimonial">
-                    <i class="bi bi-arrow-right"></i>
-                  </button>
-                </div>
               </div>
             </div>
 
-            <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 delay-2">
               ${[
-      { icon: "bi-patch-check", title: "Trusted process", desc: "Clear briefs + versioned revisions." },
-      { icon: "bi-award", title: "Premium feel", desc: "Editorial hierarchy, modern UI." },
-      { icon: "bi-lock", title: "Secure checkout", desc: "PayPal Order Now buttons." },
-      { icon: "bi-rocket-takeoff", title: "Launch-ready", desc: "Exports for web + print." },
+      { icon: "bi-patch-check", color: "text-blue-600", title: "Trusted process", desc: "Clear briefs + versioned revisions." },
+      { icon: "bi-award", color: "text-emerald-600", title: "Premium feel", desc: "Editorial hierarchy, modern UI." },
+      { icon: "bi-lock", color: "text-orange-600", title: "Secure checkout", desc: "PayPal Order Now buttons." },
+      { icon: "bi-rocket-takeoff", color: "text-blue-600", title: "Launch-ready", desc: "Exports for web + print." },
     ].map(x => `
-                <div class="rounded-2xl bg-white subtle-border p-5">
+                <div class="group rounded-2xl bg-white border border-slate-200/60 p-5 hover:border-blue-500/30 transition-all">
                   <div class="flex items-start gap-3">
-                    <div class="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-800"><i class="bi ${x.icon}"></i></div>
+                    <div class="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center ${x.color} group-hover:scale-110 transition-transform"><i class="bi ${x.icon}"></i></div>
                     <div>
                       <div class="text-sm font-extrabold text-slate-900">${x.title}</div>
                       <div class="mt-1 text-sm text-slate-600 leading-6">${x.desc}</div>
@@ -1074,19 +1224,24 @@ const HomePage = () => {
           </div>
         </section>
 
-        ${ctaBand({
+        <div class="reveal delay-2">
+          ${ctaBand({
       title: "Ready to upgrade your brand fast?",
       subtitle: "View packages, then request a free quote—no phone calls, just clear email communication and fast delivery.",
       primaryHref: "#/pricing",
       primaryText: "View All Pricing",
       secondaryHref: "#/contact",
       secondaryText: "Get a Free Quote",
-      bg: "from-white to-slate-50"
+      bg: "from-white via-slate-50 to-emerald-50/30"
     })}
+        </div>
 
         ${footerHTML()}
       `;
 };
+
+
+
 
 const LogoDesignPage = () => {
   setMeta({
@@ -1098,15 +1253,16 @@ const LogoDesignPage = () => {
 
   const packages = PRICING_DATA.logo;
 
+  // Updated SEO text with colourful accents
   const seoHtml = `
-        If you’re looking for <span class="font-semibold text-slate-900">affordable custom logo design</span> that still feels premium, True Designs was built for you. We work with businesses across the
-        <span class="font-semibold text-slate-900">USA</span>, <span class="font-semibold text-slate-900">Canada</span>, and <span class="font-semibold text-slate-900">worldwide</span>—helping new brands launch confidently and established companies refresh their image without wasting time.
+        If you’re looking for <span class="font-extrabold text-blue-600">affordable custom logo design</span> that still feels premium, True Designs was built for you. We work with businesses across the
+        <span class="font-extrabold text-orange-500">USA</span>, <span class="font-extrabold text-emerald-600">Canada</span>, and <span class="font-extrabold text-blue-600">worldwide</span>—helping new brands launch confidently and established companies refresh their image without wasting time.
         <br/><br/>
-        A logo is more than a symbol. It’s the first signal of trust. That’s why our process emphasizes <span class="font-semibold text-slate-900">clarity</span>, <span class="font-semibold text-slate-900">distinctiveness</span>, and <span class="font-semibold text-slate-900">real-world usability</span>. Your logo must look sharp on a website header, a business card, an invoice, packaging, and social profiles. We design with these real applications in mind, and we deliver exports you can actually use.
+        A logo is more than a symbol. It’s the first signal of trust. That’s why our process emphasizes <span class="font-extrabold text-emerald-600">clarity</span>, <span class="font-extrabold text-blue-600">distinctiveness</span>, and <span class="font-extrabold text-orange-500">real-world usability</span>. Your logo must look sharp on a website header, a business card, an invoice, packaging, and social profiles. We design with these real applications in mind, and we deliver exports you can actually use.
         <br/><br/>
-        Every package includes <span class="font-semibold text-slate-900">unlimited revisions</span>—because results matter more than arbitrary limits. You’ll receive strong initial concepts quickly, then we refine the direction based on your feedback until it fits your brand voice. Need modern minimalist? Bold and energetic? Elegant and high-end? Vintage or emblem style? We can tailor the typography, icon language, spacing, and color approach to match your audience.
+        Every package includes <span class="font-extrabold text-blue-600">unlimited revisions</span>—because results matter more than arbitrary limits. You’ll receive strong initial concepts quickly, then we refine the direction based on your feedback until it fits your brand voice. Need modern minimalist? Bold and energetic? Elegant and high-end? Vintage or emblem style? We can tailor the typography, icon language, spacing, and color approach to match your audience.
         <br/><br/>
-        We keep communication streamlined through email, which helps us stay precise, track revisions, and deliver fast. You’ll always know what’s next and what you’ll receive at the end. If you’re ready for a <span class="font-semibold text-slate-900">professional logo design service</span> that’s affordable and reliable, request a free quote or choose a package below.
+        We keep communication streamlined through email, which helps us stay precise, track revisions, and deliver fast. You’ll always know what’s next and what you’ll receive at the end. If you’re ready for a <span class="font-extrabold text-emerald-600">professional logo design service</span> that’s affordable and reliable, request a free quote or choose a package below.
       `;
 
   const galleryItems = [
@@ -1133,9 +1289,27 @@ const LogoDesignPage = () => {
   ];
 
   return `
-        ${heroBand({
+        <style>
+          @keyframes slideUpFade {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          .animate-logo-page { opacity: 0; animation: slideUpFade 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+          .stagger-1 { animation-delay: 0.1s; }
+          .stagger-2 { animation-delay: 0.3s; }
+          .stagger-3 { animation-delay: 0.5s; }
+          
+          .gradient-text-blue { background: linear-gradient(to right, #2563eb, #3b82f6); -webkit-background-clip: text; color: transparent; }
+          .gradient-text-emerald { background: linear-gradient(to right, #059669, #10b981); -webkit-background-clip: text; color: transparent; }
+          
+          .logo-card-hover { transition: all 0.4s ease; }
+          .logo-card-hover:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.15); }
+        </style>
+
+        <div class="animate-logo-page">
+          ${heroBand({
     kicker: "Logo Design • USA, Canada & Worldwide",
-    title: "Affordable custom logo design that looks premium",
+    title: "Affordable custom <span class='gradient-text-blue'>logo design</span> that looks premium",
     subtitle: "Get distinct, market-aware logo concepts with unlimited revisions and production-ready files—delivered fast via clear email communication.",
     primaryHref: "#logo-packages",
     primaryText: "Order Now",
@@ -1143,42 +1317,55 @@ const LogoDesignPage = () => {
     secondaryText: "Get a Free Quote",
     bgGenId: "logo-hero-banners"
   })}
+        </div>
 
-        ${longSEOBlock(seoHtml)}
+        <div class="animate-logo-page stagger-1">
+          ${longSEOBlock(seoHtml)}
+        </div>
 
-        <!-- Packages -->
-        <section id="logo-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-          <div class="flex items-end justify-between gap-6">
+        <section id="logo-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16 animate-logo-page stagger-2">
+          <div class="flex items-end justify-between gap-6 border-l-4 border-blue-500 pl-6">
             <div>
-              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Logo Design packages</h2>
-              <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Choose your package and check out securely via PayPal. Need something custom? Request a free quote.</p>
+              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Logo Design <span class="text-blue-600">packages</span></h2>
+              <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Choose your package and check out securely via PayPal. Need something custom? <span class="text-orange-500 font-bold">Request a free quote.</span></p>
             </div>
-            <a href="#/pricing#logo-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
+            <a href="#/pricing#logo-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-blue-100 bg-blue-50/50 px-4 py-2.5 text-sm font-bold text-blue-700 hover:bg-blue-100 transition-all">
               View all pricing <i class="bi bi-arrow-up-right text-sm"></i>
             </a>
           </div>
           <div class="mt-8 grid gap-5 lg:grid-cols-3">
-            ${packages.map(p => pricingCard(p)).join("")}
+            ${packages.map(p => `
+              <div class="logo-card-hover">
+                ${pricingCard(p)}
+              </div>
+            `).join("")}
           </div>
         </section>
 
-        ${galleryGrid(galleryItems, "logo-gallery")}
+        <div class="animate-logo-page stagger-3">
+          ${galleryGrid(galleryItems, "logo-gallery")}
+        </div>
 
-        ${faqHTML(faqItems)}
+        <div class="bg-slate-50/50 animate-logo-page stagger-1">
+          ${faqHTML(faqItems)}
+        </div>
 
-        ${ctaBand({
-    title: "Want your logo to look credible everywhere?",
+        <div class="animate-logo-page">
+          ${ctaBand({
+    title: "Want your logo to look <span class='text-orange-500'>credible everywhere?</span>",
     subtitle: "Get a free quote or jump to transparent pricing. We serve USA, Canada, and worldwide businesses with fast delivery and unlimited revisions.",
     primaryHref: "#/contact",
     primaryText: "Get a Free Quote",
     secondaryHref: "#/pricing#logo-design",
     secondaryText: "View Logo Pricing",
-    bg: "from-teal-50 to-blue-50"
+    bg: "from-blue-50 via-white to-emerald-50"
   })}
+        </div>
 
         ${footerHTML()}
       `;
 };
+
 
 
 const BusinessCardPage = () => {
@@ -1191,16 +1378,17 @@ const BusinessCardPage = () => {
 
   const packages = PRICING_DATA.digitalAds;
 
+  // Updated SEO text with beautiful colourful spans
   const seoHtml = `
         Your ad creative is often the first impression of your offer—so it needs to communicate value fast. True Designs provides
-        <span class="font-semibold text-slate-900">affordable digital ads &amp; banner design</span> for businesses in the <span class="font-semibold text-slate-900">USA</span>, <span class="font-semibold text-slate-900">Canada</span>, and <span class="font-semibold text-slate-900">worldwide</span>, with a workflow that’s simple and fast.
+        <span class="font-extrabold text-blue-600 underline decoration-blue-200 underline-offset-4">affordable digital ads &amp; banner design</span> for businesses in the <span class="font-extrabold text-orange-500">USA</span>, <span class="font-extrabold text-emerald-600">Canada</span>, and <span class="font-extrabold text-blue-600">worldwide</span>, with a workflow that’s simple and fast.
         <br/><br/>
-        We design ad creatives that are built for performance: clear hierarchy, readable typography at small sizes, and strong CTAs. Whether you’re running
+        We design ad creatives that are built for performance: <span class="text-blue-700 font-bold">clear hierarchy</span>, readable typography at small sizes, and <span class="text-orange-600 font-bold">strong CTAs</span>. Whether you’re running
         Google Display, website hero banners, Facebook/Instagram promos, LinkedIn ads, or retargeting campaigns, we’ll deliver properly sized exports that match your placements.
         <br/><br/>
-        Unlimited revisions are included so you don’t get stuck with “almost right.” We’ll refine the layout, messaging emphasis, colors, and CTA treatment until the creative feels sharp and conversion-ready.
+        <span class="text-emerald-600 font-extrabold">Unlimited revisions</span> are included so you don’t get stuck with “almost right.” We’ll refine the layout, messaging emphasis, colors, and CTA treatment until the creative feels sharp and conversion-ready.
         <br/><br/>
-        Our goal is simple: deliver ad designs that look premium, read clearly, and stay consistent across multiple sizes—at an affordable price. Choose a package below or request a free quote for a custom campaign set.
+        Our goal is simple: deliver ad designs that look <span class="text-blue-600 font-bold">premium</span>, read clearly, and stay consistent across multiple sizes—at an affordable price. Choose a package below or request a free quote for a custom campaign set.
       `;
 
   const galleryItems = [
@@ -1225,9 +1413,25 @@ const BusinessCardPage = () => {
   ];
 
   return `
-        ${heroBand({
+        <style>
+          @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fade { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
+          .delay-1 { animation-delay: 0.2s; }
+          .delay-2 { animation-delay: 0.4s; }
+          .delay-3 { animation-delay: 0.6s; }
+          
+          .color-title-blue { color: #2563eb; }
+          .color-title-orange { color: #f97316; }
+          .color-title-emerald { color: #059669; }
+        </style>
+
+        <div class="animate-fade">
+          ${heroBand({
     kicker: "Digital Ads &amp; Banner Design • High-converting creatives",
-    title: "Digital ads and banners that read clearly and convert",
+    title: "Digital <span class='color-title-blue'>ads</span> and <span class='color-title-emerald'>banners</span> that convert",
     subtitle: "Get scroll-stopping creatives with strong hierarchy, properly sized exports, fast turnaround, and unlimited revisions—serving USA, Canada & worldwide.",
     primaryHref: "#ads-packages",
     primaryText: "View Packages",
@@ -1235,16 +1439,19 @@ const BusinessCardPage = () => {
     secondaryText: "Get a Free Quote",
     bgGenId: "ads-hero-banners"
   })}
+        </div>
 
-        ${longSEOBlock(seoHtml)}
+        <div class="animate-fade delay-1">
+          ${longSEOBlock(seoHtml)}
+        </div>
 
-        <section id="ads-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-          <div class="flex items-end justify-between gap-6">
+        <section id="ads-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16 animate-fade delay-2">
+          <div class="flex items-end justify-between gap-6 border-l-4 border-orange-500 pl-6">
             <div>
-              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Digital Ads &amp; Banner Design packages</h2>
-              <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Transparent, affordable packages with PayPal checkout and unlimited revisions.</p>
+              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Digital Ads &amp; <span class="color-title-orange">Banner Design</span> packages</h2>
+              <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Transparent, affordable packages with PayPal checkout and <span class="text-emerald-600 font-bold">unlimited revisions</span>.</p>
             </div>
-            <a href="#/pricing#digital-ads-banner-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
+            <a href="#/pricing#digital-ads-banner-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:border-blue-500 hover:text-blue-600 transition-all">
               View all pricing <i class="bi bi-arrow-up-right text-sm"></i>
             </a>
           </div>
@@ -1253,39 +1460,53 @@ const BusinessCardPage = () => {
           </div>
         </section>
 
-        ${galleryGrid(galleryItems, "ads-gallery")}
+        <div class="animate-fade delay-3">
+          ${galleryGrid(galleryItems, "ads-gallery")}
+        </div>
 
-        ${faqHTML(faqItems)}
+        <div class="animate-fade delay-1">
+          ${faqHTML(faqItems)}
+        </div>
 
-        ${ctaBand({
-    title: "Need a consistent banner set for your campaign?",
+        <div class="animate-fade">
+          ${ctaBand({
+    title: "Need a <span class='color-title-blue'>consistent</span> banner set for your campaign?",
     subtitle: "Choose a package for fast checkout or request a free quote for additional sizes and A/B variants. We deliver worldwide.",
     primaryHref: "#/contact",
     primaryText: "Get a Free Quote",
     secondaryHref: "#/pricing#digital-ads-banner-design",
     secondaryText: "View Ads Pricing",
-    bg: "from-white to-slate-50"
+    bg: "from-blue-50 via-white to-orange-50/30"
   })}
+        </div>
 
         ${footerHTML()}
       `;
 };
+
+
 const StationeryPage = () => {
   setMeta({
     title: "Affordable Custom T‑Shirt & Merch Design | True Designs - USA, Canada & Worldwide",
     description: "Affordable custom T‑shirt & merch design—print-ready apparel graphics and merch visuals built for strong branding. True Designs serves USA, Canada, and worldwide clients.",
     keywords: "affordable custom t-shirt merch design USA Canada worldwide, t-shirt design, apparel graphics, merch design, print-ready t-shirt files",
     canonical: "https://td-designs.com/custom-tshirt-merch-design"
-  }); const packages = PRICING_DATA.tshirt; const seoHtml = `
+  });
+
+  const packages = PRICING_DATA.tshirt;
+
+  const seoHtml = `
         Cohesive stationery can instantly make a business feel established. From proposals and invoices to client onboarding and thank-you notes, professional stationery reinforces your brand at every touchpoint.
-        True Designs provides <span class="font-semibold text-slate-900">affordable stationery design</span> for clients in the <span class="font-semibold text-slate-900">USA</span>, <span class="font-semibold text-slate-900">Canada</span>, and <span class="font-semibold text-slate-900">worldwide</span>.
+        True Designs provides <span class="font-extrabold text-emerald-600">affordable stationery design</span> for clients in the <span class="font-extrabold text-blue-600">USA</span>, <span class="font-extrabold text-orange-500">Canada</span>, and <span class="font-extrabold text-emerald-600">worldwide</span>.
         <br/><br/>
         Our stationery packages are designed to be practical and production-ready. We pay attention to spacing, type scale, and alignment so documents feel premium while remaining easy to read. We also set up layouts with the right margins and bleed requirements for professional printing. Whether your brand style is minimal and modern, elegant and high-end, or bold and energetic, we translate that tone into a consistent system.
         <br/><br/>
         Many clients start with a logo, then add stationery to keep their brand consistent across email signatures, printed letterheads, and office collateral. If you already have a logo and colors, we’ll match them precisely; if you’re building from scratch, we can recommend a direction that aligns with your market and audience.
         <br/><br/>
-        With unlimited revisions and clear email communication, you’ll get a finished stationery set you can use immediately—no guesswork, no missing files, and no slow back-and-forth. Choose a package below or request a custom quote for additional items.
-      `; const galleryItems = [
+        With <span class="font-bold text-blue-600">unlimited revisions</span> and clear email communication, you’ll get a finished stationery set you can use immediately—no guesswork, no missing files, and no slow back-and-forth. Choose a package below or request a custom quote for additional items.
+      `;
+
+  const galleryItems = [
     { title: "Streetwear Back Print", tag: "Streetwear • Bold", caption: "Drop-style back graphic with strong contrast.", alt: "Streetwear t-shirt back print mockup" },
     { title: "Minimal Chest Logo", tag: "Minimal • Clean", caption: "Small front placement designed for crisp print.", alt: "Minimal chest logo t-shirt mockup" },
     { title: "Event Tee Design", tag: "Event • Merch", caption: "Typography-led design for staff and attendees.", alt: "Event t-shirt design mockup" },
@@ -1296,50 +1517,77 @@ const StationeryPage = () => {
     { title: "Gym/Brand Statement Tee", tag: "Fitness • Type", caption: "Bold type layout designed for readability on fabric.", alt: "Gym statement t-shirt design mockup" },
     { title: "Clean Vector Graphic", tag: "Vector • Print-ready", caption: "Crisp vector-first graphic with clean edges.", alt: "Vector graphic t-shirt design mockup" },
     { title: "Merch Drop Variants", tag: "Drop • Variants", caption: "Multiple colorway/placement variants for collections.", alt: "Merch drop variants mockup" }
-  ]; const faqItems = [
+  ];
+
+  const faqItems = [
     { q: "What items are included in stationery design?", a: "Depending on the package, we design letterhead, envelope, and business cards as a cohesive set. Premium can include variants as well." },
     { q: "Do you provide print-ready files?", a: "Yes. You’ll receive print-ready PDFs prepared with proper margins and bleed when required." },
     { q: "Can you match my existing logo and brand colors?", a: "Yes. Send your logo files and any brand guidelines and we’ll build stationery that aligns perfectly." },
     { q: "Can you add more items (folders, invoices, email signature)?", a: "Yes. Request a free quote and list the items you need—our team will provide a clear estimate." },
-    { q: "Is this service available worldwide?", a: "Yes. We work with clients in the USA, Canada, and worldwide. All communication and file delivery is handled by email." }
+    { q: "Is this service available worldwide?", a: "Yes. We work with clients in the USA, Canada. All communication and file delivery is handled by email." }
   ];
 
-  return `${heroBand({
+  return `
+    <style>
+      @keyframes revealUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+      .reveal { opacity: 0; animation: revealUp 0.8s ease-out forwards; }
+      .d-1 { animation-delay: 0.2s; } .d-2 { animation-delay: 0.4s; }
+    </style>
+
+    <div class="reveal">
+      ${heroBand({
     kicker: "Custom T‑Shirt &amp; Merch Design • Print-ready apparel graphics",
-    title: "Merch designs that look bold and print clean",
+    title: "<span class='text-blue-600'>Merch designs that look bold</span> and <span class='text-emerald-600'>print perfectly clean every time.</span>",
     subtitle: "Get custom apparel graphics and merch visuals designed for production—print-ready files, fast turnaround, and unlimited revisions for USA, Canada &amp; worldwide clients.",
     primaryHref: "#stationery-packages",
     primaryText: "Get Packages",
     secondaryHref: "#/contact",
     secondaryText: "Get a Free Quote",
     bgGenId: "stationery-hero-set"
-  })}${longSEOBlock(seoHtml)}
+  })}
+    </div>
 
-        <section id="stationery-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-          <div class="flex items-end justify-between gap-6">
-            <div>
-              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Stationery Design packages</h2>
-              <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Affordable packages with discounts, unlimited revisions, and PayPal checkout.</p>
-            </div><a href="#/pricing#custom-tshirt-merch-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
-              View all pricing <i class="bi bi-arrow-up-right text-sm"></i>
-            </a></div>
-          <div class="mt-8 grid gap-5 lg:grid-cols-3">
-            ${packages.map(p => pricingCard(p)).join("")}
-          </div>
-        </section>
+    <div class="reveal d-1">
+      ${longSEOBlock(seoHtml)}
+    </div>
 
-        ${galleryGrid(galleryItems, "stationery-gallery")}
+    <section id="stationery-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16 reveal d-2">
+      <div class="flex items-end justify-between gap-6 border-l-4 border-blue-500 pl-6">
+        <div>
+          <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Stationery <span class="text-blue-600">Design packages</span></h2>
+          <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Affordable packages with discounts, <span class="text-emerald-600 font-bold">unlimited revisions</span>, and PayPal checkout.</p>
+        </div>
+        <a href="#/pricing#custom-tshirt-merch-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:border-blue-500 hover:text-blue-600 transition">
+          View all pricing <i class="bi bi-arrow-up-right text-sm"></i>
+        </a>
+      </div>
+      <div class="mt-8 grid gap-5 lg:grid-cols-3">
+        ${packages.map(p => pricingCard(p)).join("")}
+      </div>
+    </section>
 
-        ${faqHTML(faqItems)}${ctaBand({
-    title: "Ready to launch merch that feels premium?",
+    <div class="reveal d-2">
+      ${galleryGrid(galleryItems, "stationery-gallery")}
+    </div>
+
+    <div class="reveal">
+      ${faqHTML(faqItems)}
+    </div>
+
+    <div class="reveal">
+      ${ctaBand({
+    title: "<span class='text-emerald-600'>Ready to launch merch</span> that <span class='text-blue-600'>feels truly premium?</span>",
     subtitle: "Jump to transparent pricing or request a free quote for multiple SKUs, placements, or a full merch drop. We deliver worldwide.",
     primaryHref: "#/pricing#custom-tshirt-merch-design",
     primaryText: "View Merch Pricing",
     secondaryHref: "#/contact",
     secondaryText: "Get a Free Quote",
-    bg: "from-teal-50 to-blue-50"
-  })}${footerHTML()}
-      `;
+    bg: "from-teal-50 via-white to-blue-50"
+  })}
+    </div>
+
+    ${footerHTML()}
+  `;
 };
 
 const GraphicDesignPage = () => {
@@ -1353,13 +1601,13 @@ const GraphicDesignPage = () => {
   const packages = PRICING_DATA.graphic;
 
   const seoHtml = `
-        Marketing moves fast—and your visuals need to keep up. True Designs provides <span class="font-semibold text-slate-900">affordable graphic design</span> for businesses in the <span class="font-semibold text-slate-900">USA</span>, <span class="font-semibold text-slate-900">Canada</span>, and <span class="font-semibold text-slate-900">worldwide</span>, with a focus on clarity, hierarchy, and results.
+        Marketing moves fast—and your visuals need to keep up. True Designs provides <span class="font-extrabold text-orange-500">affordable graphic design</span> for businesses in the <span class="font-extrabold text-blue-600">USA</span>, <span class="font-extrabold text-emerald-600">Canada</span>, and <span class="font-extrabold text-orange-500">worldwide</span>, with a focus on clarity, hierarchy, and results.
         <br/><br/>
         Whether you need event flyers, posters, social media banners, Instagram carousels, menus, YouTube thumbnails, or clean infographics, we design assets that grab attention while staying readable. Great graphics are not just “pretty”—they guide the eye, highlight the offer, and make your brand feel credible.
         <br/><br/>
-        Our process is simple: you share your goal, audience, and any brand references; we deliver strong drafts quickly; then we refine based on feedback with unlimited revisions. You’ll receive files sized correctly for the platforms you’re using, plus high-resolution exports ready to publish or print.
+        Our process is simple: you share your goal, audience, and any brand references; we deliver strong drafts quickly; then we refine based on feedback with <span class="text-blue-600 font-bold">unlimited revisions</span>. You’ll receive files sized correctly for the platforms you’re using, plus high-resolution exports ready to publish or print.
         <br/><br/>
-        If you’re running a promotion or launching something new, our multi-piece packages make it easy to keep a consistent look across all channels. Choose a package below or request a free quote for ongoing design support.
+        If you’re running a promotion or launching something new, our multi-piece packages make it easy to keep a <span class="text-emerald-600 font-bold">consistent look</span> across all channels. Choose a package below or request a free quote for ongoing design support.
       `;
 
   const galleryItems = [
@@ -1376,17 +1624,24 @@ const GraphicDesignPage = () => {
   ];
 
   const faqItems = [
-    { q: "What types of graphic design do you offer?", a: "Flyers, posters, menus, social media graphics, ad creatives, infographics, thumbnails, and more. If it’s a visual asset, we can design it." },
-    { q: "Do you deliver files sized for each platform?", a: "Yes. Tell us where you’ll use the designs (Instagram, Facebook, print size, etc.), and we’ll provide the correct dimensions." },
+    { q: "What types of graphic design do you offer?", a: "Flyers, posters, menus, social media graphics, ad creatives, infographics, thumbnails, and more." },
+    { q: "Do you deliver files sized for each platform?", a: "Yes. Tell us where you’ll use the designs and we’ll provide the correct dimensions." },
     { q: "Can you match my brand guidelines?", a: "Absolutely. Share your brand colors, fonts, and logo, and we’ll maintain consistent styling." },
-    { q: "Do you include source files?", a: "Premium packages include source files where applicable. If you need a specific file type, request a free quote and we’ll confirm." },
-    { q: "Can you design a full campaign set?", a: "Yes. Our Professional and Premium packages are ideal for multi-piece campaign assets with consistent styling across formats." }
+    { q: "Do you include source files?", a: "Premium packages include source files where applicable." },
+    { q: "Can you design a full campaign set?", a: "Yes. Our Professional and Premium packages are ideal for multi-piece campaign assets." }
   ];
 
   return `
-        ${heroBand({
+    <style>
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+      .reveal { opacity: 0; animation: fadeIn 0.8s ease forwards; }
+      .delay-1 { animation-delay: 0.2s; } .delay-2 { animation-delay: 0.4s; }
+    </style>
+
+    <div class="reveal">
+      ${heroBand({
     kicker: "Graphic Design • Campaign-ready visuals",
-    title: "Graphic design that looks clean and sells clearly",
+    title: "<span class='text-orange-500'>Graphic design that looks clean</span> and <span class='text-blue-600'>sells your message with clarity.</span>",
     subtitle: "Flyers, posters, social media, menus, and more—designed with strong hierarchy, fast turnaround, and unlimited revisions for USA/Canada/worldwide clients.",
     primaryHref: "#graphic-packages",
     primaryText: "View Pricing",
@@ -1394,40 +1649,49 @@ const GraphicDesignPage = () => {
     secondaryText: "Get a Free Quote",
     bgGenId: "graphic-hero-layered"
   })}
+    </div>
 
-        ${longSEOBlock(seoHtml)}
+    <div class="reveal delay-1">
+      ${longSEOBlock(seoHtml)}
+    </div>
 
-        <section id="graphic-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-          <div class="flex items-end justify-between gap-6">
-            <div>
-              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Graphic Design packages</h2>
-              <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Choose a package for quick checkout or request a custom quote for ongoing design.</p>
-            </div>
-            <a href="#/pricing#graphic-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
-              View all pricing <i class="bi bi-arrow-up-right text-sm"></i>
-            </a>
-          </div>
-          <div class="mt-8 grid gap-5 lg:grid-cols-3">
-            ${packages.map(p => pricingCard(p)).join("")}
-          </div>
-        </section>
+    <section id="graphic-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16 reveal delay-2">
+      <div class="flex items-end justify-between gap-6 border-l-4 border-orange-500 pl-6">
+        <div>
+          <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Graphic <span class="text-orange-600">Design packages</span></h2>
+          <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Choose a package for quick checkout or <span class="text-blue-600 font-bold">request a custom quote</span> for ongoing design.</p>
+        </div>
+        <a href="#/pricing#graphic-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:text-orange-600 transition">
+          View all pricing <i class="bi bi-arrow-up-right text-sm"></i>
+        </a>
+      </div>
+      <div class="mt-8 grid gap-5 lg:grid-cols-3">
+        ${packages.map(p => pricingCard(p)).join("")}
+      </div>
+    </section>
 
-        ${galleryGrid(galleryItems, "graphic-gallery")}
+    <div class="reveal delay-2">
+      ${galleryGrid(galleryItems, "graphic-gallery")}
+    </div>
 
-        ${faqHTML(faqItems)}
+    <div class="reveal">
+      ${faqHTML(faqItems)}
+    </div>
 
-        ${ctaBand({
-    title: "Need a campaign that looks consistent everywhere?",
+    <div class="reveal">
+      ${ctaBand({
+    title: "<span class='text-blue-600'>Need a campaign</span> that looks <span class='text-orange-500'>consistent across all platforms?</span>",
     subtitle: "Get a free quote and tell us what you’re promoting. We’ll deliver a clean, on-brand system sized for your channels.",
     primaryHref: "#/contact",
     primaryText: "Get a Free Quote",
     secondaryHref: "#/pricing#graphic-design",
     secondaryText: "View Graphic Pricing",
-    bg: "from-white to-slate-50"
+    bg: "from-orange-50 via-white to-blue-50"
   })}
+    </div>
 
-        ${footerHTML()}
-      `;
+    ${footerHTML()}
+  `;
 };
 
 const WebDesignPage = () => {
@@ -1442,19 +1706,19 @@ const WebDesignPage = () => {
 
   const seoHtml = `
         A website is often the first “sales conversation” your business has with a new customer. If the layout feels cluttered or outdated, trust drops instantly. True Designs provides
-        <span class="font-semibold text-slate-900">affordable web design</span> with a focus on clarity and conversion—serving clients in the <span class="font-semibold text-slate-900">USA</span>, <span class="font-semibold text-slate-900">Canada</span>, and <span class="font-semibold text-slate-900">worldwide</span>.
+        <span class="font-extrabold text-blue-600">affordable web design</span> with a focus on clarity and conversion—serving clients in the <span class="font-extrabold text-orange-500">USA</span>, <span class="font-extrabold text-emerald-600">Canada</span>, and <span class="font-extrabold text-blue-600">worldwide</span>.
         <br/><br/>
         Our approach is simple: we design pages that make it obvious what you do, who you help, and what action to take next. We use strong typography, generous spacing, and a clean visual rhythm so content is easy to scan. This is especially important for service businesses where credibility needs to be established quickly.
         <br/><br/>
-        We can design single-page websites for fast launches or multi-page sites with clear navigation, service detail pages, pricing sections, testimonials, and contact flows. Every design is responsive and built to look great on mobile—where most customers will first find you.
+        We can design <span class="text-emerald-600 font-bold">single-page websites</span> for fast launches or multi-page sites with clear navigation, service detail pages, pricing sections, testimonials, and contact flows. Every design is responsive and built to look great on mobile—where most customers will first find you.
         <br/><br/>
-        While we focus on the design deliverable, our files are prepared for easy handoff to developers. You’ll receive organized layouts and guidance that helps your build go smoother. If you want a conversion-focused site that looks premium and stays affordable, choose a package below or request a free quote.
+        While we focus on the design deliverable, our files are prepared for easy handoff to developers. You’ll receive organized layouts and guidance that helps your build go smoother. If you want a <span class="text-blue-600 font-bold">conversion-focused site</span> that looks premium and stays affordable, choose a package below or request a free quote.
       `;
 
   const galleryItems = [
-    { title: "Agency Homepage", tag: "Agency • Modern", caption: "Editorial hero, service grid, and strong CTAs.", alt: "Agency website homepage mockup in device frames" },
-    { title: "Clinic Website", tag: "Healthcare • Trust", caption: "Clean hierarchy designed to build confidence quickly.", alt: "Clinic website mockup on desktop and mobile" },
-    { title: "Restaurant Website", tag: "Food • Visual", caption: "Menu-forward layout with reservations CTA.", alt: "Restaurant website mockup on devices" },
+    { title: "Agency Homepage", tag: "Agency • Modern", caption: "Editorial hero, service grid, and strong CTAs.", alt: "Agency website homepage mockup" },
+    { title: "Clinic Website", tag: "Healthcare • Trust", caption: "Clean hierarchy designed to build confidence quickly.", alt: "Clinic website mockup" },
+    { title: "Restaurant Website", tag: "Food • Visual", caption: "Menu-forward layout with reservations CTA.", alt: "Restaurant website mockup" },
     { title: "SaaS Landing Page", tag: "SaaS • Conversion", caption: "Feature-led sections with benefit clarity.", alt: "SaaS landing page mockup" },
     { title: "Portfolio Site", tag: "Portfolio • Minimal", caption: "Minimal grid with refined typography and whitespace.", alt: "Portfolio website mockup" },
     { title: "Consulting Website", tag: "Professional • Clean", caption: "Trust badges, testimonials, and clear service blocks.", alt: "Consulting website mockup" },
@@ -1465,17 +1729,24 @@ const WebDesignPage = () => {
   ];
 
   const faqItems = [
-    { q: "Are these packages for design only or full development?", a: "These packages cover web design deliverables (mockups/layouts). If you need a custom build quote, request a free quote and we’ll advise based on your stack." },
-    { q: "Will my design be mobile responsive?", a: "Yes. We design responsive layouts and provide desktop and mobile views so the site looks polished on all devices." },
-    { q: "Can you design multiple pages?", a: "Yes. Our Professional and Premium packages are built for multi-page websites. If you need more pages, we can quote it." },
-    { q: "Do you include conversion elements like CTAs and testimonials?", a: "Yes. We design with conversion in mind—clear CTAs, trust badges, testimonial placement, and scannable sections." },
-    { q: "Can you match my brand style?", a: "Absolutely. Share your logo, brand colors, and examples you like, and we’ll build a cohesive visual direction." }
+    { q: "Are these packages for design only or full development?", a: "These packages cover web design deliverables (mockups/layouts). If you need a custom build quote, request a free quote." },
+    { q: "Will my design be mobile responsive?", a: "Yes. We design responsive layouts and provide desktop and mobile views." },
+    { q: "Can you design multiple pages?", a: "Yes. Our Professional and Premium packages are built for multi-page websites." },
+    { q: "Do you include conversion elements like CTAs and testimonials?", a: "Yes. We design with conversion in mind." },
+    { q: "Can you match my brand style?", a: "Absolutely. Share your logo, brand colors, and examples you like." }
   ];
 
   return `
-        ${heroBand({
+    <style>
+      @keyframes revealIn { from { opacity: 0; transform: scale(0.98) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+      .reveal { opacity: 0; animation: revealIn 0.8s cubic-bezier(0.1, 0.9, 0.2, 1) forwards; }
+      .stagger-1 { animation-delay: 0.2s; } .stagger-2 { animation-delay: 0.4s; }
+    </style>
+
+    <div class="reveal">
+      ${heroBand({
     kicker: "Web Design • Conversion-first UI",
-    title: "Web design built to convert and build trust",
+    title: "<span class='text-blue-600'>Web design built to convert visitors</span> into <span class='text-emerald-600'>customers who trust your brand.</span>",
     subtitle: "Modern, responsive page designs with clear hierarchy—crafted for USA, Canada & worldwide clients who want premium results without premium pricing.",
     primaryHref: "#web-packages",
     primaryText: "View Packages",
@@ -1483,41 +1754,51 @@ const WebDesignPage = () => {
     secondaryText: "Get a Free Quote",
     bgGenId: "web-hero-devices"
   })}
+    </div>
 
-        ${longSEOBlock(seoHtml)}
+    <div class="reveal stagger-1">
+      ${longSEOBlock(seoHtml)}
+    </div>
 
-        <section id="web-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-          <div class="flex items-end justify-between gap-6">
-            <div>
-              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Web Design packages</h2>
-              <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Choose a package and check out via PayPal, or request a custom quote if your project is larger.</p>
-            </div>
-            <a href="#/pricing#web-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
-              View all pricing <i class="bi bi-arrow-up-right text-sm"></i>
-            </a>
-          </div>
-          <div class="mt-8 grid gap-5 lg:grid-cols-3">
-            ${packages.map(p => pricingCard(p)).join("")}
-          </div>
-        </section>
+    <section id="web-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16 reveal stagger-2">
+      <div class="flex items-end justify-between gap-6 border-l-4 border-emerald-500 pl-6">
+        <div>
+          <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Web <span class="text-emerald-600">Design packages</span></h2>
+          <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Choose a package and check out via PayPal, or <span class="text-blue-600 font-bold">request a custom quote</span> if your project is larger.</p>
+        </div>
+        <a href="#/pricing#web-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:text-emerald-600 transition">
+          View all pricing <i class="bi bi-arrow-up-right text-sm"></i>
+        </a>
+      </div>
+      <div class="mt-8 grid gap-5 lg:grid-cols-3">
+        ${packages.map(p => pricingCard(p)).join("")}
+      </div>
+    </section>
 
-        ${galleryGrid(galleryItems, "web-gallery")}
+    <div class="reveal stagger-2">
+      ${galleryGrid(galleryItems, "web-gallery")}
+    </div>
 
-        ${faqHTML(faqItems)}
+    <div class="reveal">
+      ${faqHTML(faqItems)}
+    </div>
 
-        ${ctaBand({
-    title: "Want a website that looks premium and reads clearly?",
+    <div class="reveal">
+      ${ctaBand({
+    title: "<span class='text-emerald-600'>Want a website</span> that <span class='text-blue-600'>looks premium and reads clearly?</span>",
     subtitle: "Request a free quote and share your industry + goals. We’ll recommend a package and deliver a conversion-focused design.",
     primaryHref: "#/contact",
     primaryText: "Get a Free Quote",
     secondaryHref: "#/pricing#web-design",
     secondaryText: "View Web Pricing",
-    bg: "from-teal-50 to-blue-50"
+    bg: "from-blue-50 via-white to-emerald-50"
   })}
+    </div>
 
-        ${footerHTML()}
-      `;
+    ${footerHTML()}
+  `;
 };
+
 
 const EcommercePage = () => {
   setMeta({
@@ -1531,13 +1812,13 @@ const EcommercePage = () => {
 
   const seoHtml = `
         For online stores, design is directly tied to revenue. Product pages must feel trustworthy, collections must be easy to scan, and checkout must be frictionless. True Designs offers
-        <span class="font-semibold text-slate-900">affordable e-commerce website design</span> for businesses in the <span class="font-semibold text-slate-900">USA</span>, <span class="font-semibold text-slate-900">Canada</span>, and <span class="font-semibold text-slate-900">worldwide</span>, built around a conversion-first structure.
+        <span class="font-extrabold text-blue-600">affordable</span> e-commerce website design for businesses in the <span class="font-extrabold text-orange-500">USA</span>, <span class="font-extrabold text-emerald-600">Canada</span>, and <span class="font-extrabold text-blue-600">worldwide</span>, built around a conversion-first structure.
         <br/><br/>
-        We design key templates such as your homepage, collection pages, product detail pages (PDP), cart, and checkout. Our layouts prioritize product clarity, strong hierarchy, trust signals (reviews, shipping/returns, guarantees), and a clean visual rhythm. Whether you sell fashion, food, electronics, beauty, or home goods, we tailor the UI to match your market and price point.
+        We design key templates such as your homepage, collection pages, product detail pages (PDP), cart, and checkout. Our layouts prioritize product <span class="text-emerald-600 font-bold">clarity</span>, strong hierarchy, trust signals (reviews, shipping/returns, guarantees), and a clean visual rhythm. Whether you sell fashion, food, electronics, beauty, or home goods, we tailor the UI to match your market and price point.
         <br/><br/>
-        Unlimited revisions are included so you can refine details like product modules, image ratios, typography, badge placement, and call-to-action language. You’ll get responsive designs for desktop and mobile, plus a reusable component approach that makes development smoother.
+        <span class="text-blue-600 font-bold">Unlimited</span> revisions are included so you can refine details like product modules, image ratios, typography, badge placement, and call-to-action language. You’ll get responsive designs for desktop and mobile, plus a reusable component approach that makes development smoother.
         <br/><br/>
-        If you want an e-commerce site that feels premium and converts better—without overpaying—choose a package below or request a free quote and tell us what you sell.
+        If you want an e-commerce site that feels <span class="text-orange-500 font-bold">premium</span> and converts better—without overpaying—choose a package below or request a free quote and tell us what you sell.
       `;
 
   const galleryItems = [
@@ -1562,9 +1843,21 @@ const EcommercePage = () => {
   ];
 
   return `
-        ${heroBand({
+        <style>
+          @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+          }
+          .animate-reveal { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
+          .stagger-1 { animation-delay: 0.2s; }
+          .stagger-2 { animation-delay: 0.4s; }
+          .stagger-3 { animation-delay: 0.6s; }
+        </style>
+
+        <div class="animate-reveal">
+          ${heroBand({
     kicker: "E-Commerce Website • Product-to-checkout UX",
-    title: "E-commerce design that sells with clarity",
+    title: "E-commerce design that <span class='text-blue-600'>sells</span> with <span class='text-emerald-600'>clarity</span>",
     subtitle: "Product pages, collections, cart, and checkout layouts designed for trust and conversion—affordable for USA, Canada & worldwide brands.",
     primaryHref: "#ecom-packages",
     primaryText: "View Packages",
@@ -1572,16 +1865,19 @@ const EcommercePage = () => {
     secondaryText: "Get a Free Quote",
     bgGenId: "ecom-hero-checkout"
   })}
+        </div>
 
-        ${longSEOBlock(seoHtml)}
+        <div class="animate-reveal stagger-1">
+          ${longSEOBlock(seoHtml)}
+        </div>
 
-        <section id="ecom-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-          <div class="flex items-end justify-between gap-6">
+        <section id="ecom-packages" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16 animate-reveal stagger-2">
+          <div class="flex items-end justify-between gap-6 border-l-4 border-blue-500 pl-6">
             <div>
-              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">E-Commerce Website packages</h2>
-              <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Pick a package that matches your store size and checkout complexity.</p>
+              <h2 class="font-display text-3xl sm:text-4xl text-slate-900">E-Commerce <span class="text-blue-600">Website</span> packages</h2>
+              <p class="mt-3 text-slate-600 leading-7 max-w-2xl">Pick a package that matches your store <span class="text-orange-500 font-bold">size</span> and checkout complexity.</p>
             </div>
-            <a href="#/pricing#e-commerce-website" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
+            <a href="#/pricing#e-commerce-website" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:text-emerald-600 transition-all">
               View all pricing <i class="bi bi-arrow-up-right text-sm"></i>
             </a>
           </div>
@@ -1590,29 +1886,37 @@ const EcommercePage = () => {
           </div>
         </section>
 
-        ${galleryGrid(galleryItems, "ecom-gallery")}
+        <div class="animate-reveal stagger-3">
+          ${galleryGrid(galleryItems, "ecom-gallery")}
+        </div>
 
-        ${faqHTML(faqItems)}
+        <div class="animate-reveal stagger-1">
+          ${faqHTML(faqItems)}
+        </div>
 
-        ${ctaBand({
-    title: "Ready to make your store feel premium?",
+        <div class="animate-reveal">
+          ${ctaBand({
+    title: "Ready to make your store feel <span class='text-emerald-600'>premium</span>?",
     subtitle: "Request a free quote and share your products, target audience, and platform. We’ll recommend the best package for your launch.",
     primaryHref: "#/contact",
     primaryText: "Get a Free Quote",
     secondaryHref: "#/pricing#e-commerce-website",
     secondaryText: "View E-Commerce Pricing",
-    bg: "from-white to-slate-50"
+    bg: "from-white via-slate-50 to-emerald-50/30"
   })}
+        </div>
 
         ${footerHTML()}
       `;
 };
 
+
 const PricingPage = () => {
   setMeta({
     title: "All Design Packages & Pricing | True Designs",
     description: "View all True Designs packages and transparent pricing for logo design, digital ads & banner design, custom T‑shirt & merch design, graphic design, web design, and e-commerce—serving USA, Canada & worldwide clients.",
-    keywords: "True Designs pricing, affordable custom design packages USA Canada worldwide, logo design pricing, digital ads banner design pricing, custom t-shirt merch design pricing, web design pricing, e-commerce pricing", canonical: "https://td-designs.com/pricing"
+    keywords: "True Designs pricing, affordable custom design packages USA Canada worldwide, logo design pricing, digital ads banner design pricing, custom t-shirt merch design pricing, web design pricing, e-commerce pricing",
+    canonical: "https://td-designs.com/pricing"
   });
 
   const sections = [
@@ -1620,67 +1924,107 @@ const PricingPage = () => {
       id: "logo-design",
       title: "Logo Design",
       subtitle: "Distinctive identities with production-ready exports.",
-      cards: PRICING_DATA.logo
+      cards: PRICING_DATA.logo,
+      color: "text-blue-600",
+      border: "border-blue-500"
     }, {
       id: "digital-ads-banner-design",
       title: "Digital Ads &amp; Banner Design",
       subtitle: "High-converting ad creatives sized for every placement.",
-      cards: PRICING_DATA.digitalAds
+      cards: PRICING_DATA.digitalAds,
+      color: "text-orange-500",
+      border: "border-orange-500"
     }, {
       id: "business-card-design",
       title: "Business Card Design",
       subtitle: "Premium, print-ready layouts for modern brands.",
-      cards: PRICING_DATA.businessCards
+      cards: PRICING_DATA.businessCards,
+      color: "text-emerald-600",
+      border: "border-emerald-500"
     },
     {
       id: "stationery-design",
       title: "Stationery Design",
       subtitle: "Letterhead, envelopes, and cohesive brand collateral.",
-      cards: PRICING_DATA.stationery
+      cards: PRICING_DATA.stationery,
+      color: "text-blue-600",
+      border: "border-blue-500"
     },
     {
       id: "custom-tshirt-merch-design",
       title: "Custom T‑Shirt &amp; Merch Design",
       subtitle: "Print-ready apparel graphics and merch visuals.",
-      cards: PRICING_DATA.tshirt
+      cards: PRICING_DATA.tshirt,
+      color: "text-orange-500",
+      border: "border-orange-500"
     }, {
       id: "graphic-design",
       title: "Graphic Design",
       subtitle: "Marketing visuals for social, print, and campaigns.",
-      cards: PRICING_DATA.graphic
+      cards: PRICING_DATA.graphic,
+      color: "text-emerald-600",
+      border: "border-emerald-500"
     },
     {
       id: "web-design",
       title: "Web Design",
       subtitle: "Responsive, conversion-focused page designs.",
-      cards: PRICING_DATA.web
+      cards: PRICING_DATA.web,
+      color: "text-blue-600",
+      border: "border-blue-500"
     },
     {
       id: "e-commerce-website",
       title: "E-Commerce Website",
       subtitle: "Product-to-checkout UX that builds trust and sells.",
-      cards: PRICING_DATA.ecommerce
+      cards: PRICING_DATA.ecommerce,
+      color: "text-orange-500",
+      border: "border-orange-500"
+    },
+    {
+      id: "photo-to-art",
+      title: "Photo-to-Art",
+      subtitle: "Custom Artwork Packages.",
+      cards: PRICING_DATA.photoToArt,
+      color: "text-pink-600",
+      border: "border-pink-500"
     }
   ];
 
   return `
-        <section class="relative overflow-hidden bg-white">
+        <style>
+          @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-reveal { opacity: 0; animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+          .stagger-1 { animation-delay: 0.1s; }
+          .stagger-2 { animation-delay: 0.2s; }
+          .stagger-3 { animation-delay: 0.3s; }
+          
+          #pricingJump::-webkit-scrollbar { display: none; }
+          #pricingJump { -ms-overflow-style: none; scrollbar-width: none; }
+        </style>
+
+        <section class="relative overflow-hidden bg-white animate-reveal">
           <div class="absolute inset-0 bg-gradient-to-b from-slate-50 via-white to-white"></div>
           <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-10">
             <div class="max-w-3xl">
-              <div class="inline-flex items-center gap-2 rounded-full bg-white subtle-border px-3 py-1.5 text-xs font-extrabold text-slate-700">
-                <span class="h-2 w-2 rounded-full bg-gradient-to-r from-teal-500 to-blue-600"></span>
+              <div class="inline-flex items-center gap-2 rounded-full bg-white subtle-border px-3 py-1.5 text-xs font-extrabold text-slate-700 shadow-sm">
+                <span class="h-2 w-2 rounded-full bg-gradient-to-r from-teal-500 to-blue-600 animate-pulse"></span>
                 Transparent pricing • PayPal checkout • Unlimited revisions
               </div>
-              <h1 class="font-display mt-4 text-4xl sm:text-5xl lg:text-6xl leading-[1.03] text-slate-900">View All Packages & Transparent Pricing</h1>
+              <h1 class="font-display mt-4 text-4xl sm:text-5xl lg:text-6xl leading-[1.03] text-slate-900 tracking-tight">
+                View All Packages & <span class="text-blue-600">Transparent</span> Pricing
+              </h1>
               <p class="mt-5 text-lg sm:text-xl leading-8 text-slate-600">
-                Affordable custom designs for USA, Canada & worldwide clients. Choose a package below or request a custom quote.
+                Affordable custom designs for USA, Canada & worldwide clients. Choose a <span class="text-orange-500 font-bold">package</span> below or request a custom quote.
               </p>
               <div class="mt-7 flex flex-col sm:flex-row gap-3">
-                <a href="#/contact" class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-emerald-500 to-orange-500 px-6 py-4 text-sm sm:text-base font-extrabold text-white hover:opacity-95 hover:-translate-y-0.5 transition transform">
+                <a href="#/contact" class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-emerald-500 to-orange-500 px-6 py-4 text-sm sm:text-base font-extrabold text-white hover:opacity-95 hover:-translate-y-1 transition shadow-lg shadow-emerald-500/20">
                   Get a Free Quote <i class="bi bi-arrow-right-short text-xl ml-1"></i>
                 </a>
-                <a href="#/portfolio" class="inline-flex items-center justify-center rounded-2xl bg-white subtle-border px-6 py-4 text-sm sm:text-base font-extrabold text-slate-900 hover:bg-slate-50 transition">
+                <a href="#/portfolio" class="inline-flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-6 py-4 text-sm sm:text-base font-extrabold text-slate-900 hover:bg-slate-50 transition">
                   View Portfolio <i class="bi bi-arrow-up-right text-sm ml-2"></i>
                 </a>
               </div>
@@ -1688,39 +2032,44 @@ const PricingPage = () => {
           </div>
         </section>
 
-        <!-- Sticky in-page jump bar -->
-        <div class="sticky top-[92px] lg:top-[102px] z-40 bg-white/85 backdrop-blur border-y border-slate-200/60" id="pricingJump">
+        <div class="sticky top-[92px] lg:top-[102px] z-40 bg-white/90 backdrop-blur-md border-y border-slate-200/60 animate-reveal stagger-1" id="pricingJump">
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3">
-            <div class="flex items-center gap-2 overflow-x-auto">
-              ${sections.map(s => `
-                <a href="#/pricing#${s.id}" class="shrink-0 inline-flex items-center gap-2 rounded-full border border-slate-200/70 bg-white px-4 py-2 text-xs font-extrabold text-slate-800 hover:bg-slate-50 transition">
-                  <span class="h-2 w-2 rounded-full bg-gradient-to-r from-teal-500 to-blue-600"></span>
-                  ${s.title}
-                </a>
-              `).join("")}
+            <div class="flex items-center gap-2 overflow-x-auto whitespace-nowrap">
+              ${sections.map((s, idx) => {
+    const colors = ['from-blue-500 to-blue-600', 'from-orange-500 to-orange-600', 'from-emerald-500 to-emerald-600'];
+    const dotColor = colors[idx % 3];
+    return `
+                  <a href="#/pricing#${s.id}" class="shrink-0 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-extrabold text-slate-800 hover:border-blue-500 transition-all active:scale-95">
+                    <span class="h-2 w-2 rounded-full bg-gradient-to-r ${dotColor}"></span>
+                    ${s.title}
+                  </a>
+                `;
+  }).join("")}
             </div>
           </div>
         </div>
 
         ${sections.map((s, idx) => `
-          <section id="${s.id}" class="scroll-mt-28">
+          <section id="${s.id}" class="scroll-mt-28 animate-reveal stagger-2">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-              <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+              <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 border-l-4 ${s.border} pl-6">
                 <div class="max-w-2xl">
-                  <div class="text-xs font-extrabold text-teal-700">Pricing Section</div>
-                  <h2 class="font-display mt-2 text-3xl sm:text-4xl text-slate-900">${s.title}</h2>
+                  <div class="text-xs font-extrabold uppercase tracking-widest ${s.color}">Pricing Section</div>
+                  <h2 class="font-display mt-2 text-3xl sm:text-4xl text-slate-900">
+                    ${s.title.split(' ').map((word, i, arr) => i === arr.length - 1 ? `<span class="${s.color}">${word}</span>` : word).join(' ')}
+                  </h2>
                   <p class="mt-3 text-slate-600 leading-7">${s.subtitle}</p>
                   <div class="mt-5 flex flex-wrap gap-2">
-                    <a href="#/${s.id}" class="inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
+                    <a href="#/${s.id}" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
                       View Service Page <i class="bi bi-arrow-up-right text-sm"></i>
                     </a>
-                    <a href="#/contact" class="inline-flex items-center gap-2 text-sm font-extrabold text-teal-700 hover:text-teal-800 transition">
+                    <a href="#/contact" class="inline-flex items-center gap-2 text-sm font-extrabold ${s.color} hover:opacity-80 transition">
                       Get a free quote <i class="bi bi-arrow-right-short text-lg"></i>
                     </a>
                   </div>
                 </div>
-                <div class="rounded-2xl bg-slate-50 subtle-border p-5 lg:p-6 max-w-md">
-                  <div class="text-sm font-extrabold text-slate-900">Included with every package</div>
+                <div class="rounded-2xl bg-slate-50 border border-slate-100 p-5 lg:p-6 max-w-md shadow-sm">
+                  <div class="text-sm font-extrabold text-slate-900">Included with <span class="text-emerald-600">every</span> package</div>
                   <ul class="mt-3 space-y-2 text-sm text-slate-700">
                     <li class="flex gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i>Unlimited revisions</li>
                     <li class="flex gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i>Fast delivery via email</li>
@@ -1729,60 +2078,68 @@ const PricingPage = () => {
                 </div>
               </div>
 
-              <div class="mt-8 grid gap-5 lg:grid-cols-3">
+              <div class="mt-10 grid gap-6 lg:grid-cols-3">
                 ${s.cards.map(c => pricingCard(c)).join("")}
               </div>
 
               ${idx < sections.length - 1 ? `
-                <div class="mt-12 border-b border-slate-200/70"></div>
+                <div class="mt-12 border-b border-slate-100"></div>
               ` : ``}
             </div>
           </section>
         `).join("")}
 
-        ${ctaBand({
-    title: "Not sure which package fits?",
+        <div class="animate-reveal">
+          ${ctaBand({
+    title: "Not sure which <span class='text-blue-600'>package</span> fits?",
     subtitle: "Request a free quote and tell us your goals. We’ll recommend the best option and keep everything simple by email.",
     primaryHref: "#/contact",
     primaryText: "Get a Free Quote",
     secondaryHref: "#/portfolio",
     secondaryText: "View Portfolio",
-    bg: "from-teal-50 to-blue-50"
+    bg: "from-blue-50 via-white to-orange-50/30"
   })}
+        </div>
 
         ${footerHTML()}
       `;
 };
 
+
+
 const PortfolioPage = () => {
   setMeta({
-    title: "Design Portfolio | True Designs - Worldwide Clients", description: "Explore the True Designs portfolio: logos, digital ads & banner design, custom T‑shirt & merch design, graphic design, web design, and e-commerce UX mockups for clients in the USA, Canada & worldwide.",
-    keywords: "design portfolio, logo portfolio, digital ads banner design portfolio, custom t-shirt merch design portfolio, graphic design portfolio, web design portfolio, e-commerce design portfolio, USA Canada worldwide", canonical: "https://td-designs.com/portfolio"
+    title: "Design Portfolio | True Designs - Worldwide Clients",
+    description: "Explore the True Designs portfolio: logos, digital ads & banner design, custom T‑shirt & merch design, graphic design, web design, and e-commerce UX mockups for clients in the USA, Canada & worldwide.",
+    keywords: "design portfolio, logo portfolio, digital ads banner design portfolio, custom t-shirt merch design portfolio, graphic design portfolio, web design portfolio, e-commerce design portfolio, USA Canada worldwide",
+    canonical: "https://td-designs.com/portfolio"
   });
 
+  // Updated buildGrid with staggered entrance animations
   const buildGrid = (prefix, count, label) => `
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           ${Array.from({ length: count }).map((_, i) => `
             <button type="button"
-              class="group rounded-2xl overflow-hidden bg-white subtle-border hover:-translate-y-1 transition transform text-left"
+              class="group rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500 text-left animate-reveal"
+              style="animation-delay: ${0.1 * (i % 6)}s"
               data-lightbox data-title="${label} #${i + 1}" data-src=""
               aria-label="Open preview: ${label} ${i + 1}">
-              <div class="relative aspect-[4/3] bg-slate-100">
-                <img data-gen-id="${prefix}-${i + 1}" alt="${label} mockup ${i + 1}" class="absolute inset-0 w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/0 to-slate-950/0 opacity-0 group-hover:opacity-100 transition"></div>
-                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3 opacity-0 group-hover:opacity-100 transition">
+              <div class="relative aspect-[4/3] bg-slate-100 overflow-hidden">
+                <img data-gen-id="${prefix}-${i + 1}" alt="${label} mockup ${i + 1}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <div class="text-white">
                     <div class="text-sm font-extrabold">${label}</div>
                     <div class="text-xs text-white/80">Click to zoom</div>
                   </div>
-                  <div class="h-10 w-10 rounded-xl bg-white/15 border border-white/25 flex items-center justify-center text-white">
+                  <div class="h-10 w-10 rounded-xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center text-white">
                     <i class="bi bi-zoom-in"></i>
                   </div>
                 </div>
               </div>
-              <div class="p-4">
-                <div class="text-sm font-extrabold text-slate-900">${label} ${i + 1}</div>
-                <div class="mt-1 text-sm text-slate-600 leading-6">Diverse style exploration with premium mockup presentation.</div>
+              <div class="p-4 bg-white">
+                <div class="text-sm font-extrabold text-[#0f172a]">${label} ${i + 1}</div>
+                <div class="mt-1 text-sm text-slate-500 leading-6">Diverse style exploration with premium mockup presentation.</div>
               </div>
             </button>
           `).join("")}
@@ -1790,27 +2147,39 @@ const PortfolioPage = () => {
       `;
 
   return `
-        <section class="relative overflow-hidden">
-          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/wide_hero_background_collage_02bef7b3c7b393f1b036e3efe01b6679.png'); background-size: cover; background-position: center;"></div>
-          <div class="absolute inset-0 bg-gradient-to-b from-white/85 via-white/90 to-white"></div>
+        <style>
+          @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-reveal { opacity: 0; animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+          .delay-1 { animation-delay: 0.2s; }
+          .delay-2 { animation-delay: 0.4s; }
+          
+          .tab-active { background: #eff6ff; border-color: #3b82f6; color: #1d4ed8; }
+        </style>
 
-          <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-14">
+        <section class="relative overflow-hidden">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-[20s] hover:scale-105" style="background-image: url('assets/images/wide_hero_background_collage_02bef7b3c7b393f1b036e3efe01b6679.png');"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-white/85 via-white/95 to-white"></div>
+
+          <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-14 animate-reveal">
             <div class="max-w-4xl">
-              <div class="inline-flex items-center gap-2 rounded-full bg-white/80 subtle-border px-3 py-1.5 text-xs font-extrabold text-slate-700">
-                <span class="h-2 w-2 rounded-full bg-gradient-to-r from-teal-500 to-blue-600"></span>
+              <div class="inline-flex items-center gap-2 rounded-full bg-white/80 border border-slate-200 px-3 py-1.5 text-xs font-extrabold text-slate-700 shadow-sm">
+                <span class="h-2 w-2 rounded-full bg-gradient-to-r from-blue-500 to-emerald-500 animate-pulse"></span>
                 Portfolio • USA • Canada • Worldwide
               </div>
-              <h1 class="font-display mt-4 text-4xl sm:text-5xl lg:text-6xl leading-[1.03] text-slate-900">
-                Our Portfolio – Stunning Designs for Clients in USA, Canada & Worldwide
+              <h1 class="font-display mt-4 text-4xl sm:text-5xl lg:text-6xl leading-[1.03] text-[#0f172a] tracking-tight">
+                Our <span class="text-blue-600">Portfolio</span> – Stunning Designs for Clients <span class="text-orange-500">Worldwide</span>
               </h1>
               <p class="mt-5 text-lg sm:text-xl leading-8 text-slate-600">
-                Browse categorized work samples across our services. Use filters to jump between logo, print, graphics, and website UI.
+                Browse categorized work samples across our services. Use <span class="text-emerald-600 font-bold">filters</span> to jump between logo, print, graphics, and website UI.
               </p>
               <div class="mt-7 flex flex-col sm:flex-row gap-3">
-                <a href="#/pricing" class="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-6 py-4 text-sm sm:text-base font-extrabold text-white hover:opacity-95 hover:-translate-y-0.5 transition transform">
+                <a href="#/pricing" class="inline-flex items-center justify-center rounded-2xl bg-[#0f172a] px-6 py-4 text-sm sm:text-base font-extrabold text-white hover:bg-blue-600 hover:-translate-y-1 transition-all duration-300 shadow-xl shadow-blue-500/10">
                   View All Pricing <i class="bi bi-arrow-right-short text-xl ml-1"></i>
                 </a>
-                <a href="#/contact" class="inline-flex items-center justify-center rounded-2xl bg-white/90 subtle-border px-6 py-4 text-sm sm:text-base font-extrabold text-slate-900 hover:bg-white transition">
+                <a href="#/contact" class="inline-flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-6 py-4 text-sm sm:text-base font-extrabold text-slate-900 hover:bg-slate-50 hover:border-emerald-500/50 transition-all duration-300">
                   Get a Free Quote <i class="bi bi-arrow-up-right text-sm ml-2"></i>
                 </a>
               </div>
@@ -1818,192 +2187,111 @@ const PortfolioPage = () => {
           </div>
         </section>
 
-        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-14">
-          <div class="flex flex-wrap gap-2">${[
-      ["logos", "Logo Design"],
-      ["ads", "Digital Ads &amp; Banners"],
-      ["merch", "T‑Shirt &amp; Merch"],
-      ["graphics", "Graphic Design"],
-      ["web", "Web Design"],
-      ["ecom", "E-Commerce UI"]
-    ].map(([key, label]) => `<button type="button" data-portfolio-tab="${key}"
-                class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-extrabold border transition bg-white text-slate-800 border-slate-200/70 hover:bg-slate-50">
-                <span class="h-2 w-2 rounded-full bg-gradient-to-r from-teal-500 to-blue-600"></span>
+        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 lg:py-14 animate-reveal delay-1">
+          <div class="flex flex-wrap gap-2 mb-10 overflow-x-auto pb-4 scrollbar-hide">
+            ${[
+      ["logos", "Logo Design", "text-blue-500"],
+      ["ads", "Digital Ads &amp; Banners", "text-orange-500"],
+      ["merch", "T‑Shirt &amp; Merch", "text-emerald-500"],
+      ["graphics", "Graphic Design", "text-blue-500"],
+      ["web", "Web Design", "text-orange-500"],
+      ["ecom", "E-Commerce UI", "text-emerald-500"]
+    ].map(([key, label, color]) => `
+              <button type="button" data-portfolio-tab="${key}"
+                class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-extrabold border transition-all duration-300 bg-white text-slate-800 border-slate-200 hover:border-blue-500 hover:bg-blue-50/50 active:scale-95 whitespace-nowrap">
+                <span class="h-2 w-2 rounded-full bg-current ${color}"></span>
                 ${label}
               </button>
             `).join("")}
           </div>
 
-          <div class="mt-8 space-y-12">
-            <div data-portfolio-pane="logos">
-              <div class="flex items-end justify-between gap-6">
+          <div class="space-y-16">
+            <div data-portfolio-pane="logos" class="animate-reveal delay-2">
+              <div class="flex items-end justify-between gap-6 border-l-4 border-blue-500 pl-6 mb-8">
                 <div class="max-w-2xl">
-                  <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Logo Design</h2>
-                  <p class="mt-3 text-slate-600 leading-7">
-                    Modern minimalist tech logos, vintage emblems, elegant wordmarks, bold fitness icons, abstract finance marks, playful kids brands, luxury real estate, eco-friendly marks, and more.
-                  </p>
+                  <h2 class="font-display text-3xl sm:text-4xl text-[#0f172a]">Logo <span class="text-blue-600">Design</span></h2>
+                  <p class="mt-3 text-slate-600 leading-7">Modern minimalist tech logos, vintage emblems, and market-aware identities built for real-world impact.</p>
                 </div>
-                <a href="#/logo-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
-                  View Logo Service <i class="bi bi-arrow-up-right text-sm"></i>
+                <a href="#/logo-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:border-blue-500 hover:text-blue-600 transition-all">
+                  View Service <i class="bi bi-arrow-up-right text-sm"></i>
                 </a>
               </div>
-              <div class="mt-8">
-                ${buildGrid("portfolio-logo", 15, "Logo Mockup")}
-              </div>
-              <div class="mt-10">
-                ${ctaBand({
-      title: "Want a logo like these?",
+              ${buildGrid("portfolio-logo", 15, "Logo Mockup")}
+              <div class="mt-12">${ctaBand({
+      title: "Want a <span class='text-blue-600'>logo</span> like these?",
       subtitle: "Pick a package and check out securely, or request a free quote for a tailored recommendation.",
       primaryHref: "#/pricing#logo-design",
       primaryText: "View Logo Pricing",
       secondaryHref: "#/contact",
       secondaryText: "Get a Free Quote",
-      bg: "from-white to-slate-50"
-    })}
-              </div>
-            </div><div data-portfolio-pane="ads" class="hidden">
-              <div class="flex items-end justify-between gap-6">
+      bg: "from-blue-50 via-white to-slate-50"
+    })}</div>
+            </div>
+
+            <div data-portfolio-pane="ads" class="hidden">
+              <div class="flex items-end justify-between gap-6 border-l-4 border-orange-500 pl-6 mb-8">
                 <div class="max-w-2xl">
-                  <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Digital Ads &amp; Banner Design</h2>
-                  <p class="mt-3 text-slate-600 leading-7">
-                    Banner sets for display, social, and web placements—built for readability, strong CTAs, and consistent campaign styling.
-                  </p>
+                  <h2 class="font-display text-3xl sm:text-4xl text-[#0f172a]">Digital <span class="text-orange-500">Ads</span></h2>
+                  <p class="mt-3 text-slate-600 leading-7">Banner sets for display, social, and web placements—built for high conversion and readability.</p>
                 </div>
-                <a href="#/digital-ads-banner-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
+                <a href="#/digital-ads-banner-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:text-orange-600 transition-all">
                   View Ads Service <i class="bi bi-arrow-up-right text-sm"></i>
                 </a>
               </div>
-              <div class="mt-8">
-                ${buildGrid("portfolio-ads", 12, "Digital Ad / Banner")}
-              </div>
-              <div class="mt-10">
-                ${ctaBand({
-      title: "Need ad creatives sized for every placement?",
-      subtitle: "Choose a package and we’ll deliver a consistent banner set with strong hierarchy and clean typography.",
-      primaryHref: "#/pricing#digital-ads-banner-design",
-      primaryText: "View Ads Pricing",
-      secondaryHref: "#/contact",
-      secondaryText: "Get a Free Quote",
-      bg: "from-teal-50 to-blue-50"
-    })}
-              </div>
+              ${buildGrid("portfolio-ads", 12, "Digital Ad / Banner")}
             </div>
 
             <div data-portfolio-pane="merch" class="hidden">
-              <div class="flex items-end justify-between gap-6">
+              <div class="flex items-end justify-between gap-6 border-l-4 border-emerald-500 pl-6 mb-8">
                 <div class="max-w-2xl">
-                  <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Custom T‑Shirt &amp; Merch Design</h2>
-                  <p class="mt-3 text-slate-600 leading-7">
-                    Apparel graphics, merch prints, and drop-ready variations—designed for print clarity and brand consistency.
-                  </p>
+                  <h2 class="font-display text-3xl sm:text-4xl text-[#0f172a]">Custom <span class="text-emerald-600">Merch</span></h2>
+                  <p class="mt-3 text-slate-600 leading-7">Apparel graphics and drop-ready variations designed for clean production and bold branding.</p>
                 </div>
-                <a href="#/custom-tshirt-merch-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
+                <a href="#/custom-tshirt-merch-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:text-emerald-600 transition-all">
                   View Merch Service <i class="bi bi-arrow-up-right text-sm"></i>
                 </a>
               </div>
-              <div class="mt-8">
-                ${buildGrid("portfolio-merch", 12, "T‑Shirt / Merch Design")}
-              </div>
-              <div class="mt-10">
-                ${ctaBand({
-      title: "Want merch designs that look premium and print clean?",
-      subtitle: "Pick a package for print-ready files or request a free quote for a full collection/drop.",
-      primaryHref: "#/pricing#custom-tshirt-merch-design",
-      primaryText: "View Merch Pricing",
-      secondaryHref: "#/contact",
-      secondaryText: "Get a Free Quote",
-      bg: "from-white to-slate-50"
-    })}
-              </div>
-            </div><div data-portfolio-pane="graphics" class="hidden">
-              <div class="flex items-end justify-between gap-6">
+              ${buildGrid("portfolio-merch", 12, "T‑Shirt / Merch Design")}
+            </div>
+
+            <div data-portfolio-pane="graphics" class="hidden">
+              <div class="flex items-end justify-between gap-6 border-l-4 border-blue-500 pl-6 mb-8">
                 <div class="max-w-2xl">
-                  <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Graphic Design</h2>
-                  <p class="mt-3 text-slate-600 leading-7">
-                    Flyers, posters, social banners, carousels, thumbnails, menus, and infographics—designed for clarity and impact.
-                  </p>
+                  <h2 class="font-display text-3xl sm:text-4xl text-[#0f172a]">Graphic <span class="text-blue-600">Design</span></h2>
+                  <p class="mt-3 text-slate-600 leading-7">Flyers, posters, and social graphics designed with strong hierarchy and professional clarity.</p>
                 </div>
-                <a href="#/graphic-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
-                  View Graphic Service <i class="bi bi-arrow-up-right text-sm"></i>
-                </a>
               </div>
-              <div class="mt-8">
-                ${buildGrid("portfolio-graphic", 12, "Graphic Design")}
-              </div>
-              <div class="mt-10">
-                ${ctaBand({
-      title: "Need a campaign set fast?",
-      subtitle: "Tell us the goal, platform, and deadline. We’ll deliver designs that are readable and on-brand.",
-      primaryHref: "#/pricing#graphic-design",
-      primaryText: "View Graphic Pricing",
-      secondaryHref: "#/contact",
-      secondaryText: "Get a Free Quote",
-      bg: "from-teal-50 to-blue-50"
-    })}
-              </div>
+              ${buildGrid("portfolio-graphic", 12, "Graphic Design")}
             </div>
 
             <div data-portfolio-pane="web" class="hidden">
-              <div class="flex items-end justify-between gap-6">
+              <div class="flex items-end justify-between gap-6 border-l-4 border-orange-500 pl-6 mb-8">
                 <div class="max-w-2xl">
-                  <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Web Design</h2>
-                  <p class="mt-3 text-slate-600 leading-7">
-                    Responsive desktop/mobile website mockups for agencies, clinics, restaurants, SaaS, and portfolios—designed to convert.
-                  </p>
+                  <h2 class="font-display text-3xl sm:text-4xl text-[#0f172a]">Web <span class="text-orange-500">Design</span></h2>
+                  <p class="mt-3 text-slate-600 leading-7">Responsive desktop and mobile mockups designed to build trust and drive user action.</p>
                 </div>
-                <a href="#/web-design" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
-                  View Web Service <i class="bi bi-arrow-up-right text-sm"></i>
-                </a>
               </div>
-              <div class="mt-8">
-                ${buildGrid("portfolio-web", 12, "Website Mockup")}
-              </div>
-              <div class="mt-10">
-                ${ctaBand({
-      title: "Want a website that builds trust instantly?",
-      subtitle: "Choose a web design package and we’ll deliver clean, conversion-first layouts for desktop and mobile.",
-      primaryHref: "#/pricing#web-design",
-      primaryText: "View Web Pricing",
-      secondaryHref: "#/contact",
-      secondaryText: "Get a Free Quote",
-      bg: "from-white to-slate-50"
-    })}
-              </div>
+              ${buildGrid("portfolio-web", 12, "Website Mockup")}
             </div>
 
             <div data-portfolio-pane="ecom" class="hidden">
-              <div class="flex items-end justify-between gap-6">
+              <div class="flex items-end justify-between gap-6 border-l-4 border-emerald-500 pl-6 mb-8">
                 <div class="max-w-2xl">
-                  <h2 class="font-display text-3xl sm:text-4xl text-slate-900">E-Commerce Website</h2>
-                  <p class="mt-3 text-slate-600 leading-7">
-                    E-commerce flows across fashion, food, electronics, beauty, and home goods—including PDP, collection, cart, and checkout screens.
-                  </p>
+                  <h2 class="font-display text-3xl sm:text-4xl text-[#0f172a]">E-Commerce <span class="text-emerald-600">UI</span></h2>
+                  <p class="mt-3 text-slate-600 leading-7">Product-to-checkout experiences across beauty, fashion, and tech industries.</p>
                 </div>
-                <a href="#/e-commerce-website" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-bold text-slate-800 hover:bg-slate-50 transition">
-                  View E-Commerce Service <i class="bi bi-arrow-up-right text-sm"></i>
-                </a>
               </div>
-              <div class="mt-8">
-                ${buildGrid("portfolio-ecom", 12, "E-Commerce UI")}
-              </div>
-              <div class="mt-10">
-                ${ctaBand({
-      title: "Ready to improve product-to-checkout UX?",
-      subtitle: "We’ll design a clean storefront experience with strong hierarchy and trust signals that support conversions.",
-      primaryHref: "#/pricing#e-commerce-website",
-      primaryText: "View E-Commerce Pricing",
-      secondaryHref: "#/contact",
-      secondaryText: "Get a Free Quote",
-      bg: "from-teal-50 to-blue-50"
-    })}
-              </div>
+              ${buildGrid("portfolio-ecom", 12, "E-Commerce UI")}
             </div>
+
           </div>
         </section>
 
         ${footerHTML()}
       `;
 };
+
+
 
 const AboutPage = () => {
   setMeta({
@@ -2015,21 +2303,33 @@ const AboutPage = () => {
 
   const narrative = `
         True Designs is a conversion-focused design agency built for businesses that want premium-looking creative without premium complexity.
-        We work with founders, marketing teams, and service providers across the <span class="font-semibold text-slate-900">USA</span>, <span class="font-semibold text-slate-900">Canada</span>, and <span class="font-semibold text-slate-900">worldwide</span>—helping them show up with clarity, credibility, and consistent branding.
+        We work with founders, marketing teams, and service providers across the <span class="font-extrabold text-blue-600">USA</span>, <span class="font-extrabold text-orange-500">Canada</span>, and <span class="font-extrabold text-emerald-600">worldwide</span>—helping them show up with clarity, credibility, and consistent branding.
         <br/><br/>
-        Our mission is simple: <span class="font-semibold text-slate-900">make professional design accessible</span>. Many businesses either overspend on branding they can’t maintain, or underinvest and lose trust before a customer ever contacts them. We bridge that gap with streamlined packages, fast turnaround, and a reliable revision process—so you can launch quickly and look established.
+        Our mission is simple: <span class="font-bold text-blue-600">make professional design accessible</span>. Many businesses either overspend on branding they can’t maintain, or underinvest and lose trust before a customer ever contacts them. We bridge that gap with streamlined packages, fast turnaround, and a reliable revision process—so you can launch quickly and look established.
         <br/><br/>
         We design with a practical mindset. A logo should scale from a tiny favicon to a storefront sign. A business card should print cleanly and communicate the essentials at a glance. Stationery should support daily operations and reinforce your brand in every document. Websites and e-commerce experiences should guide visitors with strong hierarchy, confident spacing, and clear calls to action.
         <br/><br/>
-        You’ll notice a consistent theme across our work: <span class="font-semibold text-slate-900">clean structure</span>, <span class="font-semibold text-slate-900">modern typography</span>, and <span class="font-semibold text-slate-900">conversion-first layouts</span>. We keep communication email-based to stay organized, document decisions, and deliver fast—especially for remote and international clients.
+        You’ll notice a consistent theme across our work: <span class="text-emerald-600 font-bold">clean structure</span>, <span class="text-blue-600 font-bold">modern typography</span>, and <span class="text-orange-500 font-bold">conversion-first layouts</span>. We keep communication email-based to stay organized, document decisions, and deliver fast—especially for remote and international clients.
         <br/><br/>
         Whether you need a single design deliverable or a complete brand system, our goal is to make the process calm and effective. If you’re ready to upgrade how your business looks and converts, request a free quote and we’ll recommend the most efficient path.
       `;
 
   return `
-        ${heroBand({
+        <style>
+          @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-reveal { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
+          .stagger-1 { animation-delay: 0.2s; }
+          .stagger-2 { animation-delay: 0.4s; }
+          .stagger-3 { animation-delay: 0.6s; }
+        </style>
+
+        <div class="animate-reveal">
+          ${heroBand({
     kicker: "About True Designs",
-    title: "A global design partner built for speed and trust",
+    title: "A global design partner built for speed and <span class='text-blue-600'>trust</span>",
     subtitle: "We deliver affordable, high-quality design that helps businesses look credible and convert—serving the USA, Canada, and clients worldwide.",
     primaryHref: "#/contact",
     primaryText: "Get a Free Quote",
@@ -2037,25 +2337,28 @@ const AboutPage = () => {
     secondaryText: "View All Pricing",
     bgGenId: "about-hero-agency"
   })}
+        </div>
 
-        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
-          <div class="max-w-4xl">
-            <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Our mission & expertise</h2>
+
+
+        <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16 animate-reveal stagger-1">
+          <div class="max-w-4xl border-l-4 border-emerald-500 pl-6">
+            <h2 class="font-display text-3xl sm:text-4xl text-slate-900">Our mission & <span class="text-emerald-600">expertise</span></h2>
             <p class="mt-5 text-slate-600 leading-8 text-[15px] sm:text-base">
               ${narrative}
             </p>
           </div>
 
-          <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4 stagger-2 animate-reveal">
             ${[
-      { icon: "bi-patch-check", title: "High-trust design", desc: "Crisp hierarchy and premium spacing that looks credible." },
-      { icon: "bi-arrow-repeat", title: "Unlimited revisions", desc: "We refine until it’s right—no revision anxiety." },
-      { icon: "bi-clock-history", title: "Fast delivery", desc: "Timelines that respect your launch schedule." },
-      { icon: "bi-globe-americas", title: "Worldwide support", desc: "Clear, email-based workflow across time zones." },
+      { icon: "bi-patch-check", color: "text-blue-600", title: "High-trust design", desc: "Crisp hierarchy and premium spacing that looks credible." },
+      { icon: "bi-arrow-repeat", color: "text-emerald-600", title: "Unlimited revisions", desc: "We refine until it’s right—no revision anxiety." },
+      { icon: "bi-clock-history", color: "text-orange-500", title: "Fast delivery", desc: "Timelines that respect your launch schedule." },
+      { icon: "bi-globe-americas", color: "text-blue-600", title: "Worldwide support", desc: "Clear, email-based workflow across time zones." },
     ].map(x => `
-              <div class="rounded-2xl bg-white subtle-border p-6 hover:-translate-y-1 transition transform">
-                <div class="h-11 w-11 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-900">
-                  <i class="bi ${x.icon}"></i>
+              <div class="rounded-2xl bg-white border border-slate-100 p-6 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+                <div class="h-11 w-11 rounded-2xl bg-slate-50 flex items-center justify-center ${x.color}">
+                  <i class="bi ${x.icon} text-lg"></i>
                 </div>
                 <div class="mt-4 text-sm font-extrabold text-slate-900">${x.title}</div>
                 <div class="mt-2 text-sm text-slate-600 leading-7">${x.desc}</div>
@@ -2064,22 +2367,21 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <!-- Team strip -->
-        <section class="bg-slate-50/60 border-y border-slate-200/60">
+        <section class="bg-slate-50/60 border-y border-slate-200/60 animate-reveal stagger-2">
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
             <div class="flex items-end justify-between gap-6">
-              <div class="max-w-2xl">
-                <h2 class="font-display text-3xl sm:text-4xl text-slate-900">A small team, big output</h2>
+              <div class="max-w-2xl border-l-4 border-orange-500 pl-6">
+                <h2 class="font-display text-3xl sm:text-4xl text-slate-900">A small team, big <span class="text-orange-500">output</span></h2>
                 <p class="mt-3 text-slate-600 leading-7">
                   Diverse perspectives and consistent quality. We focus on clean execution and reliable delivery.
                 </p>
               </div>
-              <a href="#/contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-orange-500 px-4 py-2.5 text-sm font-extrabold text-white hover:opacity-95 transition">
+              <a href="#/contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-2.5 text-sm font-extrabold text-white hover:opacity-95 shadow-lg shadow-blue-500/20 transition-all">
                 Get a Free Quote <i class="bi bi-arrow-right-short text-lg"></i>
               </a>
             </div>
 
-            <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5 stagger-3 animate-reveal">
               ${[
       { name: "Creative Director", role: "Brand systems & logo identity", gen: "team-1" },
       { name: "Graphic Designer", role: "Campaign visuals & print-ready files", gen: "team-2" },
@@ -2087,9 +2389,9 @@ const AboutPage = () => {
       { name: "Production Designer", role: "Exporting, prepress, and delivery", gen: "team-4" },
       { name: "Client Support", role: "Clear communication by email", gen: "team-5" },
     ].map(p => `
-                <div class="rounded-2xl bg-white subtle-border overflow-hidden hover:-translate-y-1 transition transform">
-                  <div class="aspect-[4/5] bg-slate-100">
-                    <img data-gen-id="${p.gen}" alt="Agency team portrait: ${p.name}" class="w-full h-full object-cover" />
+                <div class="rounded-2xl bg-white border border-slate-100 overflow-hidden hover:-translate-y-2 hover:shadow-xl transition-all duration-500">
+                  <div class="aspect-[4/5] bg-slate-100 overflow-hidden">
+                    <img data-gen-id="${p.gen}" alt="Agency team portrait: ${p.name}" class="w-full h-full object-cover transition-transform duration-700 hover:scale-110" />
                   </div>
                   <div class="p-4">
                     <div class="text-sm font-extrabold text-slate-900">${p.name}</div>
@@ -2099,25 +2401,26 @@ const AboutPage = () => {
               `).join("")}
             </div>
 
-            <div class="mt-10 rounded-3xl bg-white subtle-border p-7 sm:p-10">
+            <div class="mt-10 rounded-3xl bg-white border border-slate-100 p-7 sm:p-10 shadow-sm animate-reveal stagger-1">
               <div class="grid gap-7 lg:grid-cols-12 items-start">
-                <div class="lg:col-span-5">
-                  <div class="text-xs font-extrabold text-teal-700">Process</div>
-                  <h3 class="font-display mt-2 text-2xl sm:text-3xl text-slate-900">A timeline you can count on</h3>
+                <div class="lg:col-span-5 border-l-4 border-blue-500 pl-6">
+                  <div class="text-xs font-extrabold text-blue-600 uppercase tracking-widest">Process</div>
+                  <h3 class="font-display mt-2 text-2xl sm:text-3xl text-slate-900">A timeline you can count <span class="text-blue-600">on</span></h3>
                   <p class="mt-3 text-slate-600 leading-7">
                     Our workflow is designed to keep your project moving: clear brief → fast first drafts → organized revisions → production-ready delivery.
                   </p>
                 </div>
                 <div class="lg:col-span-7">
+                  
                   <ol class="grid gap-4 sm:grid-cols-3">
                     ${[
-      { t: "Brief", d: "We confirm goals, style, and deliverables." },
-      { t: "Design", d: "You receive draft options fast; we refine." },
-      { t: "Delivery", d: "Final files + exports delivered by email." },
+      { t: "Brief", d: "We confirm goals, style, and deliverables.", color: "text-blue-600" },
+      { t: "Design", d: "You receive draft options fast; we refine.", color: "text-emerald-600" },
+      { t: "Delivery", d: "Final files + exports delivered by email.", color: "text-orange-500" },
     ].map((s, i) => `
-                      <li class="rounded-2xl bg-slate-50 subtle-border p-5">
-                        <div class="text-xs font-extrabold text-slate-500">0${i + 1}</div>
-                        <div class="mt-2 text-sm font-extrabold text-slate-900">${s.t}</div>
+                      <li class="rounded-2xl bg-slate-50 border border-slate-100 p-5 group hover:bg-white hover:shadow-md transition-all">
+                        <div class="text-xs font-extrabold text-slate-400">0${i + 1}</div>
+                        <div class="mt-2 text-sm font-extrabold ${s.color}">${s.t}</div>
                         <div class="mt-1 text-sm text-slate-600 leading-7">${s.d}</div>
                       </li>
                     `).join("")}
@@ -2129,15 +2432,17 @@ const AboutPage = () => {
           </div>
         </section>
 
-        ${ctaBand({
-      title: "Let’s make your brand look established—fast.",
+        <div class="animate-reveal">
+          ${ctaBand({
+      title: "Let’s make your brand look established—<span class='text-blue-600'>fast.</span>",
       subtitle: "View packages and pricing, or request a free quote. We’ll respond by email with a clear plan and timeline.",
       primaryHref: "#/pricing",
       primaryText: "View All Pricing",
       secondaryHref: "#/contact",
       secondaryText: "Get a Free Quote",
-      bg: "from-teal-50 to-blue-50"
+      bg: "from-blue-50 via-white to-orange-50/20"
     })}
+        </div>
 
         ${footerHTML()}
       `;
@@ -2177,115 +2482,216 @@ const ContactPage = () => {
     "E-Commerce Premium Package"
   ];
 
+  // Logic for opening/closing the modal
+  window.toggleModal = (show) => {
+    const modal = document.getElementById('success-modal');
+    if (show) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    } else {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+  };
+
+  // Submission logic for Cloudinary + Web3Forms
+  window.handleContactFormSubmission = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalBtnContent = submitBtn.innerHTML;
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `Sending... <i class="bi bi-hourglass-split ms-2"></i>`;
+
+    try {
+      const formData = new FormData(form);
+      const fileInput = form.querySelector('input[name="file"]');
+      let uploadedFileUrl = "No file attached";
+
+      if (fileInput.files.length > 0) {
+        const cloudData = new FormData();
+        cloudData.append("file", fileInput.files[0]);
+        cloudData.append("upload_preset", "true_designs");
+
+        const cloudRes = await fetch("https://api.cloudinary.com/v1_1/dqfddjoji/image/upload", {
+          method: "POST",
+          body: cloudData
+        });
+
+        if (cloudRes.ok) {
+          const cloudJson = await cloudRes.json();
+          uploadedFileUrl = cloudJson.secure_url;
+        } else {
+          throw new Error("Cloudinary upload failed");
+        }
+      }
+
+      formData.delete("file");
+      formData.append("cloudinary_file_url", uploadedFileUrl);
+      formData.append("subject", `New Quote Request from ${formData.get("name")}`);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        form.reset();
+        window.toggleModal(true);
+      } else {
+        alert("Something went wrong with the submission. Please try again.");
+      }
+
+    } catch (error) {
+      console.error("Submission Error:", error);
+      alert("Error: Could not send message. Please check your connection.");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnContent;
+    }
+  };
+
   return `
-        <section class="relative overflow-hidden">
-          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/wide_hero_background_clean_mi_8e6469d7aa8082ee55f889a7fb611990.png'); background-size: cover; background-position: center;"></div>
+        <style>
+          @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+          .animate-fade-up {
+            opacity: 0;
+            animation: fadeUp 0.8s ease-out forwards;
+          }
+          .delay-1 { animation-delay: 0.2s; }
+          .delay-2 { animation-delay: 0.4s; }
+          .delay-3 { animation-delay: 0.6s; }
+        </style>
+
+        <div id="success-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+          <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-md" onclick="toggleModal(false)"></div>
+          <div class="relative w-full max-w-md transform rounded-3xl bg-white p-8 shadow-2xl animate-in fade-in zoom-in duration-300">
+            <div class="flex flex-col items-center text-center">
+              <div class="h-20 w-20 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-500 mb-6 shadow-inner">
+                <i class="bi bi-check-circle-fill text-5xl"></i>
+              </div>
+              <h3 class="font-display text-2xl font-extrabold text-slate-900">Request Received!</h3>
+              <p class="mt-4 text-slate-600 leading-relaxed">
+                Thank you for reaching out. We've received your details and will get back to you within 24–72 hours via email.
+              </p>
+              <button onclick="toggleModal(false)" class="mt-8 w-full rounded-2xl bg-gradient-to-r from-emerald-500 to-orange-500 px-6 py-4 text-sm font-extrabold text-white hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+                Got it, Thanks!
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <section class="relative overflow-hidden min-h-screen">
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] hover:scale-110" style="background-image: url('assets/images/wide_hero_background_clean_mi_8e6469d7aa8082ee55f889a7fb611990.png');"></div>
           <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/95 to-white"></div>
 
           <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-10">
             <div class="grid gap-10 lg:grid-cols-12 items-start">
-              <div class="lg:col-span-5">
-                <div class="inline-flex items-center gap-2 rounded-full bg-white/80 subtle-border px-3 py-1.5 text-xs font-extrabold text-slate-700">
-                  <span class="h-2 w-2 rounded-full bg-gradient-to-r from-teal-500 to-blue-600"></span>
+              
+              <div class="lg:col-span-5 animate-fade-up">
+                <div class="inline-flex items-center gap-2 rounded-full bg-white/80 border border-slate-200/50 px-3 py-1.5 text-xs font-extrabold text-slate-700 shadow-sm">
+                  <span class="h-2 w-2 rounded-full bg-gradient-to-r from-teal-500 to-blue-600 animate-pulse"></span>
                   Contact • Fast response by email
                 </div>
-                <h1 class="font-display mt-4 text-4xl sm:text-5xl leading-[1.05] text-slate-900">Get Your Free Quote Today</h1>
-                <p class="mt-5 text-lg leading-8 text-slate-600">
+                <h1 class="font-display mt-4 text-4xl sm:text-5xl leading-[1.05] text-[#0f172a] tracking-tight">
+                  Get Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Free Quote</span> Today
+                </h1>
+                <p class="mt-5 text-lg leading-8 text-slate-600 animate-fade-up delay-1">
                   Tell us what you need, your timeline, and any style references. We’ll reply with a clear recommendation and next steps.
                 </p>
 
-                <div class="mt-7 rounded-2xl bg-white/85 subtle-border p-5">
+                <div class="mt-7 rounded-2xl bg-white/85 border border-slate-200/60 p-5 shadow-sm animate-fade-up delay-2">
                   <div class="flex items-start gap-3">
-                    <div class="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center text-slate-900">
+                    <div class="h-10 w-10 rounded-xl bg-slate-50 flex items-center justify-center text-[#0f172a]">
                       <i class="bi bi-envelope"></i>
                     </div>
                     <div>
-                      <div class="text-sm font-extrabold text-slate-900">Email only</div>
+                      <div class="text-sm font-extrabold text-[#0f172a]">Email only</div>
                       <div class="mt-1 text-sm text-slate-600 leading-7">Send details to:</div>
-                      <a class="mt-2 inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-extrabold text-slate-900 hover:bg-slate-50 transition" href="mailto:info@td-designs.com">
+                      <a class="mt-2 inline-flex items-center gap-2 rounded-xl border border-slate-200/70 bg-white px-4 py-2.5 text-sm font-extrabold text-[#0f172a] hover:bg-slate-50 hover:border-emerald-500/50 transition-all duration-300" href="mailto:info@td-designs.com">
                         info@td-designs.com <i class="bi bi-arrow-up-right text-sm"></i>
                       </a>
-                      <div class="mt-3 text-xs text-slate-500">No phone numbers—everything stays clear, documented, and fast.</div>
                     </div>
                   </div>
                 </div>
 
-                <div class="mt-6 grid gap-3 sm:grid-cols-2">
-                  <div class="rounded-2xl bg-white/85 subtle-border p-5">
-                    <div class="text-sm font-extrabold text-slate-900">Turnaround</div>
-                    <p class="mt-2 text-sm text-slate-600 leading-7">Most first drafts are delivered within 24–72 hours depending on scope.</p>
+                <div class="mt-6 grid gap-3 sm:grid-cols-2 animate-fade-up delay-3">
+                  <div class="rounded-2xl bg-white/85 border border-slate-200/60 p-5 shadow-sm">
+                    <div class="text-sm font-extrabold text-[#0f172a]">Turnaround</div>
+                    <p class="mt-2 text-sm text-slate-600 leading-7">Most first drafts are delivered within 24–72 hours.</p>
                   </div>
-                  <div class="rounded-2xl bg-white/85 subtle-border p-5">
-                    <div class="text-sm font-extrabold text-slate-900">Guarantee</div>
+                  <div class="rounded-2xl bg-white/85 border border-slate-200/60 p-5 shadow-sm">
+                    <div class="text-sm font-extrabold text-[#0f172a]">Guarantee</div>
                     <p class="mt-2 text-sm text-slate-600 leading-7">Unlimited revisions so you can finalize with confidence.</p>
                   </div>
                 </div>
               </div>
 
-              <div class="lg:col-span-7">
-                <div class="rounded-3xl bg-white subtle-border soft-shadow overflow-hidden">
-                  <div class="px-6 sm:px-8 py-6 border-b border-slate-200/70">
-                    <div class="text-sm font-extrabold text-slate-900">Request a free quote</div>
-                    <div class="mt-1 text-sm text-slate-600">This form sends directly to <span class="font-semibold">info@td-designs.com</span>.</div>
+              <div class="lg:col-span-7 animate-fade-up delay-2">
+                <div class="rounded-3xl bg-white border border-slate-200/60 shadow-xl overflow-hidden">
+                  <div class="px-6 sm:px-8 py-6 border-b border-slate-100 bg-slate-50/30">
+                    <div class="text-sm font-extrabold text-[#0f172a]">Request a free quote</div>
+                    <div class="mt-1 text-sm text-slate-500">This form sends directly to <span class="font-semibold text-emerald-600">info@td-designs.com</span>.</div>
                   </div>
 
-                  <form class="px-6 sm:px-8 py-6 grid gap-4" action="mailto:info@td-designs.com" method="post" enctype="multipart/form-data">
+                  <form class="px-6 sm:px-8 py-6 grid gap-4" onsubmit="handleContactFormSubmission(event)">
+                    <input type="hidden" name="access_key" value="dfe2e88d-8860-41d4-a67b-cc2dfe7e9ec6">
+                    
                     <div class="grid gap-4 sm:grid-cols-2">
-                      <div>
-                        <label class="text-xs font-extrabold text-slate-700">Name</label>
-                        <input name="name" required class="mt-2 w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm td-ring" placeholder="Your name" />
+                      <div class="group">
+                        <label class="text-xs font-extrabold text-slate-700 group-focus-within:text-emerald-600 transition-colors">Name</label>
+                        <input name="name" required class="mt-2 w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" placeholder="Your name" />
                       </div>
-                      <div>
-                        <label class="text-xs font-extrabold text-slate-700">Email</label>
-                        <input name="email" type="email" required class="mt-2 w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm td-ring" placeholder="you@company.com" />
+                      <div class="group">
+                        <label class="text-xs font-extrabold text-slate-700 group-focus-within:text-emerald-600 transition-colors">Email</label>
+                        <input name="email" type="email" required class="mt-2 w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" placeholder="you@company.com" />
                       </div>
                     </div>
 
                     <div class="grid gap-4 sm:grid-cols-2">
-                      <div>
-                        <label class="text-xs font-extrabold text-slate-700">Service</label>
-                        <select name="service" required class="mt-2 w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm td-ring">
+                      <div class="group">
+                        <label class="text-xs font-extrabold text-slate-700 group-focus-within:text-emerald-600 transition-colors">Service</label>
+                        <select name="service" required class="mt-2 w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all appearance-none">
                           <option value="" selected disabled>Select a service</option>
                           ${serviceOptions.map(s => `<option value="${s}">${s}</option>`).join("")}
                         </select>
                       </div>
-                      <div>
-                        <label class="text-xs font-extrabold text-slate-700">Package</label>
-                        <select name="package" class="mt-2 w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm td-ring">
+                      <div class="group">
+                        <label class="text-xs font-extrabold text-slate-700 group-focus-within:text-emerald-600 transition-colors">Package</label>
+                        <select name="package" class="mt-2 w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all appearance-none">
                           <option value="" selected>Not sure yet</option>
                           ${packageOptions.map(p => `<option value="${p}">${p}</option>`).join("")}
                         </select>
                       </div>
                     </div>
 
-                    <div>
-                      <label class="text-xs font-extrabold text-slate-700">Message</label>
-                      <textarea name="message" rows="6" required class="mt-2 w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm td-ring" placeholder="Tell us what you need, your style preferences, and your deadline."></textarea>
-                      <div class="mt-2 text-xs text-slate-500">Tip: Include industry, preferred style (minimal/bold/luxury/vintage), and any competitors.</div>
+                    <div class="group">
+                      <label class="text-xs font-extrabold text-slate-700 group-focus-within:text-emerald-600 transition-colors">Message</label>
+                      <textarea name="message" rows="5" required class="mt-2 w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" placeholder="Tell us what you need..."></textarea>
                     </div>
 
-                    <div>
-                      <label class="text-xs font-extrabold text-slate-700">File upload (optional)</label>
-                      <input name="file" type="file" class="mt-2 w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm td-ring" />
-                      <div class="mt-2 text-xs text-slate-500">You can attach your logo, references, or existing brand assets.</div>
+                    <div class="group">
+                      <label class="text-xs font-extrabold text-slate-700 group-focus-within:text-emerald-600 transition-colors">File upload (optional)</label>
+                      <div class="relative mt-2">
+                        <input name="file" type="file" class="w-full rounded-xl border border-slate-200/80 bg-white px-4 py-3 text-sm file:mr-4 file:py-1 file:px-3 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-emerald-50 file:text-emerald-700 hover:file:bg-emerald-100 transition-all cursor-pointer" />
+                      </div>
                     </div>
 
-                    <div class="mt-2 flex flex-col sm:flex-row gap-3">
-                      <button type="submit" class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-emerald-500 to-orange-500 px-6 py-4 text-sm font-extrabold text-white hover:opacity-95 hover:-translate-y-0.5 transition transform">
+                    <div class="mt-2 flex flex-col sm:flex-row gap-4">
+                      <button type="submit" class="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-emerald-500 to-orange-500 px-8 py-4 text-sm font-extrabold text-white shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:-translate-y-1 transition-all duration-300 active:scale-95">
                         Send Request <i class="bi bi-send ms-2"></i>
                       </button>
-                      <a href="#/pricing" class="inline-flex items-center justify-center rounded-2xl bg-white subtle-border px-6 py-4 text-sm font-extrabold text-slate-900 hover:bg-slate-50 transition">
+                      <a href="#/pricing" class="inline-flex items-center justify-center rounded-2xl bg-white border border-slate-200 px-8 py-4 text-sm font-extrabold text-[#0f172a] hover:bg-slate-50 transition-all">
                         View All Pricing <i class="bi bi-arrow-up-right text-sm ml-2"></i>
                       </a>
-                    </div>
-
-                    <div class="rounded-2xl bg-slate-50 subtle-border p-5 mt-2">
-                      <div class="text-sm font-extrabold text-slate-900">Reassurance</div>
-                      <ul class="mt-3 space-y-2 text-sm text-slate-700">
-                        <li class="flex gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i>Unlimited revisions on selected direction</li>
-                        <li class="flex gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i>Fast email-based updates (no phone calls)</li>
-                        <li class="flex gap-2"><i class="bi bi-check2-circle text-emerald-600 mt-0.5"></i>Production-ready files and exports</li>
-                      </ul>
                     </div>
                   </form>
                 </div>
@@ -2299,12 +2705,179 @@ const ContactPage = () => {
       `;
 };
 
+// --------- Inlined Components ----------
+
+
+function PhotoToArtPage() {
+  setMeta({
+    title: "Photo to Art - Turn Pictures into Canvas Paintings | True Designs",
+    description: "Transform your favorite photos into custom hand-painted style artwork. Oil paintings, watercolors, sketches, and pop art from your pictures. Perfect for gifts and home décor.",
+    keywords: "photo to art, picture into painting, custom oil painting from photo, watercolor from photo, pet portraits, wedding photo art, turn photo into canvas",
+    canonical: "https://td-designs.com/photo-to-art"
+  });
+
+  const photoArtGallery = [
+    { title: "Travel Watercolor", src: "assets/images/travel-art.jpg", alt: "Watercolor painting of a beach sunset", tag: "Watercolor", caption: "A serene beach memory turned into soft, painterly art." },
+    { title: "Classic Portrait", src: "assets/images/portrait-art.jpg", alt: "Oil painting style portrait", tag: "Oil Style", caption: "Timeless portrait with rich textures and classic lighting." },
+    { title: "Pet Pop Art", src: "assets/images/pet-art.jpg", alt: "Colorful pop art dog portrait", tag: "Pop Art", caption: "Vibrant and fun artwork celebrating a beloved pet." },
+    { title: "Wedding Fine Art", src: "assets/images/wedding-art.jpg", alt: "Romantic wedding painting", tag: "Fine Art", caption: "Capturing the romance of the big day in elegant brushstrokes." },
+    { title: "Vintage Restoration", src: "assets/images/vintage-art.jpg", alt: "Vintage style photo effect", tag: "Vintage", caption: "Nostalgic 1920s style editing for a timeless look." },
+    { title: "Scenic Landscape", src: "assets/images/travel-art.jpg", alt: "Landscape painting", tag: "Acrylic", caption: "Transforming nature shots into vibrant acrylic masterpieces." },
+    { title: "Family Sketch", src: "assets/images/portrait-art.jpg", alt: "Pencil sketch of family", tag: "Sketch", caption: "Hand-drawn style digital sketch perfect for framing." },
+    { title: "Modern Pet Portrait", src: "assets/images/pet-art.jpg", alt: "Modern style pet art", tag: "Modern", caption: "Sleek and minimal art style for your furry friends." },
+    { title: "Anniversary Moment", src: "assets/images/wedding-art.jpg", alt: "Anniversary painting", tag: "Oil Style", caption: "Celebrating milestones with a custom oil painting." }
+  ];
+
+  const servicesList = [
+    { icon: "bi-airplane", title: "Travel & Scenery", desc: "Turn vacation photos into breathtaking landscapes—watercolors for beaches, oils for mountains." },
+    { icon: "bi-person-heart", title: "Portraits & Family", desc: "Museum-quality digital paintings of your loved ones, perfect for framing and gifting." },
+    { icon: "bi-paw", title: "Pet Portraits", desc: "Celebrate your furry friends with fun pop art or dignified classic oil styles." },
+    { icon: "bi-heart", title: "Weddings", desc: "Preserve your most romantic moments as fine art pieces for your home." },
+    { icon: "bi-clock-history", title: "Vintage Style", desc: "Give modern photos a nostalgic, timeless feel inspired by past decades." },
+    { icon: "bi-stars", title: "Custom Requests", desc: "Have a unique idea? We can blend styles or create something totally new." }
+  ];
+
+  return `
+    <main class="page photo-to-art">
+      <style>
+        @keyframes fadeUp {
+          from { opacity: 0; transform: translateY(30px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-reveal { opacity: 0; animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .hero-gradient-art { background: radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.05) 0%, rgba(16, 185, 129, 0.05) 100%); }
+      </style>
+
+      <div class="hero-gradient-art">
+        ${heroBand({
+            kicker: "Turn Memories Into Masterpieces",
+            title: "Custom <span class='text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600'>Hand-Crafted</span> Digital Art from Your Photos",
+            subtitle: "Transform any picture into a stunning oil painting, watercolor, or pop art piece. Professionally designed styling—not just a filter.",
+            primaryHref: "#/contact",
+            primaryText: "Get a Free Quote",
+            secondaryHref: "#styles",
+            secondaryText: "View Gallery",
+            bgGenId: "photo-to-art-hero"
+        })}
+      </div>
+
+      <!-- Gallery Section -->
+      <div id="styles" class="animate-reveal delay-1">
+        ${galleryGrid(photoArtGallery, "photo-art")}
+      </div>
+
+      <!-- Services & Features -->
+      <section class="section py-16 bg-slate-50 border-t border-slate-200 animate-reveal">
+        <div class="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+           <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="font-display text-3xl sm:text-4xl text-slate-900 mb-4">Art styles for <span class="text-pink-600">every occasion</span></h2>
+            <p class="text-lg text-slate-600">Whether it’s a gift, a memory, or decor, we have a style that fits.</p>
+          </div>
+          
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 delay-1">
+            ${servicesList.map(s => `
+              <div class="bg-white rounded-2xl p-6 subtle-border hover:-translate-y-1 transition text-left">
+                <div class="h-12 w-12 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center text-xl mb-4">
+                  <i class="bi ${s.icon}"></i>
+                </div>
+                <h3 class="font-bold text-slate-900 text-lg mb-2">${s.title}</h3>
+                <p class="text-slate-600 text-sm leading-6">${s.desc}</p>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="mt-16 delay-2">
+            ${trustRowHTML()}
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PRICING ================= -->
+      <section class="section pricing py-16 bg-white border-t border-slate-200 animate-reveal">
+        <div class="container mx-auto max-w-7xl px-4">
+          <div class="text-center mb-12">
+            <h2 class="font-display text-3xl sm:text-4xl text-slate-900 mb-4">Transparent <span class="text-emerald-600">Pricing Packages</span></h2>
+            <p class="text-lg text-slate-600">Choose the perfect style for your custom artwork.</p>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 delay-1">
+             ${PRICING_DATA.photoToArt.map(c => pricingCard(c)).join('')}
+          </div>
+          <p class="text-center mt-8 text-sm text-slate-500">
+            Need a custom size or style? 
+            <a href="#/contact" class="font-bold text-blue-600 hover:text-blue-700 underline decoration-2 underline-offset-2 transition">Get a custom quote</a>
+          </p>
+        </div>
+      </section>
+      <!-- ================= WHY US ================= -->
+      <section class="section why-us py-16 bg-white">
+        <div class="container mx-auto max-w-3xl px-4">
+          <h2 class="font-display text-3xl sm:text-4xl text-slate-900 text-center mb-8">Why Choose True Designs?</h2>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+              <i class="bi bi-check-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <span class="text-slate-700 font-medium">Professionally crafted artwork — not auto-filters.</span>
+            </li>
+            <li class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+              <i class="bi bi-check-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <span class="text-slate-700 font-medium">Multiple art styles to choose from (Oil, Watercolor, Pop Art, etc).</span>
+            </li>
+            <li class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+              <i class="bi bi-check-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <span class="text-slate-700 font-medium">High-quality, print-ready results delivered digitally.</span>
+            </li>
+            <li class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+              <i class="bi bi-check-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <span class="text-slate-700 font-medium">Ideal for gifts, décor, and personal projects.</span>
+            </li>
+             <li class="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
+              <i class="bi bi-check-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <span class="text-slate-700 font-medium">Fast turnaround with attention to detail.</span>
+            </li>
+          </ul>
+          <p class="text-center mt-6 text-slate-600 italic">We don’t just transform photos — we turn memories into art.</p>
+        </div>
+      </section>
+
+      <!-- ================= FAQ ================= -->
+      ${faqHTML([
+    { q: "What kinds of photos can be turned into art?", a: "We can transform travel photos, family portraits, couple photos, pets, weddings, vintage shots, and landscape images into custom artwork. It works on almost any clear photo you upload." },
+    { q: "What art styles do you offer?", a: "Choose from classic oil-painting styles, expressive watercolors, acrylic flair, digital illustration, pop art, or vintage art effects. You can request a specific art style or ask our artist for creative suggestions." },
+    { q: "How do I order my custom artwork?", a: "Simply upload your photo, choose your preferred style and format, and submit your order. We’ll review and create your custom art piece, then deliver the final digital file — and physical canvas print if selected." },
+    { q: "What file formats do I receive?", a: "You’ll receive high-resolution digital files (PNG, JPEG, or PDF) suitable for printing, framing, or online sharing. Canvas and print options can be included at checkout." },
+    { q: "How long does it take to get my artwork?", a: "Most custom art pieces are completed within 3–7 business days for digital artwork. Physical prints and canvases may take additional time depending on shipping and production." },
+    { q: "Can I request changes to my artwork?", a: "Yes — we offer revisions to ensure your artwork matches your vision. Revision policies vary by order tier, and some services include a certain number of adjustments." },
+    { q: "Are there size options for canvas prints?", a: "Yes — if you choose a printed canvas, we offer multiple sizes to fit your space and budget. Larger sizes have upgraded pricing." },
+    { q: "What makes True Designs’ photo art unique?", a: "Unlike automatic filters, our artwork is crafted by experienced artists who manually interpret your photo into a true art piece — capturing emotion, style, and detail." }
+  ])}
+
+      <!-- ================= FINAL CTA ================= -->
+      <section class="cta-final py-20 bg-gradient-to-br from-blue-50 via-white to-emerald-50 border-t border-slate-200">
+        <div class="container mx-auto max-w-4xl px-4 text-center">
+          <h2 class="font-display text-3xl sm:text-5xl text-slate-900 mb-6">Ready to Turn Your Photo Into Art?</h2>
+          <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
+            Upload your photo, choose your preferred style, and let our artists do the rest.<br>
+            Create something meaningful, personal, and truly unforgettable.
+          </p>
+          <a href="#/contact" class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-8 py-4 text-base font-extrabold text-white hover:bg-black transition shadow-lg">
+            Start Your Photo-to-Art Project Today
+          </a>
+        </div>
+      </section>
+
+      ${footerHTML()}
+    </main>
+    `;
+}
+
 // --------- Router ----------
 const routes = {
   "/home": HomePage,
   "/": HomePage,
   "/logo-design": LogoDesignPage, "/digital-ads-banner-design": BusinessCardPage, "/custom-tshirt-merch-design": StationeryPage, "/graphic-design": GraphicDesignPage, "/web-design": WebDesignPage,
   "/e-commerce-website": EcommercePage,
+  "/photo-to-art": PhotoToArtPage,
   "/pricing": PricingPage,
   "/portfolio": PortfolioPage,
   "/about-us": AboutPage,
@@ -2342,6 +2915,9 @@ const render = () => {
   initPricingJump();
   initPortfolioFilters();
 
+  // Inject images (Hero backgrounds, galleries)
+  window.injectImages?.();
+
   // For lightbox: map generated images to modal src by cloning actual rendered src if any.
   // Since images are generated externally from data-gen-id, src might be empty; we set a fallback:
   // Use current displayed image's src when opening, if available.
@@ -2363,6 +2939,7 @@ const render = () => {
   // Scroll to top on new page route (but not when it's an in-page pricing anchor change)
   if (!(location.hash || "").includes("#/pricing#")) window.scrollTo({ top: 0, behavior: "smooth" });
 };
+
 
 
 // --------- Cookie Consent Banner ----------
@@ -2515,3 +3092,33 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   initCookieBanner();
 });
+
+// Global App Controller
+window.initAppLogic = () => {
+  // 1. Portfolio Tab Switcher Logic
+  const tabs = document.querySelectorAll('[data-portfolio-tab]');
+  const panes = document.querySelectorAll('[data-portfolio-pane]');
+
+  tabs.forEach(tab => {
+    tab.onclick = () => {
+      const target = tab.getAttribute('data-portfolio-tab');
+
+      // Reset Tabs
+      tabs.forEach(t => t.classList.remove('bg-blue-50', 'border-blue-500', 'text-blue-600'));
+      tab.classList.add('bg-blue-50', 'border-blue-500', 'text-blue-600');
+
+      // Switch Panes
+      panes.forEach(pane => {
+        if (pane.getAttribute('data-portfolio-pane') === target) {
+          pane.classList.remove('hidden');
+          pane.classList.add('animate-reveal'); // Re-trigger animation
+        } else {
+          pane.classList.add('hidden');
+        }
+      });
+    };
+  });
+};
+
+// Call this every time your router changes the page
+// Example: document.getElementById('app').innerHTML = PortfolioPage(); window.initAppLogic();
