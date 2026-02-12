@@ -2912,6 +2912,11 @@ const render = () => {
   const page = routes[path] || HomePage;
   app.innerHTML = page();
 
+  // Track SPA page view with Facebook Meta Pixel
+  if (typeof fbq === 'function') {
+    fbq('track', 'PageView');
+  }
+
   // Set year
   const yearEl = $("#year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
