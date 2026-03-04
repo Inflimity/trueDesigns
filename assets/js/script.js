@@ -131,7 +131,8 @@ const PRICING_DATA = {
       blurb: "One strong shirt graphic, ready for print.",
       features: ["1 concept", "Unlimited revisions", "Front (or back) design", "Print-ready PNG (transparent)", "1-color or full-color option"],
       popular: false,
-      customLink: "https://www.paypal.com/ncp/payment/4UZV9KZAK9EQC"
+
+      customLink: "https://www.paypal.com/ncp/payment/PXRAX5F83RSZ6"
     },
     {
       name: "Custom T‑Shirt & Merch Professional Package",
