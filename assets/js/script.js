@@ -2551,6 +2551,11 @@ const ContactPage = () => {
 
       if (result.success) {
         form.reset();
+        // Track the Lead event with Meta Pixel
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead');
+          console.log('Meta Pixel: Lead event tracked');
+        }
         window.toggleModal(true);
       } else {
         alert("Something went wrong with the submission. Please try again.");

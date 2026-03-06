@@ -4,44 +4,44 @@ import { setMeta } from '../utils/helper.js';
 import { footerHTML } from '../components/footer.js';
 
 export default function ContactPage() {
-    setMeta({
-        title: "Contact True Designs | Get a Free Quote",
-        description: "Contact True Designs to get a free quote for logo design, business cards, stationery, graphic design, web design, or e-commerce. Serving USA, Canada & worldwide clients. Email: info@td-designs.com.",
-        keywords: "contact True Designs, get a free quote, affordable custom design USA Canada worldwide, logo design quote, web design quote",
-        canonical: "https://td-designs.com/contact"
-    });
+  setMeta({
+    title: "Contact True Designs | Get a Free Quote",
+    description: "Contact True Designs to get a free quote for logo design, business cards, stationery, graphic design, web design, or e-commerce. Serving USA, Canada & worldwide clients. Email: info@td-designs.com.",
+    keywords: "contact True Designs, get a free quote, affordable custom design USA Canada worldwide, logo design quote, web design quote",
+    canonical: "https://td-designs.com/contact"
+  });
 
-    const serviceOptions = [
-        "Logo Design",
-        "Digital Ads & Banner Design",
-        "Custom T‑Shirt & Merch Design",
-        "Graphic Design",
-        "Web Design",
-        "E-Commerce Website"
-    ];
+  const serviceOptions = [
+    "Logo Design",
+    "Digital Ads & Banner Design",
+    "Custom T‑Shirt & Merch Design",
+    "Graphic Design",
+    "Web Design",
+    "E-Commerce Website"
+  ];
 
-    const packageOptions = [
-        "Logo Design Starter Package",
-        "Logo Design Professional Package",
-        "Logo Design Premium Package",
-        "Digital Ads & Banner Starter Package",
-        "Digital Ads & Banner Professional Package",
-        "Digital Ads & Banner Premium Package",
-        "Custom T‑Shirt & Merch Starter Package",
-        "Custom T‑Shirt & Merch Professional Package",
-        "Custom T‑Shirt & Merch Premium Package",
-        "Graphic Design Starter Package",
-        "Graphic Design Professional Package",
-        "Graphic Design Premium Package",
-        "Web Design Starter Package",
-        "Web Design Professional Package",
-        "Web Design Premium Package",
-        "E-Commerce Starter Package",
-        "E-Commerce Professional Package",
-        "E-Commerce Premium Package"
-    ];
+  const packageOptions = [
+    "Logo Design Starter Package",
+    "Logo Design Professional Package",
+    "Logo Design Premium Package",
+    "Digital Ads & Banner Starter Package",
+    "Digital Ads & Banner Professional Package",
+    "Digital Ads & Banner Premium Package",
+    "Custom T‑Shirt & Merch Starter Package",
+    "Custom T‑Shirt & Merch Professional Package",
+    "Custom T‑Shirt & Merch Premium Package",
+    "Graphic Design Starter Package",
+    "Graphic Design Professional Package",
+    "Graphic Design Premium Package",
+    "Web Design Starter Package",
+    "Web Design Professional Package",
+    "Web Design Premium Package",
+    "E-Commerce Starter Package",
+    "E-Commerce Professional Package",
+    "E-Commerce Premium Package"
+  ];
 
-    return `
+  return `
     <section class="relative overflow-hidden">
       <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/images/wide_hero_background_clean_mi_8e6469d7aa8082ee55f889a7fb611990.png'); background-size: cover; background-position: center;"></div>
       <div class="absolute inset-0 bg-gradient-to-b from-white/90 via-white/95 to-white"></div>
