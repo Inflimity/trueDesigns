@@ -875,7 +875,7 @@ const HomePage = () => {
       desc: "Bold, print-ready apparel graphics and merch visuals.",
       href: "#/pricing#custom-tshirt-merch-design",
       img: "home-service-merch",
-      icon: "bi-tshirt",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M9 1.25c.007.116.175.286.417.432.247.149.567.29 1.133.318V2.5A1.5 1.5 0 0 1 8 4 1.5 1.5 0 0 1 6.45 2.5V2c.566-.028.886-.17 1.133-.318.242-.146.41-.316.417-.432M7.203 1v.74c-.538.03-.996.16-1.393.414-.403.259-.727.606-.727 1.346H1.5a.5.5 0 0 0-.442.268l-1 1.732a.5.5 0 0 0 .142.64l.8.6a.5.5 0 0 0 .6-.8l-.6-.45 1-1.732H5.1c.007 1.258.91 2.241 2.15 2.484V15a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5V5.042c1.24-.243 2.143-1.226 2.15-2.484h2.957l1 1.732a.5.5 0 0 0 .6-.8l-.599-.45.8-.6a.5.5 0 0 0 .142-.64l-1-1.732A.5.5 0 0 0 14.5 2h-3.583c0-.74-.324-1.087-.727-1.346-.397-.254-.855-.384-1.393-.414V1h-.81v.5h-1.594V1z"/></svg>`,
       accent: "border-orange-500"
     }, {
       title: "Graphic Design",
@@ -1086,7 +1086,7 @@ const HomePage = () => {
                     <img data-gen-id="${s.img}" alt="${s.title} design mockup" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div class="absolute top-3 left-3 inline-flex items-center gap-2 rounded-full bg-white/90 glass-card border border-slate-200 px-3 py-1.5 text-xs font-extrabold text-slate-800">
-                      <i class="bi ${s.icon} text-blue-600"></i> ${s.title}
+                  ${s.icon.startsWith('<svg') ? s.icon : `<i class="bi ${s.icon} text-blue-600"></i>`} ${s.title}
                     </div>
                   </div>
                   <div class="p-6">
@@ -1133,7 +1133,7 @@ const HomePage = () => {
                   <div class="group rounded-2xl bg-white border border-slate-200/70 p-6 hover:shadow-xl hover:border-slate-300 transition-all duration-300">
                     <div class="flex items-start gap-4">
                       <div class="h-12 w-12 rounded-2xl ${s.bg} border border-slate-100 flex items-center justify-center ${s.color} transition-transform group-hover:rotate-12">
-                        <i class="bi ${s.icon} text-xl"></i>
+                        ${s.icon.startsWith('<svg') ? s.icon : `<i class="bi ${s.icon} text-xl"></i>`}
                       </div>
                       <div>
                         <div class="text-sm font-extrabold text-slate-900">${s.title}</div>
@@ -2794,7 +2794,7 @@ function PhotoToArtPage() {
             ${servicesList.map(s => `
               <div class="bg-white rounded-2xl p-6 subtle-border hover:-translate-y-1 transition text-left">
                 <div class="h-12 w-12 rounded-xl bg-pink-50 text-pink-600 flex items-center justify-center text-xl mb-4">
-                  <i class="bi ${s.icon}"></i>
+                  ${s.icon.startsWith('<svg') ? s.icon : `<i class="bi ${s.icon}"></i>`}
                 </div>
                 <h3 class="font-bold text-slate-900 text-lg mb-2">${s.title}</h3>
                 <p class="text-slate-600 text-sm leading-6">${s.desc}</p>
