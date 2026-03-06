@@ -478,6 +478,11 @@
 
                             if (result.success) {
                                 form.reset();
+                                // Track the CompleteRegistration event with Meta Pixel
+                                if (typeof fbq === 'function') {
+                                    fbq('track', 'CompleteRegistration');
+                                    console.log('Meta Pixel: CompleteRegistration event tracked');
+                                }
                                 toggleModal(true);
                             } else {
                                 alert("Something went wrong with the submission. Please try again.");
